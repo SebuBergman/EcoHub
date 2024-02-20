@@ -19,19 +19,19 @@ Maybe you can mention me or this repo in the acknowledgements too
 <!-- Badges -->
 <p>
   <a href="https://github.com/SebuBergman/EcoHub/graphs/contributors">
-    <img src="https://img.shields.io/github/contributors/Louis3797/awesome-readme-template" alt="contributors" />
+    <img src="https://img.shields.io/github/contributors/SebuBergman/EcoHub" alt="contributors" />
   </a>
   <a href="">
     <img src="https://img.shields.io/github/last-commit/SebuBergman/EcoHub/)" alt="last update" />
   </a>
   <a href="https://github.com/SebuBergman/EcoHub/network/members">
-    <img src="https://img.shields.io/github/forks/Louis3797/awesome-readme-template" alt="forks" />
+    <img src="https://img.shields.io/github/forks/SebuBergman/EcoHub" alt="forks" />
   </a>
   <a href="https://github.com/SebuBergman/EcoHub/stargazers">
-    <img src="https://img.shields.io/github/stars/Louis3797/awesome-readme-template" alt="stars" />
+    <img src="https://img.shields.io/github/stars/SebuBergman/EcoHub" alt="stars" />
   </a>
-  <a href="https://github.com/SebuBergman/EcoHubissues/">
-    <img src="https://img.shields.io/github/issues/Louis3797/awesome-readme-template" alt="open issues" />
+  <a href="https://github.com/SebuBergman/EcoHub/issues/">
+    <img src="https://img.shields.io/github/issues/SebuBergman/EcoHub" alt="open issues" />
   </a>
 </p>
    
