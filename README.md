@@ -13,6 +13,7 @@ Maybe you can mention me or this repo in the acknowledgements too
   
   <p>
     EcoHub is a Figma prototype I worked on as part of my thesis. The subject of my thesis was the importance of user-centred design in programming. Thus I created a Figma prototype using User-centered design principles. EcoHub is that end result
+    This project is majorly work in progress. Be patient.
   </p>
   
   
