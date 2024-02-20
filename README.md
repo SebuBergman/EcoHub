@@ -19,9 +19,6 @@ Maybe you can mention me or this repo in the acknowledgements too
   
 <!-- Badges -->
 <p>
-  <a href="https://github.com/SebuBergman/EcoHub/graphs/contributors">
-    <img src="https://img.shields.io/github/contributors/SebuBergman/EcoHub" alt="contributors" />
-  </a>
   <a href="">
     <img src="https://img.shields.io/github/last-commit/SebuBergman/EcoHub/" alt="last update" />
   </a>
@@ -215,17 +212,6 @@ To deploy this project run
 * [ ] Make the front-page
 * [ ] Program navigation
 * [ ] Do a lot of other things
-
-
-<!-- Contributing -->
-## :wave: Contributing
---
-<!--
-<a href="https://github.com/SebuBergman/EcoHub/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=SebuBergman/EcoHub/" />
-</a>
-Contributions are always welcome!
-See `contributing.md` for ways to get started.-->
 
 
 <!-- Code of Conduct -->
