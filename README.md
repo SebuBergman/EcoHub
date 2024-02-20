@@ -137,19 +137,10 @@ Maybe you can mention me or this repo in the acknowledgements too
 | Color             | Hex                                                                |
 | ----------------- | ------------------------------------------------------------------ |
 | Primary Color | ![#F8F8F8](https://via.placeholder.com/10/F8F8F8?text=+) #F8F8F8 |
-| Secondary Color | ![#00381E](https://via.placeholder.com/10/393E46?text=+) #00381E |
+| Secondary Color | ![#00381E](https://via.placeholder.com/10/00381E?text=+) #00381E |
 | Accent Color | ![#248823](https://via.placeholder.com/10/248823?text=+) #248823 |
 | Text Color | ![#000000](https://via.placeholder.com/10/000000?text=+) #000000 |
 
-
-<!-- Env Variables -->
-### :key: Environment Variables
-
-To run this project, you will need to add the following environment variables to your .env file
-
-`API_KEY`
-
-`ANOTHER_API_KEY`
 
 <!-- Getting Started -->
 ## 	:toolbox: Getting Started
@@ -157,10 +148,10 @@ To run this project, you will need to add the following environment variables to
 <!-- Prerequisites -->
 ### :bangbang: Prerequisites
 
-This project uses Yarn as package manager
+This project uses npm as package manager
 
 ```bash
- npm install --global yarn
+ npm install
 ```
 
 <!-- Installation -->
@@ -169,7 +160,7 @@ This project uses Yarn as package manager
 Install my-project with npm
 
 ```bash
-  yarn install my-project
+  npm install my-project
   cd my-project
 ```
    
@@ -179,7 +170,7 @@ Install my-project with npm
 To run tests, run the following command
 
 ```bash
-  yarn test test
+  npm test test
 ```
 
 <!-- Run Locally -->
@@ -188,7 +179,7 @@ To run tests, run the following command
 Clone the project
 
 ```bash
-  git clone https://github.com/Louis3797/awesome-readme-template.git
+  git clone https://github.com/SebuBergman/EcoHub.git
 ```
 
 Go to the project directory
@@ -200,13 +191,13 @@ Go to the project directory
 Install dependencies
 
 ```bash
-  yarn install
+  npm install
 ```
 
 Start the server
 
 ```bash
-  yarn start
+  npm start
 ```
 
 
@@ -216,36 +207,22 @@ Start the server
 To deploy this project run
 
 ```bash
-  yarn deploy
-```
-
-
-<!-- Usage -->
-## :eyes: Usage
-
-Use this space to tell a little more about your project and how it can be used. Show additional screenshots, code samples, demos or link to other resources.
-
-
-```javascript
-import Component from 'my-project'
-
-function App() {
-  return <Component />
-}
+  npm deploy
 ```
 
 <!-- Roadmap -->
 ## :compass: Roadmap
 
-* [x] Todo 1
-* [ ] Todo 2
+* [ ] Make the front-page
+* [ ] Program navigation
+* [ ] Do a lot of other things
 
 
 <!-- Contributing -->
 ## :wave: Contributing
 
-<a href="https://github.com/Louis3797/awesome-readme-template/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Louis3797/awesome-readme-template" />
+<a href="https://github.com/SebuBergman/EcoHub/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=SebuBergman/EcoHub/" />
 </a>
 
 
@@ -257,32 +234,27 @@ See `contributing.md` for ways to get started.
 <!-- Code of Conduct -->
 ### :scroll: Code of Conduct
 
-Please read the [Code of Conduct](https://github.com/Louis3797/awesome-readme-template/blob/master/CODE_OF_CONDUCT.md)
+Please read the -- <!--[Code of Conduct](https://github.com/Louis3797/awesome-readme-template/blob/master/CODE_OF_CONDUCT.md)-->
 
 <!-- FAQ -->
 ## :grey_question: FAQ
 
-- Question 1
+- Why are you making this a website
 
-  + Answer 1
-
-- Question 2
-
-  + Answer 2
+  + I got inspired after finishing my figma prototype
 
 
 <!-- License -->
 ## :warning: License
 
-Distributed under the no License. See LICENSE.txt for more information.
-
+--
 
 <!-- Contact -->
 ## :handshake: Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+Sebastian Bergman - https://www.instagram.com/sebu.bersman
 
-Project Link: [https://github.com/Louis3797/awesome-readme-template](https://github.com/Louis3797/awesome-readme-template)
+Project Link: https://github.com/SebuBergman/EcoHub/
 
 
 <!-- Acknowledgments -->
@@ -290,8 +262,7 @@ Project Link: [https://github.com/Louis3797/awesome-readme-template](https://git
 
 Use this section to mention useful resources and libraries that you have used in your projects.
 
- - [Shields.io](https://shields.io/)
  - [Awesome README](https://github.com/matiassingers/awesome-readme)
- - [Emoji Cheat Sheet](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md#travel--places)
- - [Readme Template](https://github.com/othneildrew/Best-README-Template)
+ - [React docs](https://reactjs.org/docs/getting-started.html)
+ - [React Cheat Sheet](https://www.freecodecamp.org/news/the-react-cheatsheet/)
 
