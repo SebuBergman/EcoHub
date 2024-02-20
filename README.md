@@ -219,15 +219,13 @@ To deploy this project run
 
 <!-- Contributing -->
 ## :wave: Contributing
-
+--
+<!--
 <a href="https://github.com/SebuBergman/EcoHub/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=SebuBergman/EcoHub/" />
 </a>
-
-
 Contributions are always welcome!
-
-See `contributing.md` for ways to get started.
+See `contributing.md` for ways to get started.-->
 
 
 <!-- Code of Conduct -->
@@ -238,7 +236,7 @@ Please read the -- <!--[Code of Conduct](https://github.com/Louis3797/awesome-re
 <!-- FAQ -->
 ## :grey_question: FAQ
 
-- Why are you making this a website
+- Why are you making this a website?
 
   + I got inspired after finishing my figma prototype
 
