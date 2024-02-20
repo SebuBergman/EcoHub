@@ -81,7 +81,8 @@ Maybe you can mention me or this repo in the acknowledgements too
 ### :camera: Screenshots
 
 <div align="center"> 
-  <img src="assets/EcoHub_FrontPage.png" alt="screenshot" />
+  <img src="assets/EcoHub_FrontPage.png" alt="FrontPage" />
+  <img src="assets/EcoHub_Ympäristöasiat.png" alt="Environmental issues" />
 </div>
 
 
