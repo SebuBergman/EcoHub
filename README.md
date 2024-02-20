@@ -77,6 +77,9 @@ Maybe you can mention me or this repo in the acknowledgements too
 <!-- About the Project -->
 ## :star2: About the Project
 
+<div>
+  <p></p>
+</div>
 
 <!-- Screenshots -->
 ### :camera: Screenshots
@@ -125,7 +128,7 @@ Maybe you can mention me or this repo in the acknowledgements too
 ### :dart: Features
 
 - User engagement (Sustainability quizzes & challenges, success stories etc.)
-- Environmental empowerment
+- Environmental empowerment & raising of awareness for environmental issues
 - Calculate impact
 
 <!-- Color Reference -->
@@ -133,10 +136,10 @@ Maybe you can mention me or this repo in the acknowledgements too
 
 | Color             | Hex                                                                |
 | ----------------- | ------------------------------------------------------------------ |
-| Primary Color | ![#222831](https://via.placeholder.com/10/222831?text=+) #222831 |
-| Secondary Color | ![#393E46](https://via.placeholder.com/10/393E46?text=+) #393E46 |
-| Accent Color | ![#00ADB5](https://via.placeholder.com/10/00ADB5?text=+) #00ADB5 |
-| Text Color | ![#EEEEEE](https://via.placeholder.com/10/EEEEEE?text=+) #EEEEEE |
+| Primary Color | ![#F8F8F8](https://via.placeholder.com/10/F8F8F8?text=+) #F8F8F8 |
+| Secondary Color | ![#00381E](https://via.placeholder.com/10/393E46?text=+) #00381E |
+| Accent Color | ![#248823](https://via.placeholder.com/10/248823?text=+) #248823 |
+| Text Color | ![#000000](https://via.placeholder.com/10/000000?text=+) #000000 |
 
 
 <!-- Env Variables -->
