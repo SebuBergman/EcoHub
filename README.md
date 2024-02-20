@@ -8,7 +8,7 @@ Maybe you can mention me or this repo in the acknowledgements too
 -->
 <div align="center">
 
-  <img src="assets/logo.png" alt="logo" width="200" height="auto" />
+  <!--<img src="assets/logo.png" alt="logo" width="200" height="auto" />-->
   <h1>EcoHub (name still under review)</h1>
   
   <p>
@@ -85,7 +85,7 @@ Maybe you can mention me or this repo in the acknowledgements too
 ### :camera: Screenshots
 
 <div align="center"> 
-  <img src="https://placehold.co/600x400?text=Your+Screenshot+here" alt="screenshot" />
+  <img src="assets/EcoHub_FrontPage.png" alt="screenshot" />
 </div>
 
 
