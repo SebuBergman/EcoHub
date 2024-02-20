@@ -9,10 +9,10 @@ Maybe you can mention me or this repo in the acknowledgements too
 <div align="center">
 
   <img src="assets/logo.png" alt="logo" width="200" height="auto" />
-  <h1>Awesome Readme Template</h1>
+  <h1>EcoHub (name still under review)</h1>
   
   <p>
-    An awesome README template for your projects! 
+    EcoHub is a Figma prototype I worked on as part of my thesis. The subject of my thesis was the importance of user-centred design in programming. Thus I created a Figma prototype using User-centered design principles. EcoHub is that end result
   </p>
   
   
