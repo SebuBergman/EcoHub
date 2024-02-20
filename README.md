@@ -22,7 +22,7 @@ Maybe you can mention me or this repo in the acknowledgements too
     <img src="https://img.shields.io/github/contributors/SebuBergman/EcoHub" alt="contributors" />
   </a>
   <a href="">
-    <img src="https://img.shields.io/github/last-commit/SebuBergman/EcoHub/)" alt="last update" />
+    <img src="https://img.shields.io/github/last-commit/SebuBergman/EcoHub/" alt="last update" />
   </a>
   <a href="https://github.com/SebuBergman/EcoHub/network/members">
     <img src="https://img.shields.io/github/forks/SebuBergman/EcoHub" alt="forks" />
