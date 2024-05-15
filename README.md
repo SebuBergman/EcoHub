@@ -90,31 +90,15 @@ Maybe you can mention me or this repo in the acknowledgements too
   <summary>Client</summary>
   <ul>
     <li><a href="https://reactjs.org/">React.js</a></li>
-    <li><a href="https://www.typescriptlang.org/">React</a></li>
     <li><a href="https://nextjs.org/">Maybe some Next.js</a></li>
-    <li><p>TailwindCSS or Bootstrap</p></li>
+    <li><p>TailwindCSS or Bootstrap or Sass</p></li>
   </ul>
 </details>
 
 <details>
   <summary>Server</summary>
   <ul>
-    <li><a href="https://www.typescriptlang.org/">Typescript</a></li>
-    <li><a href="https://expressjs.com/">Express.js</a></li>
-  </ul>
-</details>
-
-<details>
-<summary>Database</summary>
-  <ul>
-    <li><a href="https://www.mysql.com/">MySQL</a></li>
-    <li><a href="https://www.mongodb.com/">MongoDB</a></li>
-  </ul>
-</details>
-
-<details>
-<summary>DevOps</summary>
-  <ul>
+    <li><a href="https://vitejs.dev/">Vite</a></li>
   </ul>
 </details>
 
