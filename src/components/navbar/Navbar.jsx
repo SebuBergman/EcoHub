@@ -16,7 +16,7 @@ function Navbar() {
                   Learn
                 </a>
                 <ul className="dropdown-menu">
-                  <li><a className="dropdown-item" href="/Environmental-Issues">Environmental Issues</a></li>
+                  <li><a className="dropdown-item" href="/environmental-issues">Environmental Issues</a></li>
                   <li><a className="dropdown-item" href="#">Sustainable Living Tips</a></li>
                   <li><a className="dropdown-item" href="#">Green Innovations</a></li>
                 </ul>
