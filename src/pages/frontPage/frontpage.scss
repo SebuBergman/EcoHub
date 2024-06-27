@@ -7,3 +7,38 @@
 h1 {
     color: black;
 }
+
+.frontPage_coverImageBox {
+    width: 520px;
+    height: 520px;
+    border: solid 1px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.frontPage_coverImageBoxH1 {
+    text-align: center;
+}
+
+.frontPage_coverImageBox_buttons {
+    background-color: white;
+    border: none;
+    margin: 5px 0px 20px 15px;
+}
+
+.frontPage_coverImageBox_buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+}
+
+.frontPage_carousel_image {
+    width: 700px;
+    padding-left: 100px;
+}
+
+.carousel_flex {
+    display: flex;
+    flex-direction: row;
+}

@@ -8,13 +8,15 @@ const FrontPage = () => {
             <NavBar />
             <img alt="coverImage" src="Etusivu1.webp"></img>
             <div className="frontPage_coverImageBox">
-                <h1>EcoHub: Centre for Sustainable Living</h1>
+                <h1 className="frontPage_coverImageBoxH1">EcoHub: Centre for Sustainable Living</h1>
                 <p>
                     At EcoHub, we believe in the power of collective action to bring about positive change on our planet.
                     Our mission is to empower people of all ages to adopt sustainable lifestyles and promote a healthier and greener future.
                 </p>
-                <button className="frontPage_button_box">WAYS TO GET INVOLVED</button>
-                <button className="frontPage_button_box">TELL US YOUR STORY</button>
+                <div className="frontPage_coverImageBox_buttons">
+                    <button className="frontPage_coverImageBox_buttons">WAYS TO GET INVOLVED</button>
+                    <button className="frontPage_coverImageBox_buttons">TELL US YOUR STORY</button>
+                </div>
             </div>
             <div className="frontPage_container1">
                 <h2>Connect with Nature, Connect with EcoHub</h2>
@@ -23,7 +25,7 @@ const FrontPage = () => {
                     Whether you're a seasoned environmental advocate or just beginning your journey towards sustainability,
                     EcoHub is your go-to destination for inspiration, education, and action.
                 </p>
-                <h3>A Platform for Change</h3>
+                <h3 className="frontPage_container1_h4">A Platform for Change</h3>
                 <p>
                     EcoHub isn't just about learning - it's about taking action. Join us in our mission to create a greener,
                     more sustainable world by participating in our interactive challenges, engaging in meaningful discussions,
@@ -46,7 +48,7 @@ const FrontPage = () => {
                 </p>
             </div>
             <div className="frontPage_container2">
-                <img alt="Start Your Journey Today" src=""></img>
+                <img src="Image1.webp" alt="Start Your Journey Today"></img>
                 <h1>Start Your Journey Today</h1>
                 <p>
                     Ready to make a difference? Dive into EcoHub and discover the endless possibilities for positive change.
@@ -55,27 +57,36 @@ const FrontPage = () => {
                 </p>
             </div>
             <div className="frontPage_carousel">
-                <div id="carouselExample" class="carousel slide">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                        <img src="..." class="d-block w-100" alt="..." />
-                        <h3>Explore, learn and act</h3>
-                        <p>
-                            Discover a wealth of information on environmental issues from climate change to biodiversity.
-                            Explore a collection of educational videos, success stories and sustainable living tips.
-                            Take part in interactive quizzes and challenges and join a lively discussion forum to exchange ideas with a like-minded community.
-                        </p>
+                <div id="carouselExample" className="carousel carousel-dark slide">
+                    <div className="carousel-inner">
+                        <div className="carousel-item active">
+                            <div className="carousel_flex">
+                                <div>
+                                    <img src="Carousel1.webp" className="frontPage_carousel_image" alt="..." />
+                                </div> 
+                                <div>
+                                    <h3>Explore, learn and act</h3>
+                                    <p>
+                                        Discover a wealth of information on environmental issues from climate change to biodiversity.
+                                        Explore a collection of educational videos, success stories and sustainable living tips.
+                                        Take part in interactive quizzes and challenges and join a lively discussion forum to exchange ideas with a like-minded community.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="carousel-item">
-                        <img src="..." class="d-block w-100" alt="..." />
+                        <div className="carousel-item">
+                            <div className="carousel_flex">
+
+                            </div>
+                        <img src="Carousel2.webp" className="frontPage_carousel_image" alt="..." />
                         <h3>Calculate your impact</h3>
                         <p>
                             Are you curious about your carbon footprint? With our user-friendly tools you can calculate your environmental impact.
                             Explore ways to reduce your footprint and make eco-conscious choices in your daily life.
                         </p>
                         </div>
-                        <div class="carousel-item">
-                        <img src="..." class="d-block w-100" alt="..." />
+                        <div className="carousel-item">
+                        <img src="Carousel3.webp" className="frontPage_carousel_image"  alt="..." />
                         <h3>Resources for action</h3>
                         <p>
                             Access a wealth of downloadable resources and external links to reputable sustainability organisations.
@@ -83,11 +94,11 @@ const FrontPage = () => {
                         </p>
                         </div>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
                     </button>
@@ -103,10 +114,10 @@ const FrontPage = () => {
                     <button className="button_join">Join</button>
                 </div>
                 <div>
-                    <img alt="A park with a path leading to a round table"></img>
+                    <img src="Image2.webp" alt="A park with a path leading to a round table"></img>
                 </div>
                 <div>
-                    <img alt="A park with a path with trees"></img>
+                    <img src="Image3.webp" alt="A park with a path with trees"></img>
                 </div>
                 <div>
                     <h2>Get involved and tell your story</h2>
