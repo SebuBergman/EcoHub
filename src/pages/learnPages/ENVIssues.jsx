@@ -1,11 +1,11 @@
 import "./envissues.scss";
-import NavBar from "../../components/navbar/Navbar";
+import NavigationBar from "../../components/navbar/Navbar";
 
 
 const EnvIssuesPage = () => {
     return (
         <div className="envissues">
-            <NavBar />
+            <NavigationBar />
             <img src="..." alt="Climate Justice Now!"></img>
             <h3>What you can do</h3>
             <h1>Addressing environmental issues</h1>

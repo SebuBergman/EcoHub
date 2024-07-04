@@ -1,6 +1,3 @@
-
-import "./assets/dist/css/bootstrap.min.css";
-import "./assets/dist/js/bootstrap.bundle.min.js";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import './App.css'
 import './app.scss';

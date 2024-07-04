@@ -1,31 +1,36 @@
 import "./frontpage.scss";
-import NavBar from "../../components/navbar/Navbar";
+import NavigationBar from "../../components/navbar/Navbar";
 
 
 const FrontPage = () => {
     return (
         <div className="PageBody">
-            <NavBar />
+            <NavigationBar />
             <img alt="coverImage" src="Etusivu1.webp"></img>
-            <div className="frontPage_coverImageBox">
-                <div className="frontPage_coverImageBox_textContainer">
-                    <div>
-                        <h1 className="frontPage_coverImageBox_h1">EcoHub: Centre for Sustainable Living</h1>
-                        <p>
-                            At EcoHub, we believe in the power of collective action to bring about positive change on our planet.
-                            Our mission is to empower people of all ages to adopt sustainable lifestyles and promote a healthier and greener future.
-                        </p>
-                    </div>
-                    <div className="frontPage_coverImageBox_buttons">
-                        <button className="frontPage_coverImageBox_button">WAYS TO GET INVOLVED</button>
-                        <button className="frontPage_coverImageBox_button">TELL US YOUR STORY</button>
+            <div className="pageContainer">
+                <div className="frontPage_coverImageBox">
+                    <div className="frontPage_coverImageBox_textContainer">
+                        <div>
+                            <h1 className="frontPage_coverImageBox_heading">EcoHub: Centre for Sustainable Living</h1>
+                            <p>
+                                At EcoHub, we believe in the power of collective action to bring about positive change on our planet.
+                                Our mission is to empower people of all ages to adopt sustainable lifestyles and promote a healthier and greener future.
+                            </p>
+                        </div>
+                        <div className="frontPage_coverImageBox_buttons">
+                            <button className="frontPage_coverImageBox_button buttonPadding">HOW TO GET INVOLVED</button>
+                            <button className="frontPage_coverImageBox_button buttonPadding button2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="currentColor" className="bi bi-send bold" viewBox="0 0 16 16">
+                                    <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76z"/>
+                                </svg> TELL US YOUR STORY</button>
+                        </div>
                     </div>
                 </div>
             </div>
             <div className="frontPage_container1">
                 <div className="frontPage_container1_boxContainers">
                     <div className="frontPage_container1_box">
-                        <h2>Connect with Nature, Connect with EcoHub</h2>
+                        <h2 >Connect with Nature, Connect with EcoHub</h2>
                         <p>
                             At EcoHub, we're more than just a website - we're a community united by a shared passion for the planet.
                             Whether you're a seasoned environmental advocate or just beginning your journey towards sustainability,
@@ -34,7 +39,7 @@ const FrontPage = () => {
                     </div>
                     <div className="frontPage_container1_boxes">
                         <div>
-                            <h3>A Platform for Change</h3>
+                            <h3 className="forestGreen">A Platform for Change</h3>
                             <p>
                                 EcoHub isn't just about learning - it's about taking action. Join us in our mission to create a greener,
                                 more sustainable world by participating in our interactive challenges, engaging in meaningful discussions,
@@ -43,7 +48,7 @@ const FrontPage = () => {
                         </div>
                         <div className="divider"></div>
                         <div>
-                            <h3>Discover Endless Possibilities</h3>
+                            <h3 className="forestGreen">Discover Endless Possibilities</h3>
                             <p>
                                 Explore our vast collection of resources designed to inform, inspire, and empower you on your sustainability journey.
                                 From informative articles and thought-provoking documentaries to practical tips and tools, there's something for everyone at EcoHub.
@@ -52,7 +57,7 @@ const FrontPage = () => {
                     </div>
                     <div className="frontPage_container1_boxes">
                         <div>
-                            <h3>Measure Your Impact, Make a Difference</h3>
+                            <h3 className="forestGreen">Measure Your Impact, Make a Difference</h3>
                             <p>
                                 Take control of your environmental footprint with our easy-to-use calculators and assessment tools.
                                 Gain insights into your daily habits, identify areas for improvement, and make positive changes that benefit both you and the planet.
@@ -60,7 +65,7 @@ const FrontPage = () => {
                         </div>
                         <div className="divider"></div>
                         <div>
-                            <h3>Community, Connection, Collaboration</h3>
+                            <h3 className="forestGreen">Community, Connection, Collaboration</h3>
                             <p>
                                 Become part of our vibrant community of changemakers and environmental enthusiasts.
                                 Share your experiences, celebrate your achievements, and inspire others to join the movement towards a more sustainable future.
@@ -86,7 +91,7 @@ const FrontPage = () => {
                     </div>
                     <div className="frontPage_container2_inputContainer">
                         <div>
-                            <label for="exampleInputPassword1">Email</label>
+                            <label htmlfor="exampleInputPassword1">Email</label>
                         </div>
                         <div className="frontPage_container2_inputGroup">
                             <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Enter email here" />
