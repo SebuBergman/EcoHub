@@ -91,23 +91,26 @@ Maybe you can mention me or this repo in the acknowledgements too
   <ul>
     <li><a href="https://reactjs.org/">React.js</a></li>
     <li><a href="https://nextjs.org/">Maybe some Next.js</a></li>
-    <li><p>TailwindCSS or Bootstrap or Sass</p></li>
+    <li><p>Bootstrap & Sass</p></li>
   </ul>
 </details>
 
 <details>
   <summary>Server</summary>
   <ul>
-    <li><a href="https://vitejs.dev/">Vite</a></li>
+    <li><a href="https://vitejs.dev/">Vite?</a></li>
+    <li><a href="https://vitejs.dev/">Firebase?</a></li>
   </ul>
 </details>
 
 <!-- Features -->
 ### :dart: Features
 
+- Login / log out
+- User page
 - User engagement (Sustainability quizzes & challenges, success stories etc.)
 - Environmental empowerment & raising of awareness for environmental issues
-- Calculate impact
+- Some kind of forum?
 
 <!-- Color Reference -->
 ### :art: Color Reference
@@ -191,9 +194,13 @@ To deploy this project run
 <!-- Roadmap -->
 ## :compass: Roadmap
 
-* [ ] Make the front-page
-* [ ] Program navigation
-* [ ] Do a lot of other things
+* [x] Make the front-page
+* [x] Program navigation
+* [ ] Create more pages (Learn -> Environmental issues / )
+* [ ] Log in / log out
+* [ ] User Page
+* [ ] Quizzes & submit stories etc.
+* [ ] Forum?
 
 
 <!-- Code of Conduct -->
