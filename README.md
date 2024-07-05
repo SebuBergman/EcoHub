@@ -196,7 +196,7 @@ To deploy this project run
 
 * [x] Make the front-page
 * [x] Program navigation
-* [ ] Create more pages (Learn -> Environmental issues / )
+* [ ] Create more pages (Learn -> Environmental issues / Sustainable living tips)
 * [ ] Log in / log out
 * [ ] User Page
 * [ ] Quizzes & submit stories etc.
