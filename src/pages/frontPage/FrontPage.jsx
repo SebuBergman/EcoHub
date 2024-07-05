@@ -91,7 +91,7 @@ const FrontPage = () => {
                     </div>
                     <div className="frontPage_container2_inputContainer">
                         <div>
-                            <label htmlfor="exampleInputPassword1">Email</label>
+                            <label htmlFor="exampleInputPassword1">Email</label>
                         </div>
                         <div className="frontPage_container2_inputGroup">
                             <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Enter email here" />
