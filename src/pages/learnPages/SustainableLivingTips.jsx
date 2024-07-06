@@ -1,5 +1,6 @@
 import "./sustainableliving.scss";
 import NavBar from "../../components/navbar/Navbar";
+import Footer from "../../components/footer/Footer";
 
 const sustainableLiving = () => {
     return (
@@ -77,6 +78,7 @@ const sustainableLiving = () => {
                     </p>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 }

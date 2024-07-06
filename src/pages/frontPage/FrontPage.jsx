@@ -1,5 +1,6 @@
 import "./frontpage.scss";
 import NavigationBar from "../../components/navbar/Navbar";
+import Footer from "../../components/footer/Footer";
 
 
 const FrontPage = () => {
@@ -94,7 +95,7 @@ const FrontPage = () => {
                             <label htmlFor="exampleInputPassword1">Email</label>
                         </div>
                         <div className="frontPage_container2_inputGroup">
-                            <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Enter email here" />
+                            <input type="email" className="form-control" id="exampleInputEmail1" placeholder="Enter email here" />
                             <button className="button_green">Tilaa</button>
                         </div>
                     </div>
@@ -193,7 +194,7 @@ const FrontPage = () => {
                 </div>
                 
             </div>
-            {/*<Footer />*/}
+            <Footer />
         </div>
     )
 }

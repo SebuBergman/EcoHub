@@ -1,5 +1,6 @@
 import "./envissues.scss";
 import NavigationBar from "../../components/navbar/Navbar";
+import Footer from "../../components/footer/Footer";
 
 
 const EnvIssuesPage = () => {
@@ -73,7 +74,9 @@ const EnvIssuesPage = () => {
                     you can contribute to a more sustainable and resilient future for our planet and future generations.
                 </p>
             </div>
+            <Footer />
         </div>
+
     )
 }
 
