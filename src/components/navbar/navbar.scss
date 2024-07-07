@@ -1,10 +1,21 @@
 @import "../../app.scss";
 
-.dropdown:hover>.dropdown-menu {
-    display: block;
+.userbtn {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    overflow: hidden;
+    outline: none;
 }
 
-.dropdown>.dropdown-toggle:active {
-    /*Without this, clicking will make it sticky*/
-    pointer-events: none;
+.userMenu {
+    gap: 5px;
+}
+
+.button_LogIn {
+    color: white;
+    background-color: #248823;
+    padding: 6px 14px 6px 14px;
+    border: 0px;
+    border-radius: 30px;
 }

@@ -1,8 +1,29 @@
 import "./navbar.scss";
 import "../../app.scss";
-
+import { FaRegUserCircle } from "react-icons/fa";
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
 
 function NavigationBar() {
+  /* When the user clicks on the button, toggle between hiding and showing the dropdown content */
+  function myUserMenu() {
+    document.getElementById("userDropdown").classList.toggle("show");
+  }
+
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.userbtn')) {
+      var dropdowns = document.getElementsByClassName("userMenu-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
+
   return (
       <nav className="navbar fixed-top navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
@@ -10,8 +31,8 @@ function NavigationBar() {
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse" id="navbarScroll">
-            <ul className="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
+          <div className="collapse navbar-collapse justify-content-center" id="navbarScroll">
+            <ul className="navbar-nav my-2 my-lg-0 navbar-nav-scroll">
               <li className="nav-item dropdown">
                 <a className="nav-link dropdown-toggle" href="#Learn" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Learn
@@ -68,6 +89,14 @@ function NavigationBar() {
                 </ul>
               </li>
             </ul>
+          </div>
+          <div className="userMenu justify-content-end">
+              {/*<button class="userbtn">
+                <FaRegUserCircle size={24}/>
+              </button>*/}
+              <div id="logIn_Register">
+                <button className="button_LogIn" href="/login">Log In</button>
+              </div>
           </div>
         </div>
       </nav>
