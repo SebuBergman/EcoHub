@@ -95,7 +95,7 @@ function NavigationBar() {
                 <FaRegUserCircle size={24}/>
               </button>*/}
               <div id="logIn_Register">
-                <button className="button_LogIn" href="/login">Log In</button>
+                <a className="button_LogIn" href="/login">Log In</a>
               </div>
           </div>
         </div>
