@@ -68,13 +68,13 @@ const Footer = () => {
                     <div className="footer_copyright">
                         <p>© 2024 EcoHub.</p>
                     </div>
-                    <div classname="footer_socials">
+                    <div className="footer_socials">
                         <IconContext.Provider value={{padding: '0px 20px 0px 20px', size: 24}}>
                             <FaInstagram/>
-                            <FaFacebook size={24}/>
-                            <FaLinkedin size={24}/>
-                            <FaXTwitter size={24}/>
-                            <FaYoutube size={24}/>
+                            <FaFacebook/>
+                            <FaLinkedin/>
+                            <FaXTwitter/>
+                            <FaYoutube/>
                         </IconContext.Provider>
                         
                         <FaGithub />

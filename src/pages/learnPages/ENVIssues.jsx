@@ -1,4 +1,4 @@
-import "./envissues.scss";
+import "./ENVIssues.scss";
 import NavigationBar from "../../components/navbar/Navbar";
 import Footer from "../../components/footer/Footer";
 
