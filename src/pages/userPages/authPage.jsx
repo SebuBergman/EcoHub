@@ -1,11 +1,14 @@
 import "./auth.scss";
-import Login from "../../components/auth/login";
-
+import SignIn from "../../components/auth/login";
+import SignUp from "../../components/auth/register";
+import AuthDetails from "../../components/auth/authDetails";
 
 const UserAuth = () => {
     return (
         <div className="PageBody">
-            <Login />
+            <SignIn />
+            <SignUp />
+            <AuthDetails />
         </div>
     )
 }
