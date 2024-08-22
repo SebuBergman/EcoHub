@@ -90,16 +90,15 @@ Maybe you can mention me or this repo in the acknowledgements too
   <summary>Client</summary>
   <ul>
     <li><a href="https://reactjs.org/">React.js</a></li>
-    <li><a href="https://nextjs.org/">Maybe some Next.js</a></li>
-    <li><p>Bootstrap & Sass</p></li>
+    <li><p>Maybe some Next.js or Mui</p></li>
+    <li><a href="https://sass-lang.com">Sass</a></li>
   </ul>
 </details>
 
 <details>
-  <summary>Server</summary>
+  <summary>Database</summary>
   <ul>
-    <li><a href="https://vitejs.dev/">Vite?</a></li>
-    <li><a href="https://vitejs.dev/">Firebase?</a></li>
+    <li><a href="https://firebase.google.com">Firebase</a></li>
   </ul>
 </details>
 
