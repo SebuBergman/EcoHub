@@ -1,5 +1,32 @@
 @import "../../app.scss";
 
+.navbar {
+    height: 100px;
+}
+
+.navbar-brand {
+    padding-left: 50px;
+}
+
+.nav-item {
+    padding: 15px;
+}
+
+.nav-link {
+    font-weight: 600!important;
+    color: #667085!important;
+}
+
+.dropdown-menu {
+    border-radius: 0px !important;
+    top: 82.5px !important;
+    border: 1px solid #CDCDCD !important;
+}
+
+.dropdown-menu::before {
+    border-top: 1px solid #248823!important;
+}
+
 .userbtn {
     background-color: transparent;
     background-repeat: no-repeat;

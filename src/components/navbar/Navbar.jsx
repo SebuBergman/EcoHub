@@ -1,11 +1,30 @@
 import "./navbar.scss";
 import "../../app.scss";
+import { menuItems } from "./Links/Links";
+
+function Navbar() {
+  return (
+    <nav className="navbar">
+      <ul className="menus">
+        {menuItems.map((menuItem, index) =>{
+          return (
+            <li className="menu-items" key={index}>
+              <a href={menuItem.link}>{menuItem.title}</a>
+            </li>
+          )
+        })}
+      </ul>
+    </nav>
+  );
+};
+
+export default Navbar;
+
+/*
 import { FaRegUserCircle } from "react-icons/fa";
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
-
 function NavigationBar() {
-  /* When the user clicks on the button, toggle between hiding and showing the dropdown content */
   function myUserMenu() {
     document.getElementById("userDropdown").classList.toggle("show");
   }
@@ -91,9 +110,6 @@ function NavigationBar() {
             </ul>
           </div>
           <div className="userMenu justify-content-end">
-              {/*<button class="userbtn">
-                <FaRegUserCircle size={24}/>
-              </button>*/}
               <div id="logIn_Register">
                 <a className="button_LogIn" href="/login">Log In</a>
               </div>
@@ -103,4 +119,4 @@ function NavigationBar() {
   );
 }
 
-export default NavigationBar;
+export default NavigationBar;*/
