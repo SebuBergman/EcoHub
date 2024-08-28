@@ -1,12 +1,12 @@
 import "./frontpage.scss";
-import NavigationBar from "../../components/navbar/Navbar";
+import Header from "../../components/navbar/Header";
 import Footer from "../../components/footer/Footer";
 
 
 const FrontPage = () => {
     return (
         <div className="PageBody">
-            <NavigationBar />
+            <Header />
             <img alt="coverImage" src="Etusivu1.webp"></img>
             <div className="pageContainer">
                 <div className="frontPage_coverImageBox">
