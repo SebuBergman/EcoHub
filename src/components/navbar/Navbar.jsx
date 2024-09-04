@@ -41,10 +41,8 @@ function Navbar() {
     >
       <div className="bg">
         <ul className="menus">
-          {menuItems.map((menuItem, index) =>{
-            return (
-              <MenuItems items={menuItem} key={index} />
-            )
+          {menuItems.map((menuItem, index) => {
+            return <MenuItems items={menuItem} key={index} />;
           })}
         </ul>
       </div>
@@ -70,13 +68,14 @@ function Navbar() {
           <div className="navbar_links">
             <Box
               className="main-nav"
-              sx={{ flexGrow: 1, display: { xs: "none", sm: "none", md: "block" } }}
+              sx={{
+                flexGrow: 1,
+                display: { xs: "none", sm: "none", md: "block" },
+              }}
             >
               <ul className="menus">
-                {menuItems.map((menuItem, index) =>{
-                  return (
-                    <MenuItems items={menuItem} key={index} />
-                  )
+                {menuItems.map((menuItem, index) => {
+                  return <MenuItems items={menuItem} key={index} />;
                 })}
               </ul>
             </Box>
@@ -93,7 +92,10 @@ function Navbar() {
           }}
           sx={{
             display: { xs: "block", sm: "block", md: "none" },
-            "& .MuiDrawer-paper": { boxSizing: "border-box", width: drawerWidth },
+            "& .MuiDrawer-paper": {
+              boxSizing: "border-box",
+              width: drawerWidth,
+            },
           }}
         >
           {sidebar}

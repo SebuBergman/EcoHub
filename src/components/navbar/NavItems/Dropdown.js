@@ -1,6 +1,6 @@
 import "../navbar.scss";
 
-const Dropdown = ({submenus, dropdown}) => {
+const Dropdown = ({ submenus, dropdown }) => {
   return (
     <ul className={`dropdown ${dropdown ? "show" : ""}`}>
       {submenus.map((submenu, index) => (
