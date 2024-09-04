@@ -1,129 +1,83 @@
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
+
 import "./navbar.scss";
-import { useState } from "react";
-import Box from "@mui/material/Box";
-import Drawer from "@mui/material/Drawer";
-import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-//import ToggleButton from "./sidebar/toggleButton/ToggleButton";
-import { menuItems } from "./Links/Links";
-import MenuItems from "./NavItems/MenuItems";
 
-const drawerWidth = 240;
-const navItems = ["Home", "Expertise", "Tech", "Projects", "Contact"];
-
-function Navbar() {
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [visibleNavbar, setVisibleNavbar] = useState(false);
-
-  const toggleNavbarVisible = () => {
-    const scrolled = document.documentElement.scrollTop;
-    if (scrolled > 800) {
-      setVisibleNavbar(true);
-    } else if (scrolled <= 800) {
-      setVisibleNavbar(false);
-    }
-  };
-
-  window.addEventListener("scroll", toggleNavbarVisible);
-
-  const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState);
-  };
-
-  const sidebar = (
-    <div
-      className="sidebar"
-      animate={mobileOpen ? "open" : "closed"}
-      onClick={handleDrawerToggle}
-      sx={{ textAlign: "center" }}
-    >
-      <div className="bg">
-        <ul className="menus">
-          {menuItems.map((menuItem, index) =>{
-            return (
-              <MenuItems items={menuItem} key={index} />
-            )
-          })}
-        </ul>
-      </div>
-      {/*<ToggleButton />*/}
-    </div>
-  );
-
+function Navigation() {
   return (
-    <div>
-      <div component="nav" className="navbar">
-        <div className={visibleNavbar ? "navbar_scrolling" : "navbar_headings"}>
-          <div>
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              edge="start"
-              onClick={handleDrawerToggle}
-              sx={{ mr: 2, display: { md: "none" } }}
-            >
-              <MenuIcon className="navbar_menuIcon" />
-            </IconButton>
-          </div>
-          <div className="navbar_links">
-            <Box
-              className="main-nav"
-              sx={{ flexGrow: 1, display: { xs: "none", sm: "none", md: "block" } }}
-            >
-              <ul className="menus">
-                {menuItems.map((menuItem, index) =>{
-                  return (
-                    <MenuItems items={menuItem} key={index} />
-                  )
-                })}
-              </ul>
-            </Box>
-          </div>
-        </div>
-      </div>
-      <nav>
-        <Drawer
-          variant="temporary"
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
-          }}
-          sx={{
-            display: { xs: "block", sm: "block", md: "none" },
-            "& .MuiDrawer-paper": { boxSizing: "border-box", width: drawerWidth },
-          }}
-        >
-          {sidebar}
-        </Drawer>
-      </nav>
-    </div>
+    <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+      <Container>
+        <Navbar.Brand>
+          <img src="Logo.png" alt="EcoHub Logo" />
+          <a href="/" className="ecohub-logo">
+            EcoHub
+          </a>
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="me-auto">
+            <NavDropdown title="Learn" id="collapsible-nav-dropdown">
+              <NavDropdown.Item href="/Environmental-issues">
+                Environmental issues
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/Sustainable-living-tips">
+                Sustainable Living Tips
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/Green-innovations">
+                Green innovations
+              </NavDropdown.Item>
+            </NavDropdown>
+            <NavDropdown title="Watch" id="collapsible-nav-dropdown">
+              <NavDropdown.Item href="/videos">Videos</NavDropdown.Item>
+              <NavDropdown.Item href="/success Stories">
+                Success Stories
+              </NavDropdown.Item>
+            </NavDropdown>
+            <NavDropdown title="Interact" id="collapsible-nav-dropdown">
+              <NavDropdown.Item href="/quizzes-&-Challenges">
+                Quizzes & Challenges
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/discussion-forum">
+                Discussion-forum
+              </NavDropdown.Item>
+            </NavDropdown>
+            <NavDropdown title="Resources" id="collapsible-nav-dropdown">
+              <NavDropdown.Item href="/downloads-&-library">
+                Downloads & library
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/carbon-footprint-tool">
+                Environmental Impact Assessment
+              </NavDropdown.Item>
+            </NavDropdown>
+            <NavDropdown title="Engage" id="collapsible-nav-dropdown">
+              <NavDropdown.Item href="/user Profiles">
+                User Profiles
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/submit-your-story">
+                Submit Your Story
+              </NavDropdown.Item>
+            </NavDropdown>
+            <NavDropdown title="About" id="collapsible-nav-dropdown">
+              <NavDropdown.Item href="/mission-&-team">
+                Mission & Team
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/news-&-updates">
+                News & Updates
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/press-&-Media">
+                Press & Media
+              </NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+          <Nav>
+            <Nav.Link href="/login">Log In</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 }
 
-export default Navbar;
-
-/*
-import "./navbar.scss";
-import "../../app.scss";
-import { menuItems } from "./Links/Links";
-import MenuItems from "./NavItems/MenuItems";
-
-
-function Navbar() {
-  return (
-    <nav className="main-nav">
-      <ul className="menus">
-        {menuItems.map((menuItem, index) =>{
-          return (
-            <MenuItems items={menuItem} key={index} />
-          )
-        })}
-      </ul>
-    </nav>
-  );
-};
-
-export default Navbar;*/
+export default Navigation;
