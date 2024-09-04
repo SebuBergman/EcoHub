@@ -13,7 +13,7 @@ Maybe you can mention me or this repo in the acknowledgements too
   
   <p>
     EcoHub is a <a href="https://www.figma.com/proto/SLd2mjiyNSjfWAPjqlxLRV/Ymp%C3%A4rist%C3%B6n-kest%C3%A4vyyden-keskus?type=design&node-id=262-7167&t=ENi7NouD9OYJuqqR-1&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=262%3A7167&mode=design">Figma prototype</a> I worked on as part of my thesis. The subject of my thesis was the importance of user-centred design in programming. Thus I created a Figma prototype using user-centered design principles. EcoHub was the end result. I have now decided to make this a fully functional website. But this might take some time. A lot of time.
-    This project is majorly work in progress. Be patient.
+    This project is work in progress. Be patient.
   </p>
   
   
