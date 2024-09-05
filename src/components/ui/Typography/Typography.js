@@ -21,7 +21,7 @@ export const SectionSubtitle = styled.h3`
   line-height: 2rem;
 `;
 
-export const TextLight = styled.span`
+export const TextLight = styled.p`
   font-family: ${({ theme }) => theme.fonts.inter}, sans-serif;
   font-weight: ${({ theme }) => theme.fontWeights.light};
   font-size: 1rem;
@@ -42,9 +42,9 @@ export const SubText = styled.span`
   line-height: 24px;
 `;
 
-export const ButtonText = styled.span`
+export const ButtonTextSemi = styled.button`
   font-family: ${({ theme }) => theme.fonts.inter}, sans-serif;
-  font-weight: ${({ theme }) => theme.fontWeights.bold};
-  font-size: 23px;
-  line-height: 28px;
+  font-weight: ${({ theme }) => theme.fontWeights.semibold};
+  font-size: 15px;
+  line-height: 20px;
 `;
