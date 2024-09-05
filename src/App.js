@@ -1,6 +1,5 @@
 import React from 'react';
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import "./App.css";
 import "./app.scss";
 import FrontPage from "./pages/frontPage/FrontPage";
 import EnvIssuesPage from "./pages/learnPages/ENVIssues";
