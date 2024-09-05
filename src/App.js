@@ -1,14 +1,19 @@
 import React from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { GlobalStyles } from "styles/Global";
+import { ThemeProvider } from "styled-components";
+import { theme } from "styles/Theme";
+import FrontPage from "./pages/Home/";
+import EnvIssuesPage from "./pages/Learn/ENV-Issues/";
+import SustainableLiving from "./pages/Learn/SustainableLiving/";
+import UserAuth from "./pages/User/authPage";
+
 import "./app.scss";
-import FrontPage from "./pages/frontPage/FrontPage";
-import EnvIssuesPage from "./pages/learnPages/ENVIssues";
-import SustainableLiving from "./pages/learnPages/SustainableLivingTips";
-import UserAuth from "./pages/userPages/authPage";
 
 function App() {
   return (
-    <div>
+    <ThemeProvider theme={theme}>
+      <GlobalStyles />
       <BrowserRouter>
         <Routes>
           <Route index element={<FrontPage />} />
@@ -20,7 +25,7 @@ function App() {
           />
         </Routes>
       </BrowserRouter>
-    </div>
+    </ThemeProvider>
   );
 }
 

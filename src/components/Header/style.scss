@@ -1,0 +1,23 @@
+@import "../../app.scss";
+
+.navbar-brand {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.ecohubLogoImg {
+  width: 40px;
+  height: 40px;
+}
+
+.ecohubLogo {
+  padding-left: 10px;
+  text-decoration: none;
+  color: black;
+  cursor: default;
+}
+
+.nav-link {
+  font-size: 18px !important;
+}
