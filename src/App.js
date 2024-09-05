@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import "./app.scss";
 import FrontPage from "./pages/frontPage/FrontPage";
@@ -11,14 +11,17 @@ function App() {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route index element={ <FrontPage/> }/>
-          <Route path="/environmental-issues" element={ <EnvIssuesPage/> }/>
-          <Route path="/login" element={ <UserAuth/> }/>
-          <Route path="/sustainable-living-tips" element={ <SustainableLiving/> }/>
+          <Route index element={<FrontPage />} />
+          <Route path="/environmental-issues" element={<EnvIssuesPage />} />
+          <Route path="/login" element={<UserAuth />} />
+          <Route
+            path="/sustainable-living-tips"
+            element={<SustainableLiving />}
+          />
         </Routes>
       </BrowserRouter>
     </div>
-  )
+  );
 }
 
 export default App;
