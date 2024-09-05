@@ -1,24 +1,19 @@
-@import '~bootstrap/scss/bootstrap';
-
-.PageBody {
-    width: 100vw;
-    font-family: "Public Sans", sans-serif;
-}
+@import "~bootstrap/scss/bootstrap";
 
 @mixin mobile {
-    @media (max-width: 748px) {
-        @content;
-    }
+  @media (max-width: 748px) {
+    @content;
+  }
 }
 
 @mixin tablet {
-    @media (max-width: 1080px) {
-        @content;
-    }
+  @media (max-width: 1080px) {
+    @content;
+  }
 }
 
 @mixin desktop {
-    @media (max-width: 1366px) {
-        @content;
-    }
+  @media (max-width: 1366px) {
+    @content;
+  }
 }

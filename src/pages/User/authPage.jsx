@@ -1,16 +1,17 @@
-import "./auth.scss";
-import SignIn from "../../components/auth/login";
-import SignUp from "../../components/auth/register";
-import AuthDetails from "../../components/auth/authDetails";
+import SignIn from "components/Auth/login";
+import SignUp from "components/Auth/register";
+import AuthDetails from "components/Auth/authDetails";
+
+import "./styles.scss";
 
 const UserAuth = () => {
-    return (
-        <div className="PageBody">
-            <SignIn />
-            <SignUp />
-            <AuthDetails />
-        </div>
-    )
-}
+  return (
+    <div className="PageBody">
+      <SignIn />
+      <SignUp />
+      <AuthDetails />
+    </div>
+  );
+};
 
 export default UserAuth;
