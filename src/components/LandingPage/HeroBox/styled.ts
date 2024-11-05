@@ -20,6 +20,7 @@ export const ImageBoxWrapper = styled.div`
   left: auto;
   width: 520px;
   height: 520px;
+  border-radius: 8px;
 `;
 
 export const TextContainer = styled.div`
