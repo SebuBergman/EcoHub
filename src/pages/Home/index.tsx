@@ -3,12 +3,12 @@ import {
   SectionSubtitle,
   SectionTitle,
 } from "@components/ui/Typography/Typography";
-import HeroBox from "@components/HomePage/HeroBox";
+import HeroBox from "@components/LandingPage/HeroBox";
 import Header from "@components/Header/";
 import Footer from "@components/Footer/";
 import HomePageHeroImage from "./assets/homePage1.webp";
 import HomeImage1 from "./assets/homeImage1.webp";
-import Carousel from "@components/HomePage/Carousel";
+import Carousel from "@components/LandingPage/Carousel";
 import ImageBox1 from "./assets/homeImage2.webp";
 import ImageBox2 from "./assets/homeImage3.webp";
 
