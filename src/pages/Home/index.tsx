@@ -9,8 +9,8 @@ import ImageBox2 from "./assets/homeImage3.webp";
 
 // import styles
 import "./styles.scss";
-import { Typography, TextField, Box } from "@mui/material";
-
+import { Typography, TextField, Box, Stack } from "@mui/material";
+import AppButton from "@/components/ui/AppButton";
 
 const FrontPage = () => {
   return (
@@ -92,78 +92,98 @@ const FrontPage = () => {
           alt="Start Your Journey Today"
           className="frontPage_container2_image"
         ></img>
-        <div className="frontPage_container2_textContainer">
-          <div>
-            <h1>Start Your Journey Today</h1>
-            <p>
+        <Stack className="frontPage_container2_textContainer">
+          <Stack gap={1}>
+            <Typography variant="h2">Start Your Journey Today</Typography>
+            <Typography variant="body1">
               Ready to make a difference? Dive into EcoHub and discover the
               endless possibilities for positive change. Together, we can create
               a world where people and the planet thrive in harmony.
-            </p>
-            <p>
+            </Typography>
+            <Typography variant="body1">
               Stay in touch with us and be part of the sustainability debate.
               Follow us on social media, subscribe to our newsletter and join
               our community.
-            </p>
-          </div>
-          <div className="frontPage_container2_inputContainer">
-            <div className="frontPage_container2_inputGroup">
+            </Typography>
+            <Stack pt={4}>
               <Box
                 component="form"
-                sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
+                sx={{ "& .MuiTextField-root": { mr: 3, width: "45ch" } }}
                 noValidate
                 autoComplete="off"
+                justifyContent={"center"}
+                alignItems={"center"}
               >
-                <TextField
-                  id="exampleInputEmail1"
-                  label="Email"
-                />
-                <button type="submit" className="button_green">Tilaa</button>
+                <TextField id="exampleInputEmail1" label="Email" />
+                <AppButton color="success" type="submit">
+                  Tilaa
+                </AppButton>
               </Box>
-            </div>
-          </div>
-        </div>
+            </Stack>
+          </Stack>
+        </Stack>
       </div>
       <Carousel />
-      <div className="frontPage_squares">
-        <div className="frontPage_squares_row">
-          <div className="frontPage_squares_boxes">
-            <h2 className="frontPage_squares_text">
-              Join us in building a greener tomorrow
-            </h2>
-            <div className="green_divider"></div>
-            <p className="frontPage_squares_text">
-              Together we can make a difference. Join EcoHub and become part of
-              the global movement towards a more sustainable and environmentally
-              conscious future.
-            </p>
-            <button className="button_green">Join</button>
-          </div>
-          <div className="frontPage_squares_boxesImage">
-            <img
-              src={ImageBox1}
-              alt="A park with a path leading to a round table"
-            ></img>
-          </div>
-        </div>
-        <div className="frontPage_squares_row">
-          <div className="frontPage_squares_boxesImage">
-            <img src={ImageBox2} alt="A park with a path with trees"></img>
-          </div>
-          <div className="frontPage_squares_boxes">
-            <h2 className="frontPage_squares_text">
-              Get involved and tell your story
-            </h2>
-            <p className="frontPage_squares_text">
-              Create a profile, earn badges for your sustainable actions and
-              participate in our community by sharing your success stories.
-              Whether you're taking small steps or leading major initiatives,
-              your journey matters.
-            </p>
-            <button className="button_green">Tell Your Story</button>
-          </div>
-        </div>
-      </div>
+      <Box>
+        <Stack
+          sx={{ backgroundColor: "#00381E", minHeight: "400px" }}
+          alignItems={"center"}
+        >
+          <Typography variant="h1" color="white" mt={10}>
+            How to get involved
+          </Typography>
+          <Typography variant="body1" color="white" mt={2}>
+            Here's how to get involved with EcoHub and sustainability
+          </Typography>
+        </Stack>
+        <Stack className="frontPage_squares" sx={{ mt: "-160px" }}>
+          <Stack className="frontPage_squares_row" flexDirection={"row"}>
+            <Stack
+              className="frontPage_squares_boxes"
+              sx={{ backgroundColor: "#fff" }}
+            >
+              <Typography variant="h2" className="frontPage_squares_text">
+                Join us in building a greener tomorrow
+              </Typography>
+              <div className="green_divider"></div>
+              <Typography variant="body1" className="frontPage_squares_text">
+                Together we can make a difference. Join EcoHub and become part
+                of the global movement towards a more sustainable and
+                environmentally conscious future.
+              </Typography>
+              <AppButton color="success" sx={{ mt: 2 }}>
+                Join
+              </AppButton>
+            </Stack>
+            <Stack className="frontPage_squares_boxesImage">
+              <img
+                src={ImageBox1}
+                alt="A park with a path leading to a round table"
+              ></img>
+            </Stack>
+          </Stack>
+          <Stack className="frontPage_squares_row" flexDirection={"row"}>
+            <Stack className="frontPage_squares_boxesImage">
+              <img src={ImageBox2} alt="A park with a path with trees"></img>
+            </Stack>
+            <Stack className="frontPage_squares_boxes">
+              <Typography variant="h2" className="frontPage_squares_text">
+                Get involved and tell your story
+              </Typography>
+              <div className="green_divider"></div>
+              <Typography variant="body1" className="frontPage_squares_text">
+                Create a profile, earn badges for your sustainable actions and
+                participate in our community by sharing your success stories.
+                Whether you're taking small steps or leading major initiatives,
+                your journey matters.
+              </Typography>
+              <AppButton color="success" sx={{ mt: 2 }}>
+                Tell Your Story
+              </AppButton>
+            </Stack>
+          </Stack>
+        </Stack>
+      </Box>
       <Footer />
     </div>
   );
