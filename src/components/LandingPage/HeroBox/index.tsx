@@ -1,8 +1,7 @@
+import { Typography } from "@mui/material";
 import {
   Button,
   ButtonsWrapper,
-  HeroText,
-  HeroTitle,
   ImageBoxContainer,
   ImageBoxWrapper,
   TextWrapper,
@@ -15,13 +14,15 @@ function HeroBox() {
       <ImageBoxWrapper>
         <TextContainer>
           <TextWrapper>
-            <HeroTitle>EcoHub: Centre for Sustainable Living</HeroTitle>
-            <HeroText>
+            <Typography variant="h1" pb={2}>
+              EcoHub: Centre for Sustainable Living
+            </Typography>
+            <Typography variant="body1">
               At EcoHub, we believe in the power of collective action to bring
               about positive change on our planet. Our mission is to empower
               people of all ages to adopt sustainable lifestyles and promote a
               healthier and greener future.
-            </HeroText>
+            </Typography>
           </TextWrapper>
           <ButtonsWrapper>
             <Button>HOW TO GET INVOLVED</Button>

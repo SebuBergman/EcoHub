@@ -14,12 +14,13 @@ export const ImageBoxWrapper = styled.div`
   flex-direction: row;
   background-color: white;
   position: absolute;
-  bottom: -60px;
+  bottom: -59px;
   right: 0;
   top: auto;
   left: auto;
   width: 520px;
   height: 520px;
+  border-radius: 8px;
 `;
 
 export const TextContainer = styled.div`
@@ -29,6 +30,8 @@ export const TextContainer = styled.div`
 
 export const TextWrapper = styled.div`
   padding-top: 110px;
+  padding-left: 40px;
+  padding-right: 40px;
 `;
 
 export const HeroTitle = styled(MainTitle)`
