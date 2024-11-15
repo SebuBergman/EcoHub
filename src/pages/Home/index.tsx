@@ -1,8 +1,3 @@
-import {
-  TextLight,
-  SectionSubtitle,
-  SectionTitle,
-} from "@components/ui/Typography/Typography";
 import HeroBox from "@components/LandingPage/HeroBox";
 import Header from "@components/Header/";
 import Footer from "@components/Footer/";
@@ -14,6 +9,8 @@ import ImageBox2 from "./assets/homeImage3.webp";
 
 // import styles
 import "./styles.scss";
+import { Typography, TextField, Box } from "@mui/material";
+
 
 const FrontPage = () => {
   return (
@@ -24,67 +21,67 @@ const FrontPage = () => {
       <div className="frontPage_container1">
         <div className="frontPage_container1_boxContainers">
           <div className="frontPage_container1_box">
-            <SectionTitle>
+            <Typography variant="h1">
               Connect with Nature, Connect with EcoHub
-            </SectionTitle>
-            <TextLight>
+            </Typography>
+            <Typography variant="body1">
               At EcoHub, we're more than just a website - we're a community
               united by a shared passion for the planet. Whether you're a
               seasoned environmental advocate or just beginning your journey
               towards sustainability, EcoHub is your go-to destination for
               inspiration, education, and action.
-            </TextLight>
+            </Typography>
           </div>
           <div className="frontPage_container1_boxes">
-            <div>
-              <SectionSubtitle className="forestGreen">
+            <div className="frontPage_container1_boxes_div">
+              <Typography variant="h5" className="forestGreen">
                 A Platform for Change
-              </SectionSubtitle>
-              <TextLight>
+              </Typography>
+              <Typography variant="body1">
                 EcoHub isn't just about learning - it's about taking action.
                 Join us in our mission to create a greener, more sustainable
                 world by participating in our interactive challenges, engaging
                 in meaningful discussions, and connecting with like-minded
                 individuals from around the globe.
-              </TextLight>
+              </Typography>
             </div>
             <div className="divider"></div>
-            <div>
-              <SectionSubtitle className="forestGreen">
+            <div className="frontPage_container1_boxes_div">
+              <Typography variant="h5" className="forestGreen">
                 Discover Endless Possibilities
-              </SectionSubtitle>
-              <TextLight>
+              </Typography>
+              <Typography variant="body1">
                 Explore our vast collection of resources designed to inform,
                 inspire, and empower you on your sustainability journey. From
                 informative articles and thought-provoking documentaries to
                 practical tips and tools, there's something for everyone at
                 EcoHub.
-              </TextLight>
+              </Typography>
             </div>
           </div>
           <div className="frontPage_container1_boxes">
-            <div>
-              <SectionSubtitle className="forestGreen">
+            <div className="frontPage_container1_boxes_div">
+              <Typography variant="h5" className="forestGreen">
                 Measure Your Impact, Make a Difference
-              </SectionSubtitle>
-              <TextLight>
+              </Typography>
+              <Typography variant="body1">
                 Take control of your environmental footprint with our
                 easy-to-use calculators and assessment tools. Gain insights into
                 your daily habits, identify areas for improvement, and make
                 positive changes that benefit both you and the planet.
-              </TextLight>
+              </Typography>
             </div>
             <div className="divider"></div>
-            <div>
-              <SectionSubtitle className="forestGreen">
+            <div className="frontPage_container1_boxes_div">
+              <Typography variant="h5" className="forestGreen">
                 Community, Connection, Collaboration
-              </SectionSubtitle>
-              <TextLight>
+              </Typography>
+              <Typography variant="body1">
                 Become part of our vibrant community of changemakers and
                 environmental enthusiasts. Share your experiences, celebrate
                 your achievements, and inspire others to join the movement
                 towards a more sustainable future.
-              </TextLight>
+              </Typography>
             </div>
           </div>
         </div>
@@ -110,17 +107,19 @@ const FrontPage = () => {
             </p>
           </div>
           <div className="frontPage_container2_inputContainer">
-            <div>
-              <label htmlFor="exampleInputPassword1">Email</label>
-            </div>
             <div className="frontPage_container2_inputGroup">
-              <input
-                type="email"
-                className="form-control"
-                id="exampleInputEmail1"
-                placeholder="Enter email here"
-              />
-              <button className="button_green">Tilaa</button>
+              <Box
+                component="form"
+                sx={{ "& .MuiTextField-root": { m: 1, width: "25ch" } }}
+                noValidate
+                autoComplete="off"
+              >
+                <TextField
+                  id="exampleInputEmail1"
+                  label="Email"
+                />
+                <button type="submit" className="button_green">Tilaa</button>
+              </Box>
             </div>
           </div>
         </div>

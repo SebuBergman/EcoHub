@@ -14,7 +14,7 @@ function HeroBox() {
       <ImageBoxWrapper>
         <TextContainer>
           <TextWrapper>
-            <Typography variant="h1">
+            <Typography variant="h1" pb={2}>
               EcoHub: Centre for Sustainable Living
             </Typography>
             <Typography variant="body1">
