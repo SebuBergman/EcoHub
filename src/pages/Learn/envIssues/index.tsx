@@ -1,5 +1,5 @@
-import Header from "@/components/header";
-import Footer from "@/components/footer";
+import Header from "@/features/header";
+import Footer from "@/features/footer";
 
 import "./styles.scss";
 

@@ -1,16 +1,16 @@
-import HeroBox from "@components/LandingPage/HeroBox";
-import Header from "@/components/header";
-import Footer from "@/components/footer";
+import HeroBox from "@features/LandingPage/HeroBox";
+import Header from "@/features/header";
+import Footer from "@/features/footer";
 import HomePageHeroImage from "./assets/homePage1.webp";
 import HomeImage1 from "./assets/homeImage1.webp";
-import Carousel from "@components/LandingPage/Carousel";
+import Carousel from "@features/LandingPage/Carousel";
 import ImageBox1 from "./assets/homeImage2.webp";
 import ImageBox2 from "./assets/homeImage3.webp";
 
 // import styles
 import "./styles.scss";
 import { Typography, TextField, Box, Stack } from "@mui/material";
-import AppButton from "@/components/ui/AppButton";
+import AppButton from "@/features/ui/AppButton";
 
 const HomePage = () => {
   return (

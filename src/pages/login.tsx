@@ -1,5 +1,7 @@
-import { APP_NAME } from "@/app/config/constants";
 import { Typography } from "@mui/material";
+
+import { APP_NAME } from "@config/constants";
+import LoginForm from "@features/auth/components/LoginForm";
 
 export default function LoginPage() {
   return (
@@ -10,6 +12,7 @@ export default function LoginPage() {
       <Typography color="text.secondary" mb={4}>
         Login to access {APP_NAME}
       </Typography>
+      <LoginForm />
     </>
   );
 }

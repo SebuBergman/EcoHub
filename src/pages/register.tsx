@@ -1,5 +1,7 @@
-import { APP_NAME } from "@config/constants";
 import { Typography } from "@mui/material";
+
+import { APP_NAME } from "@config/constants";
+import SignUpForm from "@features/auth/components/SignUpForm";
 
 export default function SignUpPage() {
   return (
@@ -10,6 +12,7 @@ export default function SignUpPage() {
       <Typography color="text.secondary" mb={4}>
         Become a user of {APP_NAME}
       </Typography>
+      <SignUpForm />
     </>
   );
 }
