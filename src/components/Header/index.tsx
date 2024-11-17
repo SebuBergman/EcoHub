@@ -10,7 +10,6 @@ import {
   Dropdown,
   DropdownMenu,
 } from "@nextui-org/react";
-import { Logo } from "./Logo.jsx";
 import VideocamOutlinedIcon from "@mui/icons-material/VideocamOutlined";
 import ForestOutlinedIcon from "@mui/icons-material/ForestOutlined";
 import RecyclingOutlinedIcon from "@mui/icons-material/RecyclingOutlined";
@@ -26,13 +25,16 @@ import HistoryEduOutlinedIcon from "@mui/icons-material/HistoryEduOutlined";
 import GroupsOutlinedIcon from "@mui/icons-material/GroupsOutlined";
 import FeedOutlinedIcon from "@mui/icons-material/FeedOutlined";
 import ContactMailOutlinedIcon from "@mui/icons-material/ContactMailOutlined";
+import { AppRoutes } from "@/app/config/routes/AppRoutes.js";
+import { Typography } from "@mui/material";
 
 export default function App() {
   return (
     <Navbar>
       <NavbarBrand>
-        <Logo />
-        <p className="font-bold text-inherit">EcoHub</p>
+        <Link href={AppRoutes.home} aria-current="page" color="foreground">
+          <Typography sx={{ color: "black" }}>EcoHub</Typography>
+        </Link>
       </NavbarBrand>
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <Dropdown>
@@ -50,7 +52,7 @@ export default function App() {
             </DropdownTrigger>
           </NavbarItem>
           <DropdownMenu
-            aria-label="ACME features"
+            aria-label="Learn Pages..."
             className="w-[340px]"
             itemClasses={{
               base: "gap-4",
@@ -58,24 +60,36 @@ export default function App() {
           >
             <DropdownItem
               key="environmental_issues"
-              description="ACME scales apps to meet user demand, automagically, based on load."
+              description="Explore key environmental challenges like climate change, pollution, and deforestation."
               startContent={<ForestOutlinedIcon />}
             >
-              Environmental issues
+              <Link
+                href={AppRoutes.envIssues}
+                aria-current="page"
+                color="foreground"
+              >
+                Environmental Issues
+              </Link>
             </DropdownItem>
             <DropdownItem
               key="sustainable_living_tips"
-              description="Real-time metrics to debug issues. Slow query added? We’ll show you exactly where."
+              description="Discover practical tips to adopt a more eco-friendly and sustainable lifestyle."
               startContent={<RecyclingOutlinedIcon />}
             >
-              Sustainable Living Tips
+              <Link
+                href={AppRoutes.sustainableLiving}
+                aria-current="page"
+                color="foreground"
+              >
+                Sustainable Living Tips
+              </Link>
             </DropdownItem>
             <DropdownItem
               key="green_innovations"
-              description="ACME runs on ACME, join us and others serving requests at web scale."
+              description="Learn about innovative technologies and solutions driving sustainability forward."
               startContent={<VolunteerActivismOutlinedIcon />}
             >
-              Green innovations
+              Green Innovations
             </DropdownItem>
           </DropdownMenu>
         </Dropdown>
@@ -94,7 +108,7 @@ export default function App() {
             </DropdownTrigger>
           </NavbarItem>
           <DropdownMenu
-            aria-label="ACME features"
+            aria-label="Watch and Learn"
             className="w-[340px]"
             itemClasses={{
               base: "gap-4",
@@ -102,14 +116,14 @@ export default function App() {
           >
             <DropdownItem
               key="videos"
-              description="ACME scales apps to meet user demand, automagically, based on load."
+              description="Watch engaging videos on environmental topics and success stories."
               startContent={<VideocamOutlinedIcon />}
             >
               Videos
             </DropdownItem>
             <DropdownItem
               key="success_stories"
-              description="Real-time metrics to debug issues. Slow query added? We’ll show you exactly where."
+              description="Get inspired by real-life stories of individuals and organizations making a difference."
               startContent={<AutoStoriesOutlinedIcon />}
             >
               Success Stories
@@ -131,7 +145,7 @@ export default function App() {
             </DropdownTrigger>
           </NavbarItem>
           <DropdownMenu
-            aria-label="ACME features"
+            aria-label="Interact with Others"
             className="w-[340px]"
             itemClasses={{
               base: "gap-4",
@@ -139,17 +153,17 @@ export default function App() {
           >
             <DropdownItem
               key="quizzes_and_challenges"
-              description="ACME scales apps to meet user demand, automagically, based on load."
+              description="Test your knowledge with quizzes and take on exciting sustainability challenges."
               startContent={<QuizOutlinedIcon />}
             >
               Quizzes & Challenges
             </DropdownItem>
             <DropdownItem
               key="discussion_forum"
-              description="Real-time metrics to debug issues. Slow query added? We’ll show you exactly where."
+              description="Join discussions and connect with like-minded individuals in our forum."
               startContent={<ForumOutlinedIcon />}
             >
-              Discussion-forum
+              Discussion Forum
             </DropdownItem>
           </DropdownMenu>
         </Dropdown>
@@ -168,7 +182,7 @@ export default function App() {
             </DropdownTrigger>
           </NavbarItem>
           <DropdownMenu
-            aria-label="ACME features"
+            aria-label="Resources"
             className="w-[340px]"
             itemClasses={{
               base: "gap-4",
@@ -176,14 +190,14 @@ export default function App() {
           >
             <DropdownItem
               key="downloads_and_library"
-              description="ACME scales apps to meet user demand, automagically, based on load."
+              description="Access a library of eco-friendly guides, research, and tools."
               startContent={<FileDownloadOutlinedIcon />}
             >
-              Downloads & library
+              Downloads & Library
             </DropdownItem>
             <DropdownItem
               key="environmental_impact_assessment"
-              description="Real-time metrics to debug issues. Slow query added? We’ll show you exactly where."
+              description="Calculate and assess your environmental impact with our tools."
               startContent={<Co2OutlinedIcon />}
             >
               Environmental Impact Assessment
@@ -205,7 +219,7 @@ export default function App() {
             </DropdownTrigger>
           </NavbarItem>
           <DropdownMenu
-            aria-label="ACME features"
+            aria-label="Engage with the platform"
             className="w-[340px]"
             itemClasses={{
               base: "gap-4",
@@ -213,14 +227,14 @@ export default function App() {
           >
             <DropdownItem
               key="user_stories"
-              description="ACME scales apps to meet user demand, automagically, based on load."
+              description="Explore stories shared by users about their journey toward sustainability."
               startContent={<PersonSearchOutlinedIcon />}
             >
               User Stories
             </DropdownItem>
             <DropdownItem
               key="submit_your_story"
-              description="Real-time metrics to debug issues. Slow query added? We’ll show you exactly where."
+              description="Share your own sustainability journey and inspire others."
               startContent={<HistoryEduOutlinedIcon />}
             >
               Submit Your Story
@@ -242,7 +256,7 @@ export default function App() {
             </DropdownTrigger>
           </NavbarItem>
           <DropdownMenu
-            aria-label="ACME features"
+            aria-label="About us"
             className="w-[340px]"
             itemClasses={{
               base: "gap-4",
@@ -250,21 +264,21 @@ export default function App() {
           >
             <DropdownItem
               key="mission_and_team"
-              description="ACME scales apps to meet user demand, automagically, based on load."
+              description="Learn about our mission, vision, and the team behind EcoHub."
               startContent={<GroupsOutlinedIcon />}
             >
               Mission & Team
             </DropdownItem>
             <DropdownItem
-              key="news_and_ypdates"
-              description="Real-time metrics to debug issues. Slow query added? We’ll show you exactly where."
+              key="news_and_updates"
+              description="Stay updated with the latest news and announcements from EcoHub."
               startContent={<FeedOutlinedIcon />}
             >
               News & Updates
             </DropdownItem>
             <DropdownItem
               key="press_and_media"
-              description="Real-time metrics to debug issues. Slow query added? We’ll show you exactly where."
+              description="Contact us for media inquiries or explore our press materials."
               startContent={<ContactMailOutlinedIcon />}
             >
               Press & Media
