@@ -26,9 +26,11 @@
       "@/*": ["src/*"],
       "@app/*": ["src/app/*"],
       "@pages/*": ["src/pages/*"],
-      "@components/*": ["src/components/*"],
+      "@features/*": ["src/features/*"],
       "@config/*": ["src/app/config/*"],
       "@assets/*": ["src/assets/*"],
+      "@store/*": ["src/app/store/*"],
+      "@services/*": ["src/app/services/*"]
     }
   },
   "include": ["src"],

@@ -5,22 +5,25 @@ import { GlobalStyles } from "@config/styles/Global";
 import { NextUIProvider } from "@nextui-org/react";
 import { ThemeProvider } from "@mui/material";
 import { theme } from "@config/styles";
+import { useAuthStateSubscription } from "@services/firebase";
 
-import "./app.scss";
 import { AppRouter } from "./config/routes";
+import "./app.scss";
 
 function App() {
+  useAuthStateSubscription();
+
   return (
-    <ThemeProvider theme={theme}>
-      <NextUIProvider>
-        <GlobalStyles />
-        <BrowserRouter>
+    <BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <NextUIProvider>
+          <GlobalStyles />
           <SnackbarProvider>
             <AppRouter />
           </SnackbarProvider>
-        </BrowserRouter>
-      </NextUIProvider>
-    </ThemeProvider>
+        </NextUIProvider>
+      </ThemeProvider>
+    </BrowserRouter>
   );
 }
 
