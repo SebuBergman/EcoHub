@@ -1,4 +1,8 @@
-import { ButtonTextSemi, MainTitle, TextLight } from "@components/ui/Typography/Typography";
+import {
+  ButtonTextSemi,
+  MainTitle,
+  TextLight,
+} from "@features/ui/Typography/Typography";
 import styled from "styled-components";
 
 export const ImageBoxContainer = styled.div`
