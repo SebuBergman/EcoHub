@@ -1,8 +1,9 @@
 import { Outlet, useLocation } from "react-router-dom";
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
+import Grid from "@mui/material/Grid2";
 
-import LoginBackground from "@features/auth/assets/login-background.jpg";
-import SignUpBackground from "@features/auth/assets/sign-up-background.jpg";
+import LoginBackground from "@features/auth/assets/login-background.webp";
+import SignUpBackground from "@features/auth/assets/sign-up-background.webp";
 
 import Logo from "../Logo.png";
 import { APP_NAME } from "@/app/config/constants";
@@ -12,35 +13,25 @@ export default function AuthLayout() {
   const isLoginPage = location.pathname === "/login";
 
   return (
-    <Grid container component="main" sx={{ height: "100vh" }}>
-      <Grid
-        item
-        xs={false}
-        sm={4}
-        md={6}
-        sx={{
-          backgroundImage: `url(${
-            isLoginPage ? LoginBackground : SignUpBackground
-          })`,
-          backgroundRepeat: "no-repeat",
-          backgroundColor: (t) =>
-            t.palette.mode === "light"
-              ? t.palette.grey[50]
-              : t.palette.grey[900],
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          borderTopRightRadius: 56,
-          borderBottomRightRadius: 56,
-        }}
-      />
-      <Grid
-        item
-        xs={12}
-        sm={8}
-        md={6}
-        sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
-      >
-        <Box
+    <Box
+      component="main"
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
+        backgroundImage: `url(${
+          isLoginPage ? LoginBackground : SignUpBackground
+        })`,
+        backgroundRepeat: "no-repeat",
+        backgroundColor: (t) =>
+          t.palette.mode === "light" ? t.palette.grey[50] : t.palette.grey[900],
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <Grid>
+        <Grid
           sx={{
             height: "100%",
             mx: { xs: 2, md: 4 },
@@ -50,17 +41,19 @@ export default function AuthLayout() {
             justifyContent: "center",
             width: "100%",
             maxWidth: 552,
+            backgroundColor: "white",
+            padding: { xs: 2, md: 4 },
           }}
         >
-          <Box mb={4}>
+          <Stack mb={4} direction={"row"}>
             <img src={Logo} />
             <Typography variant="h4" sx={{ ml: 1 }}>
               {APP_NAME}
             </Typography>
-          </Box>
+          </Stack>
           <Outlet />
-        </Box>
+        </Grid>
       </Grid>
-    </Grid>
+    </Box>
   );
 }

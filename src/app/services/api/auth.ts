@@ -3,6 +3,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   updateProfile,
+  signOut,
 } from "firebase/auth";
 
 import { auth, mapAuthCodeToMessage } from "@services/firebase";
@@ -35,4 +36,8 @@ export async function login(email: string, password: string) {
   return handleAuthError(async () => {
     await signInWithEmailAndPassword(auth, email, password);
   });
+}
+
+export function logout() {
+  return signOut(auth);
 }
