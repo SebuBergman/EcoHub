@@ -9,7 +9,8 @@ import { auth } from "@services/firebase";
 import { useAppDispatch, useAppSelector } from "@store/index";
 
 import { registerUser } from "../store/authActions";
-import { selectUser, setUserName } from "../store/authSlice";
+import { selectAuth, setUserName } from "../store/authSlice";
+import { Colors } from "@/app/config/styles";
 
 interface FormInput {
   name: string;
@@ -19,10 +20,10 @@ interface FormInput {
 }
 
 export default function SignUpForm() {
-  const user = useAppSelector(selectUser);
+  const auth = useAppSelector(selectAuth);
   const { handleSubmit, control, password, onSubmit } = useSignUpForm();
 
-  if (user) {
+  if (auth.user) {
     return <Navigate to={AppRoutes.dashboard} replace />;
   }
 
@@ -49,7 +50,7 @@ export default function SignUpForm() {
             autoFocus
             helperText={fieldState.error?.message}
             error={Boolean(fieldState.error)}
-            sx={{ mb: 3, mt: 0 }}
+            sx={{ mb: 3, mt: 0, input: { color: Colors.black } }}
             {...field}
           />
         )}
@@ -70,7 +71,7 @@ export default function SignUpForm() {
             autoFocus
             helperText={fieldState.error?.message}
             error={Boolean(fieldState.error)}
-            sx={{ mb: 3, mt: 0 }}
+            sx={{ mb: 3, mt: 0, input: { color: Colors.black } }}
             {...field}
           />
         )}
@@ -91,7 +92,7 @@ export default function SignUpForm() {
             autoComplete="current-password"
             helperText={fieldState.error?.message}
             error={Boolean(fieldState.error)}
-            sx={{ mb: 3, mt: 0 }}
+            sx={{ mb: 3, mt: 0, input: { color: Colors.black } }}
             {...field}
           />
         )}
@@ -118,13 +119,19 @@ export default function SignUpForm() {
             autoComplete="current-password"
             helperText={fieldState.error?.message}
             error={Boolean(fieldState.error)}
-            sx={{ mb: { xs: 3, md: 5 }, mt: 0 }}
+            sx={{ mb: { xs: 3, md: 5 }, mt: 0, input: { color: Colors.black } }}
             {...field}
           />
         )}
       />
-      <AppButton type="submit" fullWidth variant="contained" sx={{ mb: 2 }}>
-        Sing up
+      <AppButton
+        loading={auth.status === "loading"}
+        type="submit"
+        fullWidth
+        variant="contained"
+        sx={{ mb: 2 }}
+      >
+        Sign up
       </AppButton>
       <Stack
         justifyContent="center"

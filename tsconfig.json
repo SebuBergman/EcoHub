@@ -30,7 +30,8 @@
       "@config/*": ["src/app/config/*"],
       "@assets/*": ["src/assets/*"],
       "@store/*": ["src/app/store/*"],
-      "@services/*": ["src/app/services/*"]
+      "@services/*": ["src/app/services/*"],
+      "@hooks/*": ["src/app/hooks/*"]
     }
   },
   "include": ["src"],

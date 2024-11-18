@@ -16,6 +16,7 @@ export default defineConfig({
       "@assets": path.resolve(__dirname, "./src/app/assets"),
       "@store": path.resolve(__dirname, "./src/app/store"),
       "@services": path.resolve(__dirname, "./src/app/services"),
+      "@hooks": path.resolve(__dirname, "./src/app/hooks"),
     },
   },
   plugins: [react(), tsconfigPaths()],

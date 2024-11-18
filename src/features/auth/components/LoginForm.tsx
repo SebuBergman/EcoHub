@@ -1,5 +1,5 @@
 import { Controller, type SubmitHandler, useForm } from "react-hook-form";
-import { Navigate } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 
 import { Box, Link, Stack, TextField, Typography } from "@mui/material";
 
@@ -8,7 +8,8 @@ import AppButton from "@features/ui/AppButton";
 import { useAppDispatch, useAppSelector } from "@store/index";
 
 import { loginUser } from "../store/authActions";
-import { selectUser } from "../store/authSlice";
+import { selectAuth } from "../store/authSlice";
+import { Colors } from "@/app/config/styles";
 
 interface FormInput {
   email: string;
@@ -16,11 +17,15 @@ interface FormInput {
 }
 
 export default function LoginForm() {
-  const user = useAppSelector(selectUser);
+  const auth = useAppSelector(selectAuth);
   const { handleSubmit, control, onSubmit } = useLoginForm();
+  const location = useLocation();
 
-  if (user) {
-    return <Navigate to={AppRoutes.dashboard} replace />;
+  if (auth.user) {
+    // Send them back to the page they tried to visit when they were
+    // redirected to the login page.
+    const from = location.state?.from?.pathname || AppRoutes.dashboard;
+    return <Navigate to={from} replace />;
   }
 
   return (
@@ -46,7 +51,7 @@ export default function LoginForm() {
             autoFocus
             helperText={fieldState.error?.message}
             error={Boolean(fieldState.error)}
-            sx={{ mb: 3, mt: 0 }}
+            sx={{ mb: 3, mt: 0, input: { color: Colors.black } }}
             {...field}
           />
         )}
@@ -67,12 +72,18 @@ export default function LoginForm() {
             autoComplete="current-password"
             helperText={fieldState.error?.message}
             error={Boolean(fieldState.error)}
-            sx={{ mb: { xs: 3, md: 5 }, mt: 0 }}
+            sx={{ mb: { xs: 3, md: 5 }, mt: 0, input: { color: Colors.black } }}
             {...field}
           />
         )}
       />
-      <AppButton type="submit" fullWidth variant="contained" sx={{ mb: 2 }}>
+      <AppButton
+        loading={auth.status === "loading"}
+        type="submit"
+        fullWidth
+        variant="contained"
+        sx={{ mb: 2 }}
+      >
         Login
       </AppButton>
       <Stack
