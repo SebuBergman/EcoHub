@@ -1,4 +1,4 @@
-/*import { Navigate, useLocation } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 
 import { selectAuth } from "@features/auth/store/authSlice";
 import Loader from "@features/ui/Loader";
@@ -23,4 +23,4 @@ export default function ProtectedRoute({ children }: Props) {
   }
 
   return children;
-}*/
+}
