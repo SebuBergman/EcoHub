@@ -1,6 +1,6 @@
 import "./styles.scss";
-import Header from "@/features/header";
-import Footer from "@/features/footer";
+import Header from "@features/header";
+import Footer from "@features/footer";
 
 const sustainableLiving = () => {
   return (
