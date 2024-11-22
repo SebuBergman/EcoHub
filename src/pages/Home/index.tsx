@@ -1,6 +1,6 @@
 import HeroBox from "@features/LandingPage/HeroBox";
-import Header from "@/features/header";
-import Footer from "@/features/footer";
+import Header from "@features/header";
+import Footer from "@features/footer";
 import HomePageHeroImage from "./assets/homePage1.webp";
 import HomeImage1 from "./assets/homeImage1.webp";
 import Carousel from "@features/LandingPage/Carousel";
@@ -12,7 +12,7 @@ import "./styles.scss";
 import { Typography, TextField, Box, Stack } from "@mui/material";
 import AppButton from "@/features/ui/AppButton";
 
-const HomePage = () => {
+export default function HomePage() {
   return (
     <div className="pageContainer">
       <Header />
@@ -188,5 +188,3 @@ const HomePage = () => {
     </div>
   );
 };
-
-export default HomePage;

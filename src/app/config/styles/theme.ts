@@ -77,6 +77,17 @@ theme.typography.h2 = {
   },
 };
 
+theme.typography.h3 = {
+  fontFamily: FontFamilies.publicSans,
+  fontWeight: FontWeights.semibold,
+  fontSize: "1.7rem",
+  lineHeight: "2.5rem",
+  [theme.breakpoints.down("md")]: {
+    fontSize: "1.3rem",
+    lineHeight: "1.955rem",
+  },
+};
+
 theme.typography.h4 = {
   fontFamily: FontFamilies.publicSans,
   fontWeight: FontWeights.semibold,

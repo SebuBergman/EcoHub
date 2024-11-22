@@ -26,14 +26,14 @@ import GroupsOutlinedIcon from "@mui/icons-material/GroupsOutlined";
 import FeedOutlinedIcon from "@mui/icons-material/FeedOutlined";
 import ContactMailOutlinedIcon from "@mui/icons-material/ContactMailOutlined";
 import { AppRoutes } from "@/app/config/routes/AppRoutes.js";
-import { Typography } from "@mui/material";
+import AppLogo from "../ui/Icons/Logo";
 
 export default function App() {
   return (
     <Navbar>
       <NavbarBrand>
         <Link href={AppRoutes.home} aria-current="page" color="foreground">
-          <Typography sx={{ color: "black" }}>EcoHub</Typography>
+        <AppLogo />
         </Link>
       </NavbarBrand>
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
@@ -46,6 +46,7 @@ export default function App() {
                 endContent={<ExpandMoreOutlinedIcon />}
                 radius="sm"
                 variant="light"
+                style={{ fontSize: "1rem" }}
               >
                 Learn
               </Button>
@@ -102,6 +103,7 @@ export default function App() {
                 endContent={<ExpandMoreOutlinedIcon />}
                 radius="sm"
                 variant="light"
+                style={{ fontSize: "1rem" }}
               >
                 Watch
               </Button>
@@ -139,6 +141,7 @@ export default function App() {
                 endContent={<ExpandMoreOutlinedIcon />}
                 radius="sm"
                 variant="light"
+                style={{ fontSize: "1rem" }}
               >
                 Interact
               </Button>
@@ -176,6 +179,7 @@ export default function App() {
                 endContent={<ExpandMoreOutlinedIcon />}
                 radius="sm"
                 variant="light"
+                style={{ fontSize: "1rem" }}
               >
                 Resources
               </Button>
@@ -213,6 +217,7 @@ export default function App() {
                 endContent={<ExpandMoreOutlinedIcon />}
                 radius="sm"
                 variant="light"
+                style={{ fontSize: "1rem" }}
               >
                 Engage
               </Button>
@@ -250,6 +255,7 @@ export default function App() {
                 endContent={<ExpandMoreOutlinedIcon />}
                 radius="sm"
                 variant="light"
+                style={{ fontSize: "1rem" }}
               >
                 About
               </Button>
@@ -288,7 +294,9 @@ export default function App() {
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem className="hidden lg:flex">
-          <Link href={AppRoutes.login}>Login</Link>
+          <Link href={AppRoutes.login} style={{ fontSize: "1rem" }}>
+            Login
+          </Link>
         </NavbarItem>
         <NavbarItem>
           <Button
@@ -296,6 +304,7 @@ export default function App() {
             color="primary"
             href={AppRoutes.signUp}
             variant="flat"
+            style={{ fontSize: "1rem" }}
           >
             Sign Up
           </Button>

@@ -22,7 +22,7 @@ export default function AppLogo({ isMinimized }: Props) {
     >
       <img src={Logo} />
       {!isMinimized && (
-        <Typography variant="h4" sx={{ color: Colors.black }}>
+        <Typography variant="h6" sx={{ color: Colors.black }}>
           {APP_NAME}
         </Typography>
       )}
