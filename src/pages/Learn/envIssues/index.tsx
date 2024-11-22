@@ -6,14 +6,44 @@ import "./styles.scss";
 import { Box, Stack, Typography } from "@mui/material";
 import ENVIssuesCards from "@/features/pageComponents/learn/ENVIssues/Cards";
 
-const EnvIssuesPage = () => {
+export default function EnvIssuesPage() {
   return (
     <Box className="envissues">
       <Header />
-      <img alt="coverImage" src={ENVPageHeroImage}></img>
-      <Stack sx={{ justifyContent: "center", alignItems: "center" }}>
-        <Typography variant="h3">What you can do</Typography>
-        <Typography variant="h1">Addressing environmental issues</Typography>
+      <Stack sx={{ position: "relative", display: "inline-block" }}>
+        <img
+          alt="A image with Climate Justice Now! writen on a cardboard sign"
+          src={ENVPageHeroImage}
+          style={{ maxHeight: "832px" }}
+        />
+        <Stack
+          sx={{
+            position: "absolute",
+            top: "0",
+            left: "0",
+            width: "100%",
+            height: "100%",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Stack
+            sx={{
+              backgroundColor: "#384C54A1",
+              padding: 5,
+              borderRadius: "25px",
+              textAlign: "center",
+            }}
+          >
+            <Typography variant="h3" color="white">
+              What you can do
+            </Typography>
+            <Typography variant="h1" color="white">
+              Addressing environmental issues
+            </Typography>
+          </Stack>
+        </Stack>
       </Stack>
       <Box
         sx={{
@@ -47,6 +77,4 @@ const EnvIssuesPage = () => {
       <Footer />
     </Box>
   );
-};
-
-export default EnvIssuesPage;
+}

@@ -2,6 +2,7 @@ export const Colors = {
   white: "#FFFFFF",
   black: "#000000",
   secondaryBlack: "#1A1A1A",
+  primaryGrey: "#CDCDCD",
   secondaryGrey: "#F3F4F6",
   secondaryGreen: "rgba(36,136,35,0.17)",
   purple: "#7F56D9",
