@@ -47,6 +47,20 @@ export const theme = createTheme({
         component: LinkBehavior,
       } as LinkProps,
     },
+    MuiButton: {
+      styleOverrides: {
+        startIcon: {
+          "& svg": {
+            fontSize: "1.5 !important",
+          },
+        },
+        endIcon: {
+          "& svg": {
+            fontSize: "1.5 !important",
+          },
+        },
+      },
+    },
     MuiButtonBase: {
       defaultProps: {
         LinkComponent: LinkBehavior,

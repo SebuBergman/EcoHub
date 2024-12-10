@@ -9,21 +9,26 @@ import { useAuthStateSubscription } from "@services/firebase";
 
 import { AppRouter } from "./config/routes";
 import "./app.scss";
+import { PersistGate } from "redux-persist/integration/react";
+import Loader from "@/features/ui/Loader";
+import { persistor } from "./store/index";
 
 function App() {
   useAuthStateSubscription();
 
   return (
-    <BrowserRouter>
-      <ThemeProvider theme={theme}>
-        <NextUIProvider>
-          <GlobalStyles />
-          <SnackbarProvider>
-            <AppRouter />
-          </SnackbarProvider>
-        </NextUIProvider>
-      </ThemeProvider>
-    </BrowserRouter>
+    <PersistGate loading={<Loader />} persistor={persistor}>
+      <BrowserRouter>
+        <ThemeProvider theme={theme}>
+          <NextUIProvider>
+            <GlobalStyles />
+            <SnackbarProvider>
+              <AppRouter />
+            </SnackbarProvider>
+          </NextUIProvider>
+        </ThemeProvider>
+      </BrowserRouter>
+    </PersistGate>
   );
 }
 

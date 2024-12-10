@@ -1,3 +1,5 @@
+import UserDashboard from "@/features/userData/userStories/components/userDashboard";
+
 export default function UserDashboardPage() {
-  return <div>Dashboard</div>;
+  return <UserDashboard />
 }
