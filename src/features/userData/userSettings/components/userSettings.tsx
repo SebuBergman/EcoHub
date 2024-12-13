@@ -41,7 +41,14 @@ export default function UserSettings() {
               title: "Display Name",
               subtitle: "Change display name",
               content: (
-                <TextField label="Display Name" fullWidth variant="outlined" />
+                <TextField
+                  color="primary"
+                  id="filled-multiline-static"
+                  multiline
+                  rows={4}
+                  defaultValue="Dislay Name"
+                  variant="filled"
+                ></TextField>
               ),
               onSubmit: () => {
                 console.log("Submitted Modal 1");
@@ -63,16 +70,11 @@ export default function UserSettings() {
               subtitle: "Give a brief description of yourself",
               content: (
                 <TextField
-                  sx={{
-                    multilineColor: {
-                      color: "red",
-                    },
-                  }}
-                  color="secondary"
+                  color="primary"
                   id="filled-multiline-static"
                   multiline
                   rows={4}
-                  defaultValue="About"
+                  defaultValue="Avatar"
                   variant="filled"
                 ></TextField>
               ),
@@ -94,11 +96,11 @@ export default function UserSettings() {
               title: "Avatar Image",
               content: (
                 <TextField
-                  color="secondary"
+                  color="primary"
                   id="filled-multiline-static"
                   multiline
                   rows={4}
-                  defaultValue="About"
+                  defaultValue="Avatar"
                   variant="filled"
                 ></TextField>
               ),
@@ -127,7 +129,7 @@ export default function UserSettings() {
                   id="filled-multiline-static"
                   multiline
                   rows={4}
-                  defaultValue="About"
+                  defaultValue="Banner"
                   variant="filled"
                 ></TextField>
               ),

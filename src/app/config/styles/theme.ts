@@ -30,6 +30,7 @@ export const theme = createTheme({
           fontWeight: FontWeights.regular,
           fontSize: "1rem",
           lineHeight: "1.5rem",
+          color: "#000000",
         },
       },
     },
