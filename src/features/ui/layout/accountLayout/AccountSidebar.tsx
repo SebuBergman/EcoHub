@@ -68,7 +68,7 @@ export default function AccountSidebar({ isMinimized, onClose }: Props) {
           </Avatar>
           {!isMinimized && (
             <Typography variant="body1" sx={{ color: Colors.black }}>
-              Andrew
+              Sebastian
             </Typography>
           )}
         </Stack>
