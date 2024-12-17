@@ -6,12 +6,36 @@ import {
   TextField,
   Typography,
   CircularProgress,
+  LinearProgress,
 } from "@mui/material";
 import { getAuth, updateProfile } from "firebase/auth";
-import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import {
+  getStorage,
+  ref,
+  uploadBytesResumable,
+} from "firebase/storage";
 import ReusableModal from "@/features/ui/reusableModal";
+import { userImageFile, UserSettings } from "../../types";
 
-export default function UserSettings() {
+interface Props {
+  userSettings: UserSettings;
+  onSave: (user: UserSettings) => void;
+}
+
+interface State {
+  avatar: userImageFile[];
+  banner: userImageFile[];
+  uploadProgress: number | null;
+}
+
+const defaultState: State = {
+  avatar: [],
+  banner: [],
+  uploadProgress: null,
+};
+
+export default function UserSettings(props: Props) {
+  const [state, setState] = useState<State>(defaultState);
   const auth = getAuth();
   const storage = getStorage();
 
@@ -44,26 +68,10 @@ export default function UserSettings() {
     setModalOpen(false);
   };
 
-  const updateDisplayName = async (newDisplayName: string) => {
-    if (!auth.currentUser) return;
-    setLoading(true);
-    try {
-      await updateProfile(auth.currentUser, {
-        displayName: newDisplayName,
-      });
-      console.log("Display name updated:", newDisplayName);
-    } catch (error) {
-      console.error("Error updating display name:", error);
-    } finally {
-      setLoading(false);
-      handleCloseModal();
-    }
-  };
-
   const uploadImage = async (
     file: File,
     folder: "avatars" | "banners"
-  ): Promise<string | null> => {
+  ): Promise<userImageFile | null> => {
     if (!auth.currentUser) return null;
     setLoading(true);
 
@@ -71,38 +79,71 @@ export default function UserSettings() {
       storage,
       `${folder}/${auth.currentUser.uid}/${file.name}`
     );
-    try {
-      await uploadBytes(fileRef, file);
-      const downloadURL = await getDownloadURL(fileRef);
-      console.log(`${folder} image uploaded to:`, downloadURL);
-      return downloadURL;
-    } catch (error) {
-      console.error(`Error uploading ${folder} image:`, error);
-      return null;
-    } finally {
-      setLoading(false);
-    }
+    const uploadTask = uploadBytesResumable(fileRef, file);
+
+    return new Promise((resolve) => {
+      uploadTask.on(
+        "state_changed",
+        (snapshot) => {
+          const progress =
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          setState((prev) => ({
+            ...prev,
+            uploadProgress: Math.round(progress),
+          }));
+        },
+        (error) => {
+          console.error(`Error uploading ${folder} image:`, error);
+          setLoading(false);
+          resolve(null);
+        },
+        async () => {
+          const storagePath = uploadTask.snapshot.ref.fullPath;
+          console.log(`${folder} image uploaded successfully:`, storagePath);
+
+          // Return uploaded file with storage path but no URL yet
+          const uploadedFile: userImageFile = {
+            fileName: file.name,
+            storagePath,
+            url: null,
+          };
+
+          resolve(uploadedFile);
+          setLoading(false);
+          setState((prev) => ({ ...prev, uploadProgress: null }));
+        }
+      );
+    });
   };
 
   const handleAvatarUpload = async (file: File) => {
-    const avatarURL = await uploadImage(file, "avatars");
-    if (avatarURL && auth.currentUser) {
-      try {
-        await updateProfile(auth.currentUser, { photoURL: avatarURL });
-        console.log("Avatar updated:", avatarURL);
-      } catch (error) {
-        console.error("Error updating avatar:", error);
-      } finally {
-        handleCloseModal();
-      }
+    const uploadedImage = await uploadImage(file, "avatars");
+    if (uploadedImage) {
+      setState((prev) => ({
+        ...prev,
+        avatar: [uploadedImage],
+      }));
+
+      console.log(
+        "Avatar uploaded with storage path:",
+        uploadedImage.storagePath
+      );
     }
+    handleCloseModal();
   };
 
   const handleBannerUpload = async (file: File) => {
-    const bannerURL = await uploadImage(file, "banners");
-    if (bannerURL) {
-      console.log("Banner updated:", bannerURL);
-      // Save the banner URL to Firestore or your app's user profile database.
+    const uploadedImage = await uploadImage(file, "banners");
+    if (uploadedImage) {
+      setState((prev) => ({
+        ...prev,
+        banner: [uploadedImage],
+      }));
+
+      console.log(
+        "Banner uploaded with storage path:",
+        uploadedImage.storagePath
+      );
     }
     handleCloseModal();
   };
@@ -133,7 +174,10 @@ export default function UserSettings() {
                   "display-name"
                 ) as HTMLInputElement;
                 if (input.value) {
-                  updateDisplayName(input.value);
+                  updateProfile(auth.currentUser!, {
+                    displayName: input.value,
+                  });
+                  handleCloseModal();
                 }
               },
             })
@@ -173,9 +217,9 @@ export default function UserSettings() {
         >
           <Typography variant="h6">Avatar</Typography>
         </Button>
-        <Typography variant="caption">
-          Edit your avatar or upload an image
-        </Typography>
+        {state.uploadProgress !== null && (
+          <LinearProgress variant="determinate" value={state.uploadProgress} />
+        )}
       </Stack>
 
       {/* Banner */}
@@ -207,9 +251,9 @@ export default function UserSettings() {
         >
           <Typography variant="h6">Banner</Typography>
         </Button>
-        <Typography variant="caption">
-          Upload a profile background image
-        </Typography>
+        {state.uploadProgress !== null && (
+          <LinearProgress variant="determinate" value={state.uploadProgress} />
+        )}
       </Stack>
 
       {/* Loading Indicator */}

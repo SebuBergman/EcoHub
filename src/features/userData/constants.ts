@@ -1,0 +1,3 @@
+export const MAX_FILE_SIZE_MB = 3;
+export const ACCEPTED_DOCUMENT_FORMATS = ".pdf, .doc, .docx, .png, .jpg, .jpeg";
+export const ACCEPTED_PHOTO_FORMATS = ".png, .jpg, .jpeg";

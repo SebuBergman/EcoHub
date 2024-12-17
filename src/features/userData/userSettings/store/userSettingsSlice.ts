@@ -1,41 +1,42 @@
 import { RootState } from "@/app/store";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { PURGE } from "redux-persist";
+import { UserSettings } from "../../types";
 
 interface UserSettingsState {
-  displayName: string | null | undefined;
-  about: string;
-  avatar: string | null;
-  banner: string | null;
-  notificationsEnabled: boolean;
+  userSettings: UserSettings;
 }
 
-const initialState: UserSettingsState = {
-  displayName: "",
-  about: "",
-  avatar: null,
-  banner: null,
-  notificationsEnabled: true,
-}
-
+const getInitialState = () => ({
+  userSettings: {
+    displayName: null,
+    about: "",
+    avatar: null,
+    banner: null,
+    photos: [],
+    notificationsEnabled: true,
+  }
+})
+const initialState: UserSettingsState = getInitialState();
 export const UserSettingsSlice = createSlice({
   name: "userSettings",
   initialState,
   reducers: {
-    setDisplayName: (state, action: PayloadAction<string>) => {
-      state.displayName = action.payload;
-    },
     setAbout: (state, action: PayloadAction<string>) => {
-      state.about = action.payload;
+      state.userSettings.about = action.payload;
     },
     setAvatar: (state, action: PayloadAction<string | null>) => {
-      state.avatar = action.payload;
+      state.userSettings.avatar = action.payload;
     },
     setBanner: (state, action: PayloadAction<string | null>) => {
-      state.banner = action.payload;
+      state.userSettings.banner = action.payload;
+    },
+    setPhotos: (state, action: PayloadAction<UserSettings["photos"]>) => {
+      state.userSettings.photos = action.payload;
     },
     toggleNotifications: (state) => {
-      state.notificationsEnabled =!state.notificationsEnabled;
+      state.userSettings.notificationsEnabled =
+        !state.userSettings.notificationsEnabled;
     },
     resetSettings: () => initialState,
   },
@@ -45,7 +46,6 @@ export const UserSettingsSlice = createSlice({
 });
 
 export const {
-  setDisplayName,
   setAbout,
   setAvatar,
   setBanner,
