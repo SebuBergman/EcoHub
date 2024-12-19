@@ -1,29 +1,29 @@
 import { RootState } from "@/app/store";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { PURGE } from "redux-persist";
-import { UserSettings } from "../../types";
+import { UserData } from "../../types";
 
-interface UserSettingsState {
-  userSettings: UserSettings;
+interface UserDataState {
+  userSettings: UserData;
 }
 
 const getInitialState = () => ({
   userSettings: {
     displayName: null,
-    about: "",
+    description: "",
     avatar: null,
     banner: null,
     photos: [],
     notificationsEnabled: true,
-  }
-})
-const initialState: UserSettingsState = getInitialState();
+  },
+});
+const initialState: UserDataState = getInitialState();
 export const UserSettingsSlice = createSlice({
   name: "userSettings",
   initialState,
   reducers: {
     setAbout: (state, action: PayloadAction<string>) => {
-      state.userSettings.about = action.payload;
+      state.userSettings.description = action.payload;
     },
     setAvatar: (state, action: PayloadAction<string | null>) => {
       state.userSettings.avatar = action.payload;
@@ -31,7 +31,7 @@ export const UserSettingsSlice = createSlice({
     setBanner: (state, action: PayloadAction<string | null>) => {
       state.userSettings.banner = action.payload;
     },
-    setPhotos: (state, action: PayloadAction<UserSettings["photos"]>) => {
+    setPhotos: (state, action: PayloadAction<UserData["photos"]>) => {
       state.userSettings.photos = action.payload;
     },
     toggleNotifications: (state) => {
@@ -41,7 +41,7 @@ export const UserSettingsSlice = createSlice({
     resetSettings: () => initialState,
   },
   extraReducers: (builder) => {
-    builder.addCase(PURGE, () => initialState)
+    builder.addCase(PURGE, () => initialState);
   },
 });
 

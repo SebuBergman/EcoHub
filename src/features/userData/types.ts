@@ -1,9 +1,13 @@
-export interface UserSettings {
-  about: string;
+export interface SocialLink {
+  id: string;
+  url: string;
+}
+
+export interface UserData {
+  description: string;
   avatar: string | null;
-  banner: string | null;
-  photos: userImageFile[];
-  notificationsEnabled: boolean;
+  socialLinks: SocialLink[];
+  notifications: boolean | null;
 }
 
 export interface userImageFile {

@@ -13,6 +13,7 @@ import LoginPage from "@/pages/login";
 import { AppRoutes } from "../AppRoutes";
 import ProtectedRoute from "./ProtectedRoute";
 import SettingsPage from "@/pages/user/settings";
+import UserEcoStory from "@/features/userData/userEcoStory/ecoStory";
 
 
 export default function AppRouter() {
@@ -38,6 +39,7 @@ export default function AppRouter() {
         }
       >
         <Route path={AppRoutes.dashboard} element={<UserDashboardPage />} />
+        <Route path={AppRoutes.ecoStory} element={<UserEcoStory />} />
         <Route path={AppRoutes.settings} element={<SettingsPage />} />
       </Route>
       {/* Not Found Page */}

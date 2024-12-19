@@ -15,26 +15,19 @@ import {
   uploadBytesResumable,
 } from "firebase/storage";
 import ReusableModal from "@/features/ui/reusableModal";
-import { userImageFile, UserSettings } from "../../types";
-
-interface Props {
-  userSettings: UserSettings;
-  onSave: (user: UserSettings) => void;
-}
+import { userImageFile } from "../../types";
 
 interface State {
   avatar: userImageFile[];
-  banner: userImageFile[];
   uploadProgress: number | null;
 }
 
 const defaultState: State = {
   avatar: [],
-  banner: [],
   uploadProgress: null,
 };
 
-export default function UserSettings(props: Props) {
+export default function UserSettings() {
   const [state, setState] = useState<State>(defaultState);
   const auth = getAuth();
   const storage = getStorage();
@@ -132,22 +125,6 @@ export default function UserSettings(props: Props) {
     handleCloseModal();
   };
 
-  const handleBannerUpload = async (file: File) => {
-    const uploadedImage = await uploadImage(file, "banners");
-    if (uploadedImage) {
-      setState((prev) => ({
-        ...prev,
-        banner: [uploadedImage],
-      }));
-
-      console.log(
-        "Banner uploaded with storage path:",
-        uploadedImage.storagePath
-      );
-    }
-    handleCloseModal();
-  };
-
   return (
     <Box sx={{ maxWidth: "1120px", display: "flex", flexDirection: "column" }}>
       <Typography variant="h1">Settings</Typography>
@@ -216,40 +193,6 @@ export default function UserSettings(props: Props) {
           }
         >
           <Typography variant="h6">Avatar</Typography>
-        </Button>
-        {state.uploadProgress !== null && (
-          <LinearProgress variant="determinate" value={state.uploadProgress} />
-        )}
-      </Stack>
-
-      {/* Banner */}
-      <Stack sx={{ pb: 2 }}>
-        <Button
-          sx={{ justifyContent: "start", p: "0" }}
-          onClick={() =>
-            handleOpenModal({
-              title: "Banner Image",
-              subtitle: "Upload a new banner image",
-              content: (
-                <input
-                  type="file"
-                  id="banner-upload"
-                  accept="image/*"
-                  style={{ display: "block" }}
-                />
-              ),
-              onSubmit: () => {
-                const input = document.getElementById(
-                  "banner-upload"
-                ) as HTMLInputElement;
-                if (input.files && input.files[0]) {
-                  handleBannerUpload(input.files[0]);
-                }
-              },
-            })
-          }
-        >
-          <Typography variant="h6">Banner</Typography>
         </Button>
         {state.uploadProgress !== null && (
           <LinearProgress variant="determinate" value={state.uploadProgress} />
