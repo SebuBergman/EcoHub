@@ -3,7 +3,7 @@ import { SocialLink, UserData } from "./types";
 
 const initialState: UserData = {
   description: "",
-  avatar: null,
+  avatar: [],
   socialLinks: [],
   notifications: null,
 };

@@ -5,12 +5,18 @@ export interface SocialLink {
 
 export interface UserData {
   description: string;
-  avatar: string | null;
+  avatar: Avatar[];
   socialLinks: SocialLink[];
   notifications: boolean | null;
 }
 
 export interface userImageFile {
+  fileName: string;
+  storagePath?: string | null;
+  url?: string | null;
+}
+
+export interface Avatar {
   fileName: string;
   storagePath?: string | null;
   url?: string | null;
