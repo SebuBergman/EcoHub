@@ -15,76 +15,36 @@ import {
 } from "@mui/material";
 import { useAppDispatch, useAppSelector } from "@/app/store";
 import {
-  updateAvatar,
   updateDescription,
   updateSocialLink,
 } from "../userDataSlice";
 import { SocialLink, UserData } from "../types";
-import { getAuth } from "firebase/auth";
-import { saveUserDataToFirestore, uploadImageToFirebaseStorage } from "@/app/services/firebase/hooks/useStorage";
+import { saveUserDataToFirestore } from "@/app/services/firebase/hooks/useStorage";
+import { v4 as uuidv4 } from "uuid";
 
 interface Props {
-  avatar: UserData[];
   description: UserData[];
-  socialLinks: UserData[];
+  socialLinks: SocialLink[];
 }
 
-export default function UserDashboard({ avatar, description, socialLinks }: Props) {
+export default function UserDashboard(props: Props) {
   const user = useAppSelector((state) => state.auth.user);
-  const userData = useAppSelector((state) => state.userData);
   const dispatch = useAppDispatch();
+  const [socialLinks, setSocialLinks] = useState<SocialLink[]>(props.socialLinks || []);
+  const [description, setDescription] = useState(props.description || "");
 
-  const [uploading, setUploading] = useState(false);
-  const [uploadProgress, setUploadProgress] = useState(0);
   const [editOpen, setEditOpen] = useState(false);
-  const [description, setDescription] = useState(description);
-  const [socialLinks, setSocialLinks] = useState<SocialLink[]>();
-
-  const handleFileUploads = async (file: File) => {
-    if (!user?.uid) return;
-
-    setUploading(true);
-    try {
-      const downloadURL = await uploadImageToFirebaseStorage(
-        user.uid,
-        file,
-        "avatars"
-      );
-      dispatch(updateAvatar(downloadURL));
-
-      // Update Firestore
-      await saveUserDataToFirestore(user.uid, {
-        ...userData,
-        avatar: downloadURL,
-      });
-
-      setUploading(false);
-    } catch (error) {
-      console.error("Error uploading avatar:", error);
-      setUploading(false);
-    }
-  };
 
   const handleEditSubmit = async () => {
     if (!user?.uid) return;
 
-    dispatch(updateDescription(description));
+    dispatch(updateDescription(props.description));
     socialLinks.forEach((link) => {
       if (link.url.trim()) dispatch(updateSocialLink(link));
     });
 
-    // Save data to Firestore
-    await saveUserDataToFirestore(user.uid, {
-      ...userData,
-      description,
-      socialLinks,
-    });
-
-    setEditOpen(false);
-  };
-
   const handleAddSocialLink = () => {
-    setSocialLinks((prev) => [...prev, { id: crypto.randomUUID(), url: "" }]);
+    setSocialLinks((prev) => [...prev, { id: uuidv4(), url: "" }]);
   };
 
   const handleRemoveSocialLink = (id: string) => {
@@ -96,7 +56,6 @@ export default function UserDashboard({ avatar, description, socialLinks }: Prop
       <Stack direction="row" gap="20px" alignItems="center">
         <label htmlFor="avatar-upload">
           <Avatar
-            src={avatar || ""}
             sx={{
               width: 72,
               height: 72,
@@ -105,26 +64,11 @@ export default function UserDashboard({ avatar, description, socialLinks }: Prop
             }}
           />
         </label>
-        <input
-          id="avatar-upload"
-          type="file"
-          accept="image/*"
-          style={{ display: "none" }}
-          onChange={(e) =>
-            e.target.files && handleFileUploads(e.target.files[0])
-          }
-        />
         <Typography variant="h1">{user?.displayName || "User"}</Typography>
       </Stack>
-      {uploading && (
-        <Box sx={{ mt: 2, width: "100%" }}>
-          <Typography variant="body2">Uploading: {uploadProgress}%</Typography>
-          <CircularProgress variant="determinate" value={uploadProgress} />
-        </Box>
-      )}
       <Stack sx={{ mt: 4 }}>
         <Typography variant="body1">Description:</Typography>
-        <Typography variant="body1">{description}</Typography>
+        <Typography variant="body1">{props.description}</Typography>
       </Stack>
       <Stack sx={{ mt: 4 }}>
         <Typography variant="body1">Social Links:</Typography>
@@ -170,4 +114,5 @@ export default function UserDashboard({ avatar, description, socialLinks }: Prop
       </Dialog>
     </Box>
   );
+}
 }

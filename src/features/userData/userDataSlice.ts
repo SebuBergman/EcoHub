@@ -15,9 +15,6 @@ const userDataSlice = createSlice({
     updateDescription(state, action: PayloadAction<string>) {
       state.description = action.payload;
     },
-    updateAvatar(state, action: PayloadAction<string>) {
-      state.avatar = action.payload;
-    },
     addSocialLink(state, action: PayloadAction<SocialLink>) {
       state.socialLinks.push(action.payload);
     },
@@ -39,7 +36,6 @@ const userDataSlice = createSlice({
 
 export const {
   updateDescription,
-  updateAvatar,
   addSocialLink,
   updateSocialLink,
   removeSocialLink,
