@@ -30,6 +30,7 @@ export const theme = createTheme({
           fontWeight: FontWeights.regular,
           fontSize: "1rem",
           lineHeight: "1.5rem",
+          color: "#000000",
         },
       },
     },
@@ -46,6 +47,20 @@ export const theme = createTheme({
       defaultProps: {
         component: LinkBehavior,
       } as LinkProps,
+    },
+    MuiButton: {
+      styleOverrides: {
+        startIcon: {
+          "& svg": {
+            fontSize: "1.5 !important",
+          },
+        },
+        endIcon: {
+          "& svg": {
+            fontSize: "1.5 !important",
+          },
+        },
+      },
     },
     MuiButtonBase: {
       defaultProps: {

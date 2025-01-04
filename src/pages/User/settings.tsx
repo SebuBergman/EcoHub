@@ -1,3 +1,5 @@
+import UserSettings from "@/features/userData/userSettings/components/userSettings";
+
 export default function SettingsPage() {
-  return <div>User Settings</div>;
+  return <UserSettings />
 }
