@@ -1,16 +1,15 @@
+export interface UserData {
+  description: string;
+  socialLinks: SocialLink[];
+  notifications: boolean | undefined;
+}
+
 export interface SocialLink {
   id: string;
   url: string;
 }
 
-export interface UserData {
-  description: string;
-  avatar: Avatar[];
-  socialLinks: SocialLink[];
-  notifications: boolean | null;
-}
-
-export interface userImageFile {
+/*export interface userImageFile {
   fileName: string;
   storagePath?: string | null;
   url?: string | null;
@@ -27,4 +26,4 @@ export interface EcoStory {
   title: string;
   content: string;
   date: string;
-}
+}*/

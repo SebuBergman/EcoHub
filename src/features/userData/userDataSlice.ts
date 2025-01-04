@@ -3,9 +3,8 @@ import { SocialLink, UserData } from "./types";
 
 const initialState: UserData = {
   description: "",
-  avatar: [],
   socialLinks: [],
-  notifications: null,
+  notifications: false,
 };
 
 const userDataSlice = createSlice({
@@ -31,6 +30,9 @@ const userDataSlice = createSlice({
         (link) => link.id !== action.payload
       );
     },
+    toggleNotifications(state) {
+      state.notifications = !state.notifications;
+    },
   },
 });
 
@@ -39,6 +41,7 @@ export const {
   addSocialLink,
   updateSocialLink,
   removeSocialLink,
+  toggleNotifications,
 } = userDataSlice.actions;
 
 export default userDataSlice.reducer;
