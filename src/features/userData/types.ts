@@ -21,3 +21,10 @@ export interface Avatar {
   storagePath?: string | null;
   url?: string | null;
 }
+
+export interface EcoStory {
+  id: string;
+  title: string;
+  content: string;
+  date: string;
+}

@@ -11,7 +11,7 @@ import {
 } from "redux-persist";
 
 import authReducer from "@features/auth/store/authSlice";
-import userDataReducer from "@/features/userData/store/userDataSlice";
+import userDataReducer from "@/features/userData/userDataSlice";
 
 import { rtkQueryErrorLogger } from "./middleware/errorMiddleware";
 import storage from "redux-persist/lib/storage";
