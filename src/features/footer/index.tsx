@@ -80,8 +80,13 @@ const Footer = () => {
           <div className="footer_navlinks_links">
             <h4>About</h4>
             <ul>
-              <li>Mission & Team</li>
+              <li>
+                <a href="/mission_and_team">Mission & Team</a>
+              </li>
               <li>News & Updates</li>
+              <li>
+                <a href="/press_and_media">Press & Media</a>
+              </li>
             </ul>
           </div>
         </div>

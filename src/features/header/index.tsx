@@ -30,10 +30,10 @@ import AppLogo from "../ui/Icons/Logo";
 
 export default function App() {
   return (
-    <Navbar>
+    <Navbar maxWidth="full">
       <NavbarBrand>
         <Link href={AppRoutes.home} aria-current="page" color="foreground">
-        <AppLogo />
+          <AppLogo />
         </Link>
       </NavbarBrand>
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
@@ -273,7 +273,13 @@ export default function App() {
               description="Learn about our mission, vision, and the team behind EcoHub."
               startContent={<GroupsOutlinedIcon />}
             >
-              Mission & Team
+              <Link
+                href={AppRoutes.missionTeam}
+                aria-current="page"
+                color="foreground"
+              >
+                Mission & Team
+              </Link>
             </DropdownItem>
             <DropdownItem
               key="news_and_updates"
@@ -287,7 +293,13 @@ export default function App() {
               description="Contact us for media inquiries or explore our press materials."
               startContent={<ContactMailOutlinedIcon />}
             >
-              Press & Media
+              <Link
+                href={AppRoutes.PressAndMedia}
+                aria-current="page"
+                color="foreground"
+              >
+                Press & Media
+              </Link>
             </DropdownItem>
           </DropdownMenu>
         </Dropdown>
