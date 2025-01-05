@@ -28,10 +28,10 @@
       "@pages/*": ["src/pages/*"],
       "@features/*": ["src/features/*"],
       "@config/*": ["src/app/config/*"],
-      "@assets/*": ["src/assets/*"],
+      "@assets/*": ["src/app/assets/*"],
       "@store/*": ["src/app/store/*"],
       "@services/*": ["src/app/services/*"],
-      "@hooks/*": ["src/app/hooks/*"]
+      "@hooks/*": ["src/app/hooks/*"],
     }
   },
   "include": ["src"],

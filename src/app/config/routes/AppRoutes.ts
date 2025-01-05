@@ -7,4 +7,6 @@ export const AppRoutes = {
   settings: "/account/settings",
   envIssues: "/environmental_issues",
   sustainableLiving: "/sustainable_living",
+  missionTeam: "/mission_and_team",
+  PressAndMedia: "/press_and_media",
 };

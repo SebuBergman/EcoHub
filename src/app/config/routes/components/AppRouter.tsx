@@ -14,6 +14,8 @@ import { AppRoutes } from "../AppRoutes";
 import ProtectedRoute from "./ProtectedRoute";
 import SettingsPage from "@/pages/user/settings";
 import UserEcoStory from "@/features/userData/userEcoStory/ecoStory";
+import PressAndMedia from "@/pages/about/pressAndMedia";
+import MissionAndTeam from "@/pages/about/missionAndteam";
 
 
 export default function AppRouter() {
@@ -22,6 +24,8 @@ export default function AppRouter() {
       {/* Public Pages */}
       <Route path={AppRoutes.home} element={<HomePage />} />
       <Route path={AppRoutes.envIssues} element={<EnvIssuesPage />} />
+      <Route path={AppRoutes.PressAndMedia} element={<PressAndMedia />} />
+      <Route path={AppRoutes.missionTeam} element={<MissionAndTeam />} />
       <Route
         path={AppRoutes.sustainableLiving}
         element={<SustainableLiving />}
