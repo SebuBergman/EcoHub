@@ -5,32 +5,12 @@ import {
   Stack,
   TextField,
   Typography,
-  CircularProgress,
-  LinearProgress,
 } from "@mui/material";
 import { getAuth, updateProfile } from "firebase/auth";
-import {
-  getStorage,
-  ref,
-  uploadBytesResumable,
-} from "firebase/storage";
 import ReusableModal from "@/features/ui/reusableModal";
-import { userImageFile } from "../../types";
-
-interface State {
-  avatar: userImageFile[];
-  uploadProgress: number | null;
-}
-
-const defaultState: State = {
-  avatar: [],
-  uploadProgress: null,
-};
 
 export default function UserSettings() {
-  const [state, setState] = useState<State>(defaultState);
   const auth = getAuth();
-  const storage = getStorage();
 
   const [modalOpen, setModalOpen] = useState(false);
   const [modalConfig, setModalConfig] = useState<{
@@ -45,8 +25,6 @@ export default function UserSettings() {
     onSubmit: undefined,
   });
 
-  const [loading, setLoading] = useState(false);
-
   const handleOpenModal = (config: {
     title: string;
     subtitle?: string;
@@ -59,70 +37,6 @@ export default function UserSettings() {
 
   const handleCloseModal = () => {
     setModalOpen(false);
-  };
-
-  const uploadImage = async (
-    file: File,
-    folder: "avatars" | "banners"
-  ): Promise<userImageFile | null> => {
-    if (!auth.currentUser) return null;
-    setLoading(true);
-
-    const fileRef = ref(
-      storage,
-      `${folder}/${auth.currentUser.uid}/${file.name}`
-    );
-    const uploadTask = uploadBytesResumable(fileRef, file);
-
-    return new Promise((resolve) => {
-      uploadTask.on(
-        "state_changed",
-        (snapshot) => {
-          const progress =
-            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-          setState((prev) => ({
-            ...prev,
-            uploadProgress: Math.round(progress),
-          }));
-        },
-        (error) => {
-          console.error(`Error uploading ${folder} image:`, error);
-          setLoading(false);
-          resolve(null);
-        },
-        async () => {
-          const storagePath = uploadTask.snapshot.ref.fullPath;
-          console.log(`${folder} image uploaded successfully:`, storagePath);
-
-          // Return uploaded file with storage path but no URL yet
-          const uploadedFile: userImageFile = {
-            fileName: file.name,
-            storagePath,
-            url: null,
-          };
-
-          resolve(uploadedFile);
-          setLoading(false);
-          setState((prev) => ({ ...prev, uploadProgress: null }));
-        }
-      );
-    });
-  };
-
-  const handleAvatarUpload = async (file: File) => {
-    const uploadedImage = await uploadImage(file, "avatars");
-    if (uploadedImage) {
-      setState((prev) => ({
-        ...prev,
-        avatar: [uploadedImage],
-      }));
-
-      console.log(
-        "Avatar uploaded with storage path:",
-        uploadedImage.storagePath
-      );
-    }
-    handleCloseModal();
   };
 
   return (
@@ -164,47 +78,6 @@ export default function UserSettings() {
         </Button>
         <Typography variant="caption">Change your display name</Typography>
       </Stack>
-
-      {/* Avatar */}
-      <Stack sx={{ pb: 2 }}>
-        <Button
-          sx={{ justifyContent: "start", p: "0" }}
-          onClick={() =>
-            handleOpenModal({
-              title: "Avatar Image",
-              subtitle: "Upload a new avatar image",
-              content: (
-                <input
-                  type="file"
-                  id="avatar-upload"
-                  accept="image/*"
-                  style={{ display: "block" }}
-                />
-              ),
-              onSubmit: () => {
-                const input = document.getElementById(
-                  "avatar-upload"
-                ) as HTMLInputElement;
-                if (input.files && input.files[0]) {
-                  handleAvatarUpload(input.files[0]);
-                }
-              },
-            })
-          }
-        >
-          <Typography variant="h6">Avatar</Typography>
-        </Button>
-        {state.uploadProgress !== null && (
-          <LinearProgress variant="determinate" value={state.uploadProgress} />
-        )}
-      </Stack>
-
-      {/* Loading Indicator */}
-      {loading && (
-        <Stack sx={{ alignItems: "center", my: 2 }}>
-          <CircularProgress />
-        </Stack>
-      )}
 
       {/* Reusable Modal */}
       <ReusableModal
