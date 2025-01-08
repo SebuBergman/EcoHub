@@ -6,7 +6,7 @@ export default function PressAndMedia() {
   return (
     <Box>
       <Header />
-      <Box sx={{ maxWidth: "800px", mt: 4, mb: 4}}>
+      <Box sx={{ maxWidth: "800px", mx: "auto", mt: 4, mb: 4 }}>
         <Typography variant="h3" sx={{ mb: 4 }}>
           Press & Media
         </Typography>
