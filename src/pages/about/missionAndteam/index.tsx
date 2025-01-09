@@ -1,8 +1,8 @@
 import { Box, Card, CardContent, Stack, Typography } from "@mui/material";
 import { teamMember } from "./data";
-import Header from "@/features/header";
+import Header from "@features/header";
 import PictureSebu from "@assets/images/PictureSebu.jpg";
-import Footer from "@/features/footer";
+import Footer from "@features/footer";
 
 export default function MissionAndTeamPage() {
   return (

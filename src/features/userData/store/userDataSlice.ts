@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { SocialLink, UserData } from "./types";
+import { SocialLink, UserData } from "../types";
 
 const initialState: UserData = {
   description: "",
