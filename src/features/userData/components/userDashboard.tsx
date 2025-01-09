@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
+import { useSelector } from "react-redux";
 import {
   Box,
   Button,
@@ -15,11 +15,11 @@ import {
   updateSocialLink,
   removeSocialLink,
   toggleNotifications,
-} from "../userDataSlice";
-import { AppDispatch, RootState } from "@/app/store/types";
+} from "../store/userDataSlice";
+import {RootState, useAppDispatch } from "@app/store/";
 
-const UserDashboard: React.FC = () => {
-  const dispatch = useDispatch<AppDispatch>();
+export default function UserDashboard() {
+  const dispatch = useAppDispatch();
   const { description, socialLinks, notifications } = useSelector(
     (state: RootState) => state.userData
   );
@@ -104,5 +104,3 @@ const UserDashboard: React.FC = () => {
     </Box>
   );
 };
-
-export default UserDashboard;
