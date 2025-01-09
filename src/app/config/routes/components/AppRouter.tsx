@@ -13,7 +13,7 @@ import LoginPage from "@/pages/login";
 import { AppRoutes } from "../AppRoutes";
 import ProtectedRoute from "./ProtectedRoute";
 import SettingsPage from "@/pages/user/settings";
-import UserEcoStory from "@/features/userData/userEcoStory/ecoStory";
+import UserEcoStory from "@/features/userData/components/ecoStory";
 import PressAndMedia from "@/pages/about/pressAndMedia";
 import MissionAndTeam from "@/pages/about/missionAndteam";
 
