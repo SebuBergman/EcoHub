@@ -5,9 +5,10 @@ export interface UserData {
 }
 
 export interface EcoStory {
-  id: string | undefined | null;
+  id: string;
   title: string;
   content: string;
+  submissionDate: string;
   accepted: boolean;
 }
 
@@ -15,15 +16,3 @@ export interface SocialLink {
   id: string;
   url: string;
 }
-
-/*export interface userImageFile {
-  fileName: string;
-  storagePath?: string | null;
-  url?: string | null;
-}
-
-export interface Avatar {
-  fileName: string;
-  storagePath?: string | null;
-  url?: string | null;
-}*/
