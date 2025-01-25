@@ -1,4 +1,3 @@
-import { updateStoryInFirestore } from "@/app/services/firebase/hooks/useFirestore";
 import { useAppDispatch, useAppSelector } from "@/app/store";
 import {
   Box,
@@ -8,6 +7,7 @@ import {
   CardActions,
   Button,
 } from "@mui/material";
+import { updateStoryInFirestore } from "../userData/store/ecoStorySlice";
 
 export default function AdminPage() {
   const dispatch = useAppDispatch();

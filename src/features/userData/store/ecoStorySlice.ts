@@ -1,13 +1,13 @@
-// ecoStorySlice.ts
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-
-// Define the EcoStory interface
-export interface EcoStory {
-  id: string; // User ID or a unique story ID
-  title: string;
-  content: string;
-  accepted: boolean; // Admin approval status
-}
+import {
+  getFirestore,
+  doc,
+  collection,
+  addDoc,
+  updateDoc,
+} from "firebase/firestore";
+import { createAsyncThunk } from "@reduxjs/toolkit";
+import { EcoStory } from "../types";
 
 // Initial state
 interface EcoStoryState {
@@ -18,18 +18,34 @@ const initialState: EcoStoryState = {
   stories: [],
 };
 
+const ECO_STORY_COLLECTION = "ecoStories";
+
+// Async thunk to upload a story to Firestore
+export const uploadStoryToFirestore = createAsyncThunk(
+  "ecoStory/uploadToFirestore",
+  async (story: EcoStory) => {
+    const db = getFirestore();
+    const storyRef = await addDoc(collection(db, ECO_STORY_COLLECTION), story);
+    return { ...story, id: storyRef.id }; // Use Firestore's generated ID
+  }
+);
+
+// Async thunk to update a story's `accepted` status in Firestore
+export const updateStoryInFirestore = createAsyncThunk(
+  "ecoStory/updateInFirestore",
+  async ({ id, accepted }: { id: string; accepted: boolean }) => {
+    const db = getFirestore();
+    const storyRef = doc(db, ECO_STORY_COLLECTION, id);
+    await updateDoc(storyRef, { accepted });
+    return { id, accepted };
+  }
+);
+
 // Create the slice
 const ecoStorySlice = createSlice({
   name: "ecoStory",
   initialState,
   reducers: {
-    // Action to add a new story
-    submitStory(state, action: PayloadAction<Omit<EcoStory, "accepted">>) {
-      state.stories.push({
-        ...action.payload,
-        accepted: false, // New stories are not accepted by default
-      });
-    },
     // Action to update the accepted status of a story
     approveStory(state, action: PayloadAction<string>) {
       const story = state.stories.find((s) => s.id === action.payload);
@@ -42,10 +58,24 @@ const ecoStorySlice = createSlice({
       state.stories = state.stories.filter((s) => s.id !== action.payload);
     },
   },
+  extraReducers: (builder) => {
+    builder
+      .addCase(uploadStoryToFirestore.fulfilled, (state, action) => {
+        state.stories.push(action.payload);
+      })
+      .addCase(updateStoryInFirestore.fulfilled, (state, action) => {
+        const story = state.stories.find(
+          (story) => story.id === action.payload.id
+        );
+        if (story) {
+          story.accepted = action.payload.accepted;
+        }
+      });
+  },
 });
 
 // Export actions
-export const { submitStory, approveStory, removeStory } = ecoStorySlice.actions;
+export const { approveStory, removeStory } = ecoStorySlice.actions;
 
 // Export reducer
 export default ecoStorySlice.reducer;

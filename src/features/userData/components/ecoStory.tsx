@@ -10,14 +10,13 @@ import {
   CardActions,
 } from "@mui/material";
 import { useAppDispatch, useAppSelector } from "@app/store";
-import { approveStory, removeStory, submitStory } from "../store/ecoStorySlice";
+import { approveStory, removeStory, uploadStoryToFirestore } from "../store/ecoStorySlice";
+import { EcoStory } from "../types";
 
 export default function EcoStoryPage() {
   const dispatch = useAppDispatch();
   const stories = useAppSelector((state) => state.ecoStory.stories);
   const userId = useAppSelector((state) => state.auth.user?.uid); // Fetch user ID
-
-  console.log(userId);
 
   // State for form inputs
   const [title, setTitle] = useState("");
@@ -26,15 +25,23 @@ export default function EcoStoryPage() {
   // Submit a story
   const handleSubmit = () => {
     if (title.trim() && content.trim()) {
-      dispatch(
-        submitStory({
+      if (userId) {
+        // Ensure userId is defined
+        const submissionDate = new Date().toISOString(); // Get current date and time
+        const story: EcoStory = {
           id: userId,
           title,
           content,
-        })
-      );
-      setTitle("");
-      setContent("");
+          submissionDate, // Add submission date to the story
+          accepted: false,
+        };
+        dispatch(uploadStoryToFirestore(story));
+        setTitle("");
+        setContent("");
+      } else {
+        console.error("User ID is undefined. Cannot submit story.");
+        // Optionally, you can show an error message to the user here
+      }
     }
   };
 
@@ -96,6 +103,12 @@ export default function EcoStoryPage() {
             </Typography>
             <Typography variant="body2" sx={{ mb: 3 }} color="black">
               {story.content}
+            </Typography>
+            <Typography variant="body1" color="black">
+              Submitted On:
+            </Typography>
+            <Typography variant="body2" sx={{ mb: 3 }} color="black">
+              {new Date(story.submissionDate).toLocaleString()}
             </Typography>
             <Typography
               variant="caption"
