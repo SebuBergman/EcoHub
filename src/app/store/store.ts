@@ -16,11 +16,13 @@ import ecoStoryReducer from "@/features/userData/store/ecoStorySlice";
 
 import { rtkQueryErrorLogger } from "./middleware/errorMiddleware";
 import storage from "redux-persist/lib/storage";
+import forumReducer from "@/features/forum/store/forumSlice";
 
 const rootReducer = combineReducers({
   auth: authReducer,
   userData: userDataReducer,
   ecoStory: ecoStoryReducer,
+  forum: forumReducer,
 });
 
 const persistConfig = {
