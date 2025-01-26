@@ -89,8 +89,8 @@ Maybe you can mention me or this repo in the acknowledgements too
   <summary>Client</summary>
   <ul>
     <li><a href="https://reactjs.org/">React.js</a></li>
-    <li><p>Maybe some Next.js or Mui</p></li>
     <li><a href="https://sass-lang.com">Sass</a></li>
+        <li><a href="https://mui.com/material-ui">Material UI</a></li>
   </ul>
 </details>
 
@@ -115,10 +115,10 @@ Maybe you can mention me or this repo in the acknowledgements too
 
 | Color             | Hex                                                                |
 | ----------------- | ------------------------------------------------------------------ |
-| Primary Color | ![#F8F8F8](https://via.placeholder.com/10/F8F8F8?text=+) #F8F8F8 |
-| Secondary Color | ![#00381E](https://via.placeholder.com/10/00381E?text=+) #00381E |
-| Accent Color | ![#248823](https://via.placeholder.com/10/248823?text=+) #248823 |
-| Text Color | ![#000000](https://via.placeholder.com/10/000000?text=+) #000000 |
+| Primary Color | ![#F8F8F8] #F8F8F8 |
+| Secondary Color | ![#00381E] #00381E |
+| Accent Color | ![#248823] #248823 |
+| Text Color | ![#000000] #000000 |
 
 
 <!-- Getting Started -->
@@ -176,7 +176,7 @@ Install dependencies
 Start the server
 
 ```bash
-  npm start
+  npm run dev
 ```
 
 
@@ -194,11 +194,14 @@ To deploy this project run
 
 * [x] Make the front-page
 * [x] Program navigation
-* [ ] Create more pages (Learn -> Environmental issues / Sustainable living tips)
-* [ ] Log in / log out
-* [ ] User Page
-* [ ] Quizzes & submit stories etc.
-* [ ] Forum?
+* [x] Create more pages (Learn -> Environmental issues / Sustainable living tips)
+* [x] Log in / log out
+* [x] User Page
+* [x] EcoStory submittion
+* [x] Discussion Forum
+* [ ] Quizzes etc.
+* [ ] Mobile optimization
+* [ ] EcoStory page with all user stories
 
 
 <!-- Code of Conduct -->
@@ -222,7 +225,7 @@ Please read the -- <!--[Code of Conduct](https://github.com/Louis3797/awesome-re
 <!-- Contact -->
 ## :handshake: Contact
 
-Sebastian Bergman - https://www.instagram.com/sebu.bersman
+Sebastian Bergman - https://sebastianbergman.fi
 
 Project Link: https://github.com/SebuBergman/EcoHub/
 
