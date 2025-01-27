@@ -8,7 +8,8 @@ import {
   getDocs,
   getDoc,
 } from "firebase/firestore";
-import { Post, Comment } from "../types";
+import { Post} from "../types";
+import { Comment as CommentTypes } from "../types";
 
 interface ForumState {
   posts: Post[];
@@ -39,7 +40,7 @@ export const fetchPosts = createAsyncThunk(
       const posts: Post[] = [];
       querySnapshot.forEach((doc) => {
         const data = doc.data() as Post;
-        posts.push({ ...data });
+        posts.push({ ...data, id: doc.id }); // Ensure each post includes the doc ID
       });
       return posts;
     } catch (error) {
@@ -51,16 +52,19 @@ export const fetchPosts = createAsyncThunk(
 export const addComment = createAsyncThunk(
   "forum/addComment",
   async (
-    { postId, comment }: { postId: string; comment: Comment },
+    { postId, comment }: { postId: string; comment: CommentTypes },
     { rejectWithValue }
   ) => {
     try {
       const postRef = doc(firestore, "posts", postId);
-      const post = await getDoc(postRef);
-      const comments = post.data()?.comments || [];
-      await updateDoc(postRef, {
-        comments: [...comments, comment],
-      });
+      const postSnap = await getDoc(postRef);
+      const postData = postSnap.data();
+      if (!postData) return rejectWithValue("Post not found");
+
+      const comments = postData.comments as CommentTypes[];
+      const newComments = [...comments, comment];
+
+      await updateDoc(postRef, { comments: newComments });
       return { postId, comment };
     } catch (error) {
       return rejectWithValue(error);
@@ -76,11 +80,19 @@ export const toggleLike = createAsyncThunk(
   ) => {
     try {
       const postRef = doc(firestore, "posts", postId);
-      const post = await getDoc(postRef);
-      const likes = post.data()?.likes || [];
-      const newLikes = likes.includes(userId)
-        ? likes.filter((id: string) => id !== userId)
-        : [...likes, userId];
+      const postSnap = await getDoc(postRef);
+      const postData = postSnap.data();
+      if (!postData) return rejectWithValue("Post not found");
+
+      const likes = postData.likes as string[];
+      let newLikes: string[];
+
+      if (likes.includes(userId)) {
+        newLikes = likes.filter((id) => id !== userId);
+      } else {
+        newLikes = [...likes, userId];
+      }
+
       await updateDoc(postRef, { likes: newLikes });
       return { postId, likes: newLikes };
     } catch (error) {
@@ -109,7 +121,7 @@ const forumSlice = createSlice({
         addComment.fulfilled,
         (
           state,
-          action: PayloadAction<{ postId: string; comment: Comment }>
+          action: PayloadAction<{ postId: string; comment: CommentTypes }>
         ) => {
           const { postId, comment } = action.payload;
           const post = state.posts.find((post) => post.id === postId);
@@ -120,7 +132,13 @@ const forumSlice = createSlice({
       )
       .addCase(
         toggleLike.fulfilled,
-        (state, action: PayloadAction<{ postId: string; likes: string[] }>) => {
+        (
+          state,
+          action: PayloadAction<{
+            postId: string;
+            likes: string[];
+          }>
+        ) => {
           const { postId, likes } = action.payload;
           const post = state.posts.find((post) => post.id === postId);
           if (post) {
