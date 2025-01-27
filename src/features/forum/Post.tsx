@@ -8,6 +8,10 @@ import LikesComponent from "./Likes";
 import { Comment as CommentTypes } from "./types";
 import { v4 as uuidv4 } from "uuid";
 import CommentIconComponent from "../ui/CommentIcon";
+import dayjs from "dayjs";
+import { timeAgo } from "@/app/services/date/formatDate";
+
+import SquareIcon from "@mui/icons-material/Square";
 
 interface Props {
   post: PostTypes;
@@ -26,10 +30,12 @@ export default function Post({
   onLikeComment,
   onDislikeComment,
 }: Props) {
+  const date = dayjs(new Date()).toISOString();
   const user = useAppSelector(selectUser);
-  const userInitial = user?.displayName?.split(" ")[0][0];
+  const userInitial = post.username?.split(" ")[0][0];
   const userName = user?.displayName;
   const userId = user?.uid;
+  
 
   const [commentContent, setCommentContent] = useState("");
   const [commentsVisible, setCommentsVisible] = useState(false);
@@ -53,7 +59,7 @@ export default function Post({
         userId,
         username: userName,
         content: commentContent,
-        timestamp: new Date().toISOString(),
+        timestamp: date,
         likes: [],
       };
       onAddComment(post.postId, newComment);
@@ -79,12 +85,21 @@ export default function Post({
 
   return (
     <Box sx={{ mb: 4 }} className="postContainer">
-      <Stack flexDirection={"row"} alignItems={"center"} gap={2}>
+      <Stack flexDirection={"row"} alignItems={"center"} gap={1}>
         <Avatar sx={{ height: 48, width: 48, background: Colors.disabled }}>
           {userInitial}
         </Avatar>
+        <Typography
+          variant="body1"
+          sx={{ color: Colors.black, paddingLeft: "8px" }}
+        >
+          {post.username}
+        </Typography>
         <Typography variant="body1" sx={{ color: Colors.black }}>
-          {userName}
+          -
+        </Typography>
+        <Typography variant="body1" sx={{ color: Colors.black }}>
+          {timeAgo(post.timestamp)}
         </Typography>
       </Stack>
       <Typography variant="h1" sx={{ pt: 2 }}>
@@ -114,13 +129,18 @@ export default function Post({
         <Stack spacing={2} sx={{ pt: 2 }} className="commentsContainer">
           {post.comments?.map((comment, idx) => (
             <Box key={idx}>
-              <Typography variant="body2" sx={{ fontWeight: "bold" }}>
-                {comment.username}
-              </Typography>
+              <Stack direction="row" gap={1}>
+                <Typography variant="body2" sx={{ fontWeight: "bold" }}>
+                  {comment.username}
+                </Typography>
+                <Typography variant="body1" sx={{ color: Colors.black }}>
+                  -
+                </Typography>
+                <Typography variant="body1" sx={{ color: Colors.black }}>
+                  {timeAgo(post.timestamp)}
+                </Typography>
+              </Stack>
               <Typography variant="body2">{comment.content}</Typography>
-              <Typography variant="caption" sx={{ color: Colors.disabled }}>
-                {new Date(comment.timestamp).toLocaleString()}
-              </Typography>
               <LikesComponent
                 initialLikes={comment.likes?.length || 0} // Ensure likes is always defined
                 initialUserVote={

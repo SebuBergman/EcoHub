@@ -38,15 +38,16 @@ export default function NewPost() {
   const handleClose = () => setOpen(false);
 
   return (
-    <Box sx={{display: "flex", justifyContent: "flex-end", margin: "20px 0"}}>
-        <Button variant="contained" color="primary" onClick={handleOpen}>
-          Create +
-        </Button>
+    <Box sx={{ display: "flex", justifyContent: "flex-end", margin: "20px 0" }}>
+      <Button variant="contained" color="primary" onClick={handleOpen}>
+        Create +
+      </Button>
       <Modal
         open={open}
         onClose={handleClose}
         aria-labelledby="new-post-modal-title"
         aria-describedby="new-post-modal-description"
+        className="modalContainer"
       >
         <Box className="modalStyle">
           <Typography id="new-post-modal-title" variant="h6" component="h2">
@@ -60,6 +61,7 @@ export default function NewPost() {
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               required
+              sx={{ marginBottom: "0px" }}
             />
             <TextField
               fullWidth
@@ -70,9 +72,10 @@ export default function NewPost() {
               required
               multiline
               rows={4}
+              sx={{ marginBottom: "25px" }}
             />
             <Button type="submit" variant="contained" color="primary">
-              Post
+              Create Post
             </Button>
           </form>
         </Box>

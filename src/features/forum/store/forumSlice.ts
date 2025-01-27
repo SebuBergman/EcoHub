@@ -8,7 +8,7 @@ import {
   getDocs,
   getDoc,
 } from "firebase/firestore";
-import { Post} from "../types";
+import { Post } from "../types";
 import { Comment as CommentTypes } from "../types";
 
 interface ForumState {
@@ -22,10 +22,10 @@ const initialState: ForumState = {
 // Define async thunks for Firestore operations
 export const addPost = createAsyncThunk(
   "forum/addPost",
-  async (post: Omit<Post, "id">, { rejectWithValue }) => {
+  async (post: Omit<Post, "postId">, { rejectWithValue }) => {
     try {
-      await addDoc(collection(firestore, "posts"), post);
-      return post;
+      const docRef = await addDoc(collection(firestore, "posts"), post);
+      return { ...post, postId: docRef.id };
     } catch (error) {
       return rejectWithValue(error);
     }
@@ -37,15 +37,9 @@ export const fetchPosts = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const querySnapshot = await getDocs(collection(firestore, "posts"));
-      const posts: Post[] = [];
-      querySnapshot.forEach((doc) => {
-        const data = doc.data() as Post;
-        posts.push({
-          ...data,
-          postId: doc.id,
-          comments: data.comments || [],
-          likes: data.likes || [],
-        });
+      const posts: Post[] = querySnapshot.docs.map((doc) => {
+        const data = doc.data() as Omit<Post, "postId">;
+        return { ...data, postId: doc.id };
       });
       return posts;
     } catch (error) {
@@ -148,31 +142,16 @@ export const toggleCommentLike = createAsyncThunk(
 const forumSlice = createSlice({
   name: "forum",
   initialState,
-  reducers: {},
+  reducers: {
+    updatePostsLocally: (state, action: PayloadAction<Post[]>) => {
+      state.posts = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder
-      .addCase(
-        addPost.fulfilled,
-        (state, action: PayloadAction<Post>) => {
-          state.posts.push(action.payload);
-        }
-      )
       .addCase(fetchPosts.fulfilled, (state, action: PayloadAction<Post[]>) => {
         state.posts = action.payload;
       })
-      .addCase(
-        addComment.fulfilled,
-        (
-          state,
-          action: PayloadAction<{ postId: string; comment: CommentTypes }>
-        ) => {
-          const { postId, comment } = action.payload;
-          const post = state.posts.find((post) => post.postId === postId);
-          if (post) {
-            post.comments = [...(post.comments || []), comment];
-          }
-        }
-      )
       .addCase(
         toggleLike.fulfilled,
         (
@@ -205,4 +184,5 @@ const forumSlice = createSlice({
   },
 });
 
+export const { updatePostsLocally } = forumSlice.actions;
 export default forumSlice.reducer;
