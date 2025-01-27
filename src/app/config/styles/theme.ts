@@ -67,6 +67,16 @@ export const theme = createTheme({
         LinkComponent: LinkBehavior,
       },
     },
+    MuiOutlinedInput: {
+      styleOverrides: {
+        root: {
+          borderRadius: "10px",
+          "&:hover .MuiOutlinedInput-notchedOutline": {
+            borderColor: "#248823",
+          },
+        },
+      },
+    },
   },
 });
 

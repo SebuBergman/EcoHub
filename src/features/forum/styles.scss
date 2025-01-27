@@ -1,0 +1,52 @@
+.like-component {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40px; /* Adjust width as needed */
+    font-family: Arial, sans-serif;
+}
+
+.vote-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px; /* Adjust font size as needed */
+    color: grey;
+}
+
+.vote-button.active {
+    color: orange;
+}
+
+.like-count {
+    font-size: 20px;
+    margin: 5px 0;
+}
+
+.modalStyle {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    width: 50%;
+    background-color: white;
+};
+
+.modalContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.postContainer {
+    border-bottom: 1px solid #ccc;
+}
+
+.postContainer:last-child {
+    border-bottom: none;
+}
+
+.commentsContainer {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 32px;
+}
+

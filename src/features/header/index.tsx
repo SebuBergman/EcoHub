@@ -166,7 +166,13 @@ export default function App() {
               description="Join discussions and connect with like-minded individuals in our forum."
               startContent={<ForumOutlinedIcon />}
             >
-              Discussion Forum
+              <Link
+                href={AppRoutes.discussionForum}
+                aria-current="page"
+                color="foreground"
+              >
+                Discussion Forum
+              </Link>
             </DropdownItem>
           </DropdownMenu>
         </Dropdown>
@@ -294,7 +300,7 @@ export default function App() {
               startContent={<ContactMailOutlinedIcon />}
             >
               <Link
-                href={AppRoutes.PressAndMedia}
+                href={AppRoutes.pressAndMedia}
                 aria-current="page"
                 color="foreground"
               >
