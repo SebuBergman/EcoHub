@@ -9,6 +9,7 @@ import {
 
 import "./styles.scss";
 import { Stack } from "@mui/material";
+import { AppRoutes } from "@/app/config/routes";
 
 export default function Footer() {
   return (
@@ -43,14 +44,14 @@ export default function Footer() {
             <h4>Learn</h4>
             <ul>
               <li>
-                <a href="/environmental-issues">Environmental Issues</a>
+                <a href={AppRoutes.envIssues}>Environmental Issues</a>
               </li>
               <li>
-                <a href="/sustainable-living-tips">Sustainable Living Tips</a>
+                <a href={AppRoutes.sustainableLiving}>
+                  Sustainable Living Tips
+                </a>
               </li>
-              <li>
-                <a href="/green-innovations">Green Innovations</a>
-              </li>
+              <li>Green Innovations</li>
             </ul>
             <h4>Watch</h4>
             <ul>
@@ -60,7 +61,9 @@ export default function Footer() {
             <h4>Interact</h4>
             <ul>
               <li>Quizzes & Challenges</li>
-              <li>Discussion Forum</li>
+              <li>
+                <a href={AppRoutes.discussionForum}>Discussion Forum</a>
+              </li>
             </ul>
           </div>
           <div className="footer_navlinks_links">
@@ -81,11 +84,11 @@ export default function Footer() {
             <h4>About</h4>
             <ul>
               <li>
-                <a href="/mission_and_team">Mission & Team</a>
+                <a href={AppRoutes.missionTeam}>Mission & Team</a>
               </li>
               <li>News & Updates</li>
               <li>
-                <a href="/press_and_media">Press & Media</a>
+                <a href={AppRoutes.pressAndMedia}>Press & Media</a>
               </li>
             </ul>
           </div>

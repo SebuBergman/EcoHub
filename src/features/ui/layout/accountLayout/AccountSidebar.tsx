@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-
 import LogoutIcon from "@mui/icons-material/Logout";
 import {
   Avatar,
@@ -12,6 +11,7 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
+import { Link } from "@nextui-org/react";
 
 import { Colors, theme } from "@config/styles";
 import { selectUser } from "@features/auth/store/authSlice";
@@ -21,6 +21,7 @@ import { logout } from "@services/api";
 import { useAppSelector } from "@store/index";
 
 import { ACCOUNT_LINKS } from "./data";
+import { AppRoutes } from "@/app/config/routes";
 
 interface Props {
   onClose: () => void;
@@ -53,9 +54,11 @@ export default function AccountSidebar({ isMinimized, onClose }: Props) {
       }}
     >
       <Box>
-        <Box mb={6}>
-          <AppLogo isMinimized={isMinimized} />
-        </Box>
+        <Stack mb={6} alignItems={"center"}>
+          <Link href={AppRoutes.home}>
+            <AppLogo isMinimized={isMinimized} />
+          </Link>
+        </Stack>
         <Stack
           direction="row"
           alignItems="center"
