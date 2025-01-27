@@ -17,6 +17,7 @@ import {
   toggleNotifications,
 } from "../store/userDataSlice";
 import {RootState, useAppDispatch } from "@app/store/";
+import { v4 as uuidv4 } from "uuid";
 
 export default function UserDashboard() {
   const dispatch = useAppDispatch();
@@ -28,9 +29,7 @@ export default function UserDashboard() {
 
   const handleAddSocialLink = () => {
     if (newLinkUrl.trim()) {
-      dispatch(
-        addSocialLink({ id: crypto.randomUUID(), url: newLinkUrl.trim() })
-      );
+      dispatch(addSocialLink({ id: uuidv4(), url: newLinkUrl.trim() }));
       setNewLinkUrl("");
     }
   };

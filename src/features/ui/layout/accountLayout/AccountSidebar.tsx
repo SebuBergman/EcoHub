@@ -1,6 +1,6 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 
-import LogoutIcon from '@mui/icons-material/Logout';
+import LogoutIcon from "@mui/icons-material/Logout";
 import {
   Avatar,
   Box,
@@ -11,17 +11,16 @@ import {
   ListItemIcon,
   Stack,
   Typography,
-} from '@mui/material';
+} from "@mui/material";
 
-import { Colors, theme } from '@config/styles';
-import { selectUser } from '@features/auth/store/authSlice';
+import { Colors, theme } from "@config/styles";
+import { selectUser } from "@features/auth/store/authSlice";
 import AppLogo from "@features/ui/Icons/Logo";
-import { useBreakpoints } from '@hooks/useBreakpoints';
-import { logout } from '@services/api';
-import { useAppSelector } from '@store/index';
+import { useBreakpoints } from "@hooks/useBreakpoints";
+import { logout } from "@services/api";
+import { useAppSelector } from "@store/index";
 
-import { ACCOUNT_LINKS } from './data';
-
+import { ACCOUNT_LINKS } from "./data";
 
 interface Props {
   onClose: () => void;
@@ -31,7 +30,7 @@ interface Props {
 export default function AccountSidebar({ isMinimized, onClose }: Props) {
   const { md } = useBreakpoints();
   const user = useAppSelector(selectUser);
-  const userInitial = user?.displayName?.split(' ')[0][0];
+  const userInitial = user?.displayName?.split(" ")[0][0];
   const userName = user?.displayName;
 
   const onLinkClick = () => {

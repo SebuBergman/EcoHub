@@ -18,7 +18,6 @@ import PressAndMedia from "@/pages/about/pressAndMedia";
 import MissionAndTeam from "@/pages/about/missionAndteam";
 import DiscussionForum from "@/pages/interact/discussionForum";
 
-
 export default function AppRouter() {
   return (
     <Routes>
