@@ -1,5 +1,5 @@
 export interface Post {
-  id: string;
+  postId: string;
   userId: string | undefined;
   username: string | null | undefined;
   title: string;
@@ -10,6 +10,7 @@ export interface Post {
 }
 
 export interface Comment {
+  commentId: string;
   userId: string | undefined;
   username: string | null | undefined;
   content: string;
@@ -18,6 +19,7 @@ export interface Comment {
 }
 
 export interface newPost {
+  postId: string;
   userId: string | undefined;
   username: string | null | undefined;
   title: string;

@@ -40,7 +40,12 @@ export const fetchPosts = createAsyncThunk(
       const posts: Post[] = [];
       querySnapshot.forEach((doc) => {
         const data = doc.data() as Post;
-        posts.push({ ...data, id: doc.id }); // Ensure each post includes the doc ID
+        posts.push({
+          ...data,
+          postId: doc.id,
+          comments: data.comments || [],
+          likes: data.likes || [],
+        });
       });
       return posts;
     } catch (error) {
@@ -61,7 +66,7 @@ export const addComment = createAsyncThunk(
       const postData = postSnap.data();
       if (!postData) return rejectWithValue("Post not found");
 
-      const comments = postData.comments as CommentTypes[];
+      const comments = postData.comments || [];
       const newComments = [...comments, comment];
 
       await updateDoc(postRef, { comments: newComments });
@@ -101,6 +106,44 @@ export const toggleLike = createAsyncThunk(
   }
 );
 
+export const toggleCommentLike = createAsyncThunk(
+  "forum/toggleCommentLike",
+  async (
+    {
+      postId,
+      commentId,
+      userId,
+    }: { postId: string; commentId: number; userId: string },
+    { rejectWithValue }
+  ) => {
+    try {
+      const postRef = doc(firestore, "posts", postId);
+      const postSnap = await getDoc(postRef);
+      const postData = postSnap.data();
+      if (!postData) return rejectWithValue("Post not found");
+
+      const comments = postData.comments as CommentTypes[];
+      const comment = comments[commentId];
+      if (!comment) return rejectWithValue("Comment not found");
+
+      let newLikes: string[];
+
+      if (comment.likes.includes(userId)) {
+        newLikes = comment.likes.filter((id) => id !== userId);
+      } else {
+        newLikes = [...comment.likes, userId];
+      }
+
+      comments[commentId] = { ...comment, likes: newLikes };
+
+      await updateDoc(postRef, { comments });
+      return { postId, comments };
+    } catch (error) {
+      return rejectWithValue(error);
+    }
+  }
+);
+
 // Create the slice
 const forumSlice = createSlice({
   name: "forum",
@@ -110,8 +153,8 @@ const forumSlice = createSlice({
     builder
       .addCase(
         addPost.fulfilled,
-        (state, action: PayloadAction<Omit<Post, "id">>) => {
-          state.posts.push({ id: "", ...action.payload });
+        (state, action: PayloadAction<Post>) => {
+          state.posts.push(action.payload);
         }
       )
       .addCase(fetchPosts.fulfilled, (state, action: PayloadAction<Post[]>) => {
@@ -124,7 +167,7 @@ const forumSlice = createSlice({
           action: PayloadAction<{ postId: string; comment: CommentTypes }>
         ) => {
           const { postId, comment } = action.payload;
-          const post = state.posts.find((post) => post.id === postId);
+          const post = state.posts.find((post) => post.postId === postId);
           if (post) {
             post.comments = [...(post.comments || []), comment];
           }
@@ -140,9 +183,22 @@ const forumSlice = createSlice({
           }>
         ) => {
           const { postId, likes } = action.payload;
-          const post = state.posts.find((post) => post.id === postId);
+          const post = state.posts.find((post) => post.postId === postId);
           if (post) {
             post.likes = likes;
+          }
+        }
+      )
+      .addCase(
+        toggleCommentLike.fulfilled,
+        (
+          state,
+          action: PayloadAction<{ postId: string; comments: CommentTypes[] }>
+        ) => {
+          const { postId, comments } = action.payload;
+          const post = state.posts.find((post) => post.postId === postId);
+          if (post) {
+            post.comments = comments;
           }
         }
       );

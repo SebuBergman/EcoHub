@@ -30,3 +30,16 @@
     width: 50%;
     background-color: white;
 };
+
+.postContainer {
+    border-bottom: 1px solid #ccc;
+}
+
+.postContainer:last-child {
+    border-bottom: none;
+}
+
+.commentsContainer {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 32px;
+}
