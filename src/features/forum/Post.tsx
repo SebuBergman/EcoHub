@@ -11,8 +11,6 @@ import CommentIconComponent from "../ui/CommentIcon";
 import dayjs from "dayjs";
 import { timeAgo } from "@/app/services/date/formatDate";
 
-import SquareIcon from "@mui/icons-material/Square";
-
 interface Props {
   post: PostTypes;
   onLike: (postId: string, userId: string) => void;
