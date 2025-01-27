@@ -26,10 +26,16 @@
 .modalStyle {
     display: flex;
     flex-direction: column;
-    padding: 25px;
+    padding: 50px;
     width: 50%;
     background-color: white;
 };
+
+.modalContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .postContainer {
     border-bottom: 1px solid #ccc;
@@ -43,3 +49,4 @@
     border-bottom: 1px solid #ccc;
     margin-bottom: 32px;
 }
+
