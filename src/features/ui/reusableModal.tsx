@@ -19,7 +19,6 @@ export default function ReusableModal({
   onSubmit,
 }: Props) {
   return (
-    // Ensure the component properly returns JSX
     <Modal open={open} onClose={onClose}>
       <Box
         sx={{
