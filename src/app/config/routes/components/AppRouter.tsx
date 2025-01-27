@@ -23,14 +23,18 @@ export default function AppRouter() {
     <Routes>
       {/* Public Pages */}
       <Route path={AppRoutes.home} element={<HomePage />} />
+      {/* Learn Pages */}
       <Route path={AppRoutes.envIssues} element={<EnvIssuesPage />} />
-      <Route path={AppRoutes.pressAndMedia} element={<PressAndMedia />} />
-      <Route path={AppRoutes.missionTeam} element={<MissionAndTeam />} />
       <Route
         path={AppRoutes.sustainableLiving}
         element={<SustainableLiving />}
       />
+      {/* Interact Pages */}
       <Route path={AppRoutes.discussionForum} element={<DiscussionForum />} />
+      {/* About Pages */}
+      <Route path={AppRoutes.missionTeam} element={<MissionAndTeam />} />
+      <Route path={AppRoutes.pressAndMedia} element={<PressAndMedia />} />
+
       <Route element={<AuthLayout />}>
         <Route path={AppRoutes.signUp} element={<SignUpPage />} />
         <Route path={AppRoutes.login} element={<LoginPage />} />
