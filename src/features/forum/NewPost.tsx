@@ -18,7 +18,7 @@ export default function NewPost() {
     const date = dayjs(new Date()).toISOString();
     e.preventDefault();
     const newPost = {
-      id: uuidv4(),
+      postId: uuidv4(),
       userId: userId,
       username: username,
       title,

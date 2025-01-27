@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { RootState, useAppDispatch, useAppSelector } from "@app/store/";
-import { addComment, fetchPosts, toggleLike } from "./store/forumSlice";
+import { addComment, fetchPosts, toggleCommentLike, toggleLike } from "./store/forumSlice";
 import Post from "./Post";
 import { Stack } from "@mui/material";
 import NewPost from "./NewPost";
@@ -26,6 +26,22 @@ export default function PostList() {
     dispatch(addComment({ postId, comment }));
   };
 
+  const handleLikeComment = (
+    postId: string,
+    commentId: number,
+    userId: string
+  ) => {
+    dispatch(toggleCommentLike({ postId, commentId, userId }));
+  };
+
+  const handleDislikeComment = (
+    postId: string,
+    commentId: number,
+    userId: string
+  ) => {
+    dispatch(toggleCommentLike({ postId, commentId, userId }));
+  };
+
   return (
     <Stack
       sx={{
@@ -37,11 +53,13 @@ export default function PostList() {
       <NewPost />
       {posts.map((post) => (
         <Post
-          key={post.id}
+          key={post.postId}
           post={post}
           onLike={handleLike}
           onDislike={handleDislike}
           onAddComment={handleAddComment}
+          onLikeComment={handleLikeComment}
+          onDislikeComment={handleDislikeComment}
         />
       ))}
     </Stack>
