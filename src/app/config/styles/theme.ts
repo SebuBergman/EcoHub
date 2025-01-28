@@ -86,7 +86,7 @@ theme.typography.h1 = {
   fontSize: "2rem",
   lineHeight: "3rem",
   [theme.breakpoints.down("md")]: {
-    fontSize: "1.rem",
+    fontSize: "1.25rem",
     lineHeight: "2.25rem",
   },
 };
