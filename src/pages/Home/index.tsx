@@ -14,7 +14,7 @@ import AppButton from "@/features/ui/AppButton";
 
 export default function HomePage() {
   return (
-    <div className="pageContainer">
+    <Box className="pageContainer">
       <Header />
       <img alt="coverImage" src={HomePageHeroImage}></img>
       <HeroBox />
@@ -185,6 +185,6 @@ export default function HomePage() {
         </Stack>
       </Box>
       <Footer />
-    </div>
+    </Box>
   );
 };
