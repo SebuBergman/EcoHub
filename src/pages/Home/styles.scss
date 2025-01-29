@@ -82,60 +82,7 @@ h1 {
   flex: 1;
 }
 
-.frontPage_container1_boxContainers {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 60px 0px 60px 0px;
-  margin-top: 100px;
-
-  .frontPage_container1_box {
-    width: 380px;
-    padding-right: 40px;
-  }
-
-  .frontPage_container1_boxes {
-    width: 456px;
-    margin: 0px 15px 0px 15px;
-
-    p {
-      margin: 0px;
-    }
-
-    .divider {
-      background-color: #cdcdcd;
-      height: 1px;
-      margin: 15px 0px 15px 0px;
-    }
-
-    .frontPage_container1_boxes_div {
-      min-height: 190px;
-      margin-bottom: 14px;
-    }
-  }
-}
-
-.frontPage_container2 {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin: 60px 0px 60px 0px;
-
-  .frontPage_container2_image {
-    width: 600px;
-    height: 800px;
-  }
-
-  .frontPage_container2_textContainer {
-    width: 810px;
-    padding: 0px 100px 0px 100px;
-  }
-}
-
 .frontPage_squares {
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;

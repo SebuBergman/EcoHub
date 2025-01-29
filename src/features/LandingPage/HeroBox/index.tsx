@@ -20,12 +20,16 @@ function HeroBox() {
           top: "auto",
           left: "auto",
           width: { xs: "100%", md: "520px" },
-          height: { xs: 500, md: 520 },
+          height: { xs: 380, md: 520 },
           borderRadius: 8,
         }}
       >
         <Stack sx={{ flexWrap: "wrap" }}>
-          <Stack sx={{ padding: "110px 40px 0px 40px" }}>
+          <Stack
+            sx={{
+              padding: { xs: "40px 40px 0px 40px", md: "110px 40px 0px 40px" },
+            }}
+          >
             <Typography variant="h1" pb={2}>
               EcoHub: Centre for Sustainable Living
             </Typography>
@@ -50,6 +54,7 @@ function HeroBox() {
                 borderBottom: "3px solid #248823",
                 height: "60px",
                 padding: "0px 20px 0px 20px",
+                fontSize: { xs: "0.75rem", md: "1rem" },
               }}
             >
               HOW TO GET INVOLVED
@@ -65,6 +70,7 @@ function HeroBox() {
                 borderBottom: "3px solid #248823",
                 height: "60px",
                 padding: "0px 20px 0px 20px",
+                fontSize: { xs: "0.75rem", md: "1rem" },
               }}
             >
               {" "}

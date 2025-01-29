@@ -12,23 +12,46 @@ import "swiper/css/navigation";
 import "./styles.scss";
 
 // import required modules
-import { Pagination, Navigation } from "swiper/modules";
-import { Typography } from "@mui/material";
+import { Navigation, Pagination, History } from "swiper/modules";
+import { Box, Stack, Typography } from "@mui/material";
 
-export default function App() {
+export default function CarouselComponent() {
   return (
-    <div className="CarouselContainer">
+    <Stack
+      className="CarouselContainer"
+      sx={{ bgcolor: "#f8f8f8", padding: "40px 50px 40px 50px" }}
+    >
       <Swiper
-        pagination={{
-          type: "fraction",
-        }}
+        spaceBetween={50}
+        slidesPerView={1}
         navigation={true}
-        modules={[Pagination, Navigation]}
+        pagination={true}
+        history={{
+          key: "slide",
+        }}
+        modules={[Navigation, Pagination, History]}
         className="mySwiper"
       >
         <SwiperSlide>
-          <img src={Carousel1} alt="Carousel 1"></img>
-          <div className="textContainer">
+          <Box
+            component="img"
+            src={Carousel1}
+            alt="Carousel 1"
+            sx={{
+              height: { xs: "100%" },
+              width: { xs: "100%", md: "680px" },
+              borderRadius: "30px",
+            }}
+          />
+          <Stack
+            sx={{
+              textAlign: { xs: "center", md: "left" },
+              padding: { xs: "45px 0px 0px 0px", md: "0px 0px 0px 40px" },
+              width: { md: "500px" },
+              flexDirection: { xs: "column", md: "column" },
+              marginBottom: { xs: "50px" },
+            }}
+          >
             <Typography variant="h2" sx={{ color: "#248823" }}>
               Explore, learn and act
             </Typography>
@@ -39,11 +62,28 @@ export default function App() {
               Take part in interactive quizzes and challenges and join a lively
               discussion forum to exchange ideas with a like-minded community.
             </Typography>
-          </div>
+          </Stack>
         </SwiperSlide>
         <SwiperSlide>
-          <img src={Carousel2} alt="Carousel 2"></img>
-          <div className="textContainer">
+          <Box
+            component="img"
+            src={Carousel2}
+            alt="Carousel 2"
+            sx={{
+              height: { xs: "100%" },
+              width: { xs: "100%", md: "680px" },
+              borderRadius: "30px",
+            }}
+          />
+          <Stack
+            sx={{
+              textAlign: { xs: "center", md: "left" },
+              padding: { xs: "45px 0px 0px 0px", md: "0px 0px 0px 40px" },
+              width: { md: "500px" },
+              flexDirection: { xs: "column", md: "column" },
+              marginBottom: { xs: "50px" },
+            }}
+          >
             <Typography variant="h2" sx={{ color: "#248823" }}>
               Calculate your impact
             </Typography>
@@ -53,11 +93,28 @@ export default function App() {
               Explore ways to reduce your footprint and make eco-conscious
               choices in your daily life.
             </Typography>
-          </div>
+          </Stack>
         </SwiperSlide>
         <SwiperSlide>
-          <img src={Carousel3} alt="Carousel 3"></img>
-          <div className="textContainer">
+          <Box
+            component="img"
+            src={Carousel3}
+            alt="Carousel 3"
+            sx={{
+              height: { xs: "100%" },
+              width: { xs: "100%", md: "680px" },
+              borderRadius: "30px",
+            }}
+          />
+          <Stack
+            sx={{
+              textAlign: { xs: "center", md: "left" },
+              padding: { xs: "45px 0px 0px 0px", md: "0px 0px 0px 40px" },
+              width: { md: "500px" },
+              flexDirection: { xs: "column", md: "column" },
+              marginBottom: { xs: "50px" },
+            }}
+          >
             <Typography variant="h2" sx={{ color: "#248823" }}>
               Resources for action
             </Typography>
@@ -67,9 +124,9 @@ export default function App() {
               involved in local initiatives and take meaningful steps towards a
               more sustainable lifestyle.
             </Typography>
-          </div>
+          </Stack>
         </SwiperSlide>
       </Swiper>
-    </div>
+    </Stack>
   );
 }
