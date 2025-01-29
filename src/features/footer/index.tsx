@@ -147,7 +147,7 @@ export default function Footer() {
           </Stack>
         </Stack>
         <Stack
-          sx={{ p: { xs: "25px 20px", md: "0px 48px" }, flexDirection: {xs: "column", md: "row"}, alignItems: {xs: "center"} }} gap={1}
+          sx={{ p: { xs: "25px 20px", md: "25px 48px" }, flexDirection: {xs: "column", md: "row"}, alignItems: {xs: "center"} }} gap={1}
         >
           <Stack sx={{ flex: 1, flexWrap: "flex-start" }}>
             <p>© 2024 EcoHub.</p>
