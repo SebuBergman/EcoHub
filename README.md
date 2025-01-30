@@ -74,11 +74,12 @@ Maybe you can mention me or this repo in the acknowledgements too
 </div>
 
 <!-- Screenshots -->
-### :camera: Screenshots
+### :camera: Screenshots/Video
 
 <div align="center"> 
   <p>A screenshot of the front page</p>
   <img src="https://github.com/SebuBergman/EcoHub/blob/main/src/assets/EcoHub_FrontPage.png" alt="FrontPage" />
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/3nbMg8a8-DU?si=VqjzyuVYPTnvevKq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
 
