@@ -19,3 +19,31 @@
 .nav-link {
   font-size: 18px !important;
 }
+
+.mobileNavContainer {
+  position: absolute;
+  display: none;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+.spaceTop {
+  margin-top: 15px;
+}
+
+.spaceBottom {
+  margin-bottom: 15px;
+}
+
+.accountContainer {
+  margin-top: 5px;
+  margin-bottom: 20px;
+}

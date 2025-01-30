@@ -14,13 +14,26 @@ import AppButton from "@/features/ui/AppButton";
 
 export default function HomePage() {
   return (
-    <div className="pageContainer">
+    <Box className="pageContainer">
       <Header />
       <img alt="coverImage" src={HomePageHeroImage}></img>
       <HeroBox />
-      <div className="frontPage_container1">
-        <div className="frontPage_container1_boxContainers">
-          <div className="frontPage_container1_box">
+      <Stack>
+        <Stack
+          sx={{
+            flexDirection: { xs: "column", md: "row" },
+            justifyContent: "center",
+            alignItems: "center",
+            padding: { xs: "0px", md: "60px 0px 60px 0px" },
+            marginTop: { xs: "80px", md: "100px" },
+          }}
+        >
+          <Stack
+            sx={{
+              width: { md: "380px" },
+              padding: { xs: "0px 15px", md: "0px 40px 0px 0px" },
+            }}
+          >
             <Typography variant="h1">
               Connect with Nature, Connect with EcoHub
             </Typography>
@@ -31,9 +44,26 @@ export default function HomePage() {
               towards sustainability, EcoHub is your go-to destination for
               inspiration, education, and action.
             </Typography>
-          </div>
-          <div className="frontPage_container1_boxes">
-            <div className="frontPage_container1_boxes_div">
+            <Stack
+              sx={{
+                bgcolor: "#cdcdcd",
+                height: { xs: "1px", md: "0px" },
+                margin: { xs: "15px 0px 15px 0px" },
+              }}
+            ></Stack>
+          </Stack>
+          <Stack
+            sx={{
+              width: { md: "456px" },
+              padding: "0px 15px 0px 15px",
+            }}
+          >
+            <Stack
+              sx={{
+                minHeight: { md: "190px" },
+                marginBottom: { xs: "0px", md: "14px" },
+              }}
+            >
               <Typography variant="h5" className="forestGreen">
                 A Platform for Change
               </Typography>
@@ -44,9 +74,20 @@ export default function HomePage() {
                 in meaningful discussions, and connecting with like-minded
                 individuals from around the globe.
               </Typography>
-            </div>
-            <div className="divider"></div>
-            <div className="frontPage_container1_boxes_div">
+            </Stack>
+            <Stack
+              sx={{
+                bgcolor: "#cdcdcd",
+                height: "1px",
+                margin: "15px 0px 15px 0px",
+              }}
+            ></Stack>
+            <Stack
+              sx={{
+                minHeight: { md: "190px" },
+                marginBottom: { xs: "0px", md: "14px" },
+              }}
+            >
               <Typography variant="h5" className="forestGreen">
                 Discover Endless Possibilities
               </Typography>
@@ -57,10 +98,27 @@ export default function HomePage() {
                 practical tips and tools, there's something for everyone at
                 EcoHub.
               </Typography>
-            </div>
-          </div>
-          <div className="frontPage_container1_boxes">
-            <div className="frontPage_container1_boxes_div">
+            </Stack>
+            <Stack
+              sx={{
+                bgcolor: "#cdcdcd",
+                height: { xs: "1px", md: "0px" },
+                margin: { xs: "15px 0px 15px 0px" },
+              }}
+            ></Stack>
+          </Stack>
+          <Stack
+            sx={{
+              width: { md: "456px" },
+              padding: "0px 15px 0px 15px",
+            }}
+          >
+            <Stack
+              sx={{
+                minHeight: { md: "190px" },
+                marginBottom: { xs: "0px", md: "14px" },
+              }}
+            >
               <Typography variant="h5" className="forestGreen">
                 Measure Your Impact, Make a Difference
               </Typography>
@@ -70,9 +128,20 @@ export default function HomePage() {
                 your daily habits, identify areas for improvement, and make
                 positive changes that benefit both you and the planet.
               </Typography>
-            </div>
-            <div className="divider"></div>
-            <div className="frontPage_container1_boxes_div">
+            </Stack>
+            <Stack
+              sx={{
+                bgcolor: "#cdcdcd",
+                height: "1px",
+                margin: "15px 0px 15px 0px",
+              }}
+            ></Stack>
+            <Stack
+              sx={{
+                minHeight: { md: "190px" },
+                marginBottom: "14px",
+              }}
+            >
               <Typography variant="h5" className="forestGreen">
                 Community, Connection, Collaboration
               </Typography>
@@ -82,18 +151,35 @@ export default function HomePage() {
                 your achievements, and inspire others to join the movement
                 towards a more sustainable future.
               </Typography>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="frontPage_container2">
-        <img
+            </Stack>
+          </Stack>
+        </Stack>
+      </Stack>
+      <Stack
+        sx={{
+          flexDirection: { xs: "column", md: "row" },
+          justifyContent: "center",
+          alignItems: "center",
+          marginTop: { xs: "80px", md: "50px" },
+          marginBottom: { xs: "80px", md: "50px" },
+        }}
+      >
+        <Box
+          component="img"
           src={HomeImage1}
           alt="Start Your Journey Today"
-          className="frontPage_container2_image"
-        ></img>
-        <Stack className="frontPage_container2_textContainer">
-          <Stack gap={1}>
+          sx={{
+            width: { xs: "100%", md: "500px" },
+            height: { xs: "500px", md: "600px" },
+          }}
+        />
+        <Stack
+          sx={{
+            width: { md: "810px" },
+            padding: { xs: "0px 15px", md: "0px 100px 0px 100px" },
+          }}
+        >
+          <Stack gap={1} sx={{ pt: { xs: 2, md: 0 } }}>
             <Typography variant="h2">Start Your Journey Today</Typography>
             <Typography variant="body1">
               Ready to make a difference? Dive into EcoHub and discover the
@@ -108,13 +194,18 @@ export default function HomePage() {
             <Stack pt={4}>
               <Box
                 component="form"
-                sx={{ "& .MuiTextField-root": { mr: 3, width: "45ch" } }}
+                sx={{
+                  display: "flex",
+                  "& .MuiTextField-root": {
+                    mr: { xs: 1, md: 3 },
+                    width: { xs: "100%", md: "45ch" },
+                  },
+                }}
                 noValidate
                 autoComplete="off"
-                justifyContent={"center"}
                 alignItems={"center"}
               >
-                <TextField id="exampleInputEmail1" label="Email" />
+                <TextField id="exampleInputEmail1" label="Email" fullWidth />
                 <AppButton color="success" type="submit">
                   Tilaa
                 </AppButton>
@@ -122,31 +213,77 @@ export default function HomePage() {
             </Stack>
           </Stack>
         </Stack>
-      </div>
+      </Stack>
       <Carousel />
       <Box>
         <Stack
-          sx={{ backgroundColor: "#00381E", minHeight: "400px" }}
+          sx={{
+            backgroundColor: "#00381E",
+            minHeight: { xs: "200px", md: "400px" },
+            padding: { xs: "0px 15px" },
+          }}
           alignItems={"center"}
+          justifyContent={"center"}
         >
-          <Typography variant="h1" color="white" mt={10}>
+          <Typography variant="h1" color="white">
             How to get involved
           </Typography>
-          <Typography variant="body1" color="white" mt={2}>
+          <Typography
+            variant="body1"
+            color="white"
+            mt={2}
+            sx={{ textAlign: "center" }}
+          >
             Here's how to get involved with EcoHub and sustainability
           </Typography>
         </Stack>
-        <Stack className="frontPage_squares" sx={{ mt: "-160px" }}>
-          <Stack className="frontPage_squares_row" flexDirection={"row"}>
+        <Stack
+          sx={{
+            mt: "-160px",
+            flexDirection: { xs: "column", md: "column" },
+            justifyContent: "center",
+            alignItems: "center",
+            margin: { xs: "0px 15px", md: "60px 0px 60px 0px" },
+          }}
+        >
+          <Stack
+            sx={{
+              flexDirection: { xs: "column", md: "row" },
+            }}
+          >
             <Stack
-              className="frontPage_squares_boxes"
-              sx={{ backgroundColor: "#fff" }}
+              sx={{
+                bgcolor: "#fff",
+                flexDirection: { xs: "column", md: "column" },
+                alignItems: "center",
+                justifyContent: "center",
+                textAlign: "center",
+                padding: { xs: "20px 0px", md: "0px 40px 0px 40px" },
+                width: { xs: "100%", md: "690px" },
+              }}
             >
-              <Typography variant="h2" className="frontPage_squares_text">
+              <Typography
+                variant="h2"
+                sx={{
+                  padding: { xs: "10px 0px", md: "0px" },
+                }}
+              >
                 Join us in building a greener tomorrow
               </Typography>
-              <div className="green_divider"></div>
-              <Typography variant="body1" className="frontPage_squares_text">
+              <Stack
+                sx={{
+                  bgcolor: "#248823",
+                  width: { xs: "100%", md: "50px" },
+                  height: { xs: "5px", md: "10px" },
+                  margin: { xs: "0px", md: "20px 0 20px 0px" },
+                }}
+              ></Stack>
+              <Typography
+                variant="body1"
+                sx={{
+                  padding: { xs: "10px 0px", md: "0px" },
+                }}
+              >
                 Together we can make a difference. Join EcoHub and become part
                 of the global movement towards a more sustainable and
                 environmentally conscious future.
@@ -155,23 +292,63 @@ export default function HomePage() {
                 Join
               </AppButton>
             </Stack>
-            <Stack className="frontPage_squares_boxesImage">
+            <Stack
+              sx={{
+                minWidth: { xs: "100%", md: "690px" },
+              }}
+            >
               <img
                 src={ImageBox1}
                 alt="A park with a path leading to a round table"
               ></img>
             </Stack>
           </Stack>
-          <Stack className="frontPage_squares_row" flexDirection={"row"}>
-            <Stack className="frontPage_squares_boxesImage">
+          <Stack
+            sx={{
+              flexDirection: { xs: "column-reverse", md: "row" },
+              padding: { xs: "0px 0px" },
+            }}
+          >
+            <Stack
+              sx={{
+                minWidth: { xs: "100%", md: "690px" },
+              }}
+            >
               <img src={ImageBox2} alt="A park with a path with trees"></img>
             </Stack>
-            <Stack className="frontPage_squares_boxes">
-              <Typography variant="h2" className="frontPage_squares_text">
+            <Stack
+              sx={{
+                bgcolor: "#fff",
+                flexDirection: { xs: "column", md: "column" },
+                alignItems: "center",
+                justifyContent: "center",
+                textAlign: "center",
+                padding: { xs: "20px 0px", md: "0px 40px 0px 40px" },
+                width: { xs: "100%", md: "690px" },
+              }}
+            >
+              <Typography
+                variant="h2"
+                sx={{
+                  padding: { xs: "10px 0px", md: "0px" },
+                }}
+              >
                 Get involved and tell your story
               </Typography>
-              <div className="green_divider"></div>
-              <Typography variant="body1" className="frontPage_squares_text">
+              <Stack
+                sx={{
+                  bgcolor: "#248823",
+                  width: { xs: "100%", md: "50px" },
+                  height: { xs: "5px", md: "10px" },
+                  margin: { xs: "0px", md: "20px 0 20px 0px" },
+                }}
+              ></Stack>
+              <Typography
+                variant="body1"
+                sx={{
+                  padding: { xs: "10px 0px", md: "0px" },
+                }}
+              >
                 Create a profile, earn badges for your sustainable actions and
                 participate in our community by sharing your success stories.
                 Whether you're taking small steps or leading major initiatives,
@@ -185,6 +362,6 @@ export default function HomePage() {
         </Stack>
       </Box>
       <Footer />
-    </div>
+    </Box>
   );
-};
+}
