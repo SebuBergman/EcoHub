@@ -9,6 +9,7 @@ import SustainableLiving from "@/pages/learn/sustainableLiving";
 import AuthLayout from "@/features/ui/layout/AuthLayout";
 import SignUpPage from "@/pages/register";
 import LoginPage from "@/pages/login";
+import NotYetFinished from "@/pages/not-implemented";
 
 import { AppRoutes } from "../AppRoutes";
 import ProtectedRoute from "./ProtectedRoute";
@@ -39,7 +40,7 @@ export default function AppRouter() {
         <Route path={AppRoutes.signUp} element={<SignUpPage />} />
         <Route path={AppRoutes.login} element={<LoginPage />} />
       </Route>
-      {/* Account Pages */}
+      {/* User account Pages */}
       <Route
         element={
           <ProtectedRoute>
@@ -53,6 +54,8 @@ export default function AppRouter() {
       </Route>
       {/* Not Found Page */}
       <Route path="*" element={<NotFoundPage />} />
+      {/* Not implemented yet */}
+      <Route path={AppRoutes.notImplemented} element={<NotYetFinished />} />
     </Routes>
   );
 }
