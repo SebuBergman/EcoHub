@@ -80,6 +80,7 @@ Maybe you can mention me or this repo in the acknowledgements too
   <p>A screenshot of the front page</p>
   <img src="https://github.com/SebuBergman/EcoHub/blob/main/src/assets/EcoHub_FrontPage.png" alt="FrontPage" />
   [![A small glimple into my ecohub progress](https://img.youtube.com/vi/PpG7rtFujiA/0.jpg)]](https://www.youtube.com/watch?v=PpG7rtFujiA)
+  [![A small glimple into my ecohub progress](https://i.sstatic.net/q3ceS.png)](https://youtu.be/PpG7rtFujiAt "Everything Is AWESOME")
 </div>
 
 
