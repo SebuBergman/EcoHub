@@ -135,7 +135,7 @@ export default function Post({
                   -
                 </Typography>
                 <Typography variant="body1" sx={{ color: Colors.black }}>
-                  {timeAgo(post.timestamp)}
+                  {timeAgo(comment.timestamp)}
                 </Typography>
               </Stack>
               <Typography variant="body2">{comment.content}</Typography>

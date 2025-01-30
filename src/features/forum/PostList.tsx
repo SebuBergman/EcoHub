@@ -23,9 +23,15 @@ export default function PostList() {
         ...doc.data(),
         postId: doc.id,
       })) as PostTypes[];
+
+      // Sort posts by timestamp in descending order
+      updatedPosts.sort(
+        (a, b) =>
+          new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
+      );
+      
       // Dispatch an action to update the posts in local state
       dispatch(updatePostsLocally(updatedPosts));
-      console.log("Double? In useEffect" + updatedPosts);
     });
 
     // Cleanup the listener on unmount

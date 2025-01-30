@@ -13,7 +13,6 @@ async function handleAuthError(authFunction: () => Promise<void>) {
     await authFunction();
   } catch (error) {
     if (error instanceof FirebaseError) {
-      console.log(error, "error");
       throw Error(mapAuthCodeToMessage(error.code));
     }
 

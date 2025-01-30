@@ -24,7 +24,7 @@ export default function LoginForm() {
   if (auth.user) {
     // Send them back to the page they tried to visit when they were
     // redirected to the login page.
-    const from = location.state?.from?.pathname || AppRoutes.dashboard;
+    const from = location.state?.from?.pathname || AppRoutes.home;
     return <Navigate to={from} replace />;
   }
 

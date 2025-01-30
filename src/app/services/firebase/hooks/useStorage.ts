@@ -16,7 +16,6 @@ export const saveUserDataToFirestore = async (
 
   try {
     await setDoc(userDocRef, userData, { merge: true });
-    console.log("User data saved to Firestore successfully!");
   } catch (error) {
     console.error("Error saving user data:", error);
   }
