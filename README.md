@@ -113,7 +113,7 @@ Maybe you can mention me or this repo in the acknowledgements too
 - User page
 - User engagement (Sustainability quizzes & challenges, success stories etc.)
 - Environmental empowerment & raising of awareness for environmental issues
-- Some kind of forum?
+- Web Forum
 
 <!-- Color Reference -->
 ### :art: Color Reference
