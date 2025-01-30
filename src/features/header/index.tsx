@@ -122,6 +122,7 @@ export default function Header() {
                   key="green_innovations"
                   description="Learn about innovative technologies and solutions driving sustainability forward."
                   startContent={<VolunteerActivismOutlinedIcon />}
+                  href={AppRoutes.notImplemented}
                 >
                   Green Innovations
                 </DropdownItem>
@@ -151,6 +152,7 @@ export default function Header() {
                   key="videos"
                   description="Watch engaging videos on environmental topics and success stories."
                   startContent={<VideocamOutlinedIcon />}
+                  href={AppRoutes.notImplemented}
                 >
                   Videos
                 </DropdownItem>
@@ -158,6 +160,7 @@ export default function Header() {
                   key="success_stories"
                   description="Get inspired by real-life stories of individuals and organizations making a difference."
                   startContent={<AutoStoriesOutlinedIcon />}
+                  href={AppRoutes.notImplemented}
                 >
                   Success Stories
                 </DropdownItem>
@@ -187,6 +190,7 @@ export default function Header() {
                   key="quizzes_and_challenges"
                   description="Test your knowledge with quizzes and take on exciting sustainability challenges."
                   startContent={<QuizOutlinedIcon />}
+                  href={AppRoutes.notImplemented}
                 >
                   Quizzes & Challenges
                 </DropdownItem>
@@ -194,6 +198,7 @@ export default function Header() {
                   key="discussion_forum"
                   description="Join discussions and connect with like-minded individuals in our forum."
                   startContent={<ForumOutlinedIcon />}
+                  href={AppRoutes.discussionForum}
                 >
                   <Link
                     href={AppRoutes.discussionForum}
@@ -229,6 +234,7 @@ export default function Header() {
                   key="downloads_and_library"
                   description="Access a library of eco-friendly guides, research, and tools."
                   startContent={<FileDownloadOutlinedIcon />}
+                  href={AppRoutes.notImplemented}
                 >
                   Downloads & Library
                 </DropdownItem>
@@ -236,6 +242,7 @@ export default function Header() {
                   key="environmental_impact_assessment"
                   description="Calculate and assess your environmental impact with our tools."
                   startContent={<Co2OutlinedIcon />}
+                  href={AppRoutes.notImplemented}
                 >
                   Environmental Impact Assessment
                 </DropdownItem>
@@ -265,6 +272,7 @@ export default function Header() {
                   key="user_stories"
                   description="Explore stories shared by users about their journey toward sustainability."
                   startContent={<PersonSearchOutlinedIcon />}
+                  href={AppRoutes.notImplemented}
                 >
                   User Stories
                 </DropdownItem>
@@ -272,6 +280,7 @@ export default function Header() {
                   key="submit_your_story"
                   description="Share your own sustainability journey and inspire others."
                   startContent={<HistoryEduOutlinedIcon />}
+                  href={AppRoutes.notImplemented}
                 >
                   Submit Your Story
                 </DropdownItem>
@@ -315,6 +324,7 @@ export default function Header() {
                   key="news_and_updates"
                   description="Stay updated with the latest news and announcements from EcoHub."
                   startContent={<FeedOutlinedIcon />}
+                  href={AppRoutes.notImplemented}
                 >
                   News & Updates
                 </DropdownItem>

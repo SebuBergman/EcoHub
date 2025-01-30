@@ -10,4 +10,5 @@ export const AppRoutes = {
   missionTeam: "/mission_and_team",
   pressAndMedia: "/press_and_media",
   discussionForum: "/discussion_forum",
+  notImplemented: "/not_implemented",
 };

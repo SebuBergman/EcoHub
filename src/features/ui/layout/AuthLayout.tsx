@@ -28,13 +28,14 @@ export default function AuthLayout() {
           t.palette.mode === "light" ? t.palette.grey[50] : t.palette.grey[900],
         backgroundSize: "cover",
         backgroundPosition: "center",
+        px: {xs: 1}
       }}
     >
       <Grid>
         <Grid
           sx={{
             height: "100%",
-            mx: { xs: 2, md: 4 },
+            mx: { xs: 0, md: 4 },
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
@@ -42,7 +43,7 @@ export default function AuthLayout() {
             width: "100%",
             maxWidth: 552,
             backgroundColor: "white",
-            padding: { xs: 2, md: 4 },
+            padding: { xs: "25px", md: 4 },
           }}
         >
           <Stack mb={4} direction={"row"}>

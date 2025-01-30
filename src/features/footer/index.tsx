@@ -13,13 +13,19 @@ import { AppRoutes } from "@/app/config/routes";
 
 export default function Footer() {
   return (
-    <Box sx={{ bgcolor: "#f9fafb" }} mt={4} mb={4}>
+    <Box
+      sx={{
+        bgcolor: "#f9fafb",
+        marginTop: { xs: "0px", md: "32px" },
+        pb: 2
+      }}
+    >
       <Stack sx={{ maxWidth: "1280px", width: "100%", margin: "auto" }}>
         <Stack
           sx={{
             alignItems: "center",
             flexDirection: { xs: "column", md: "row" },
-            padding: { xs: "20px", md: "48px 0px 48px 0px" },
+            padding: { xs: "40px 20px 20px 20px", md: "30px 0px 20px 0px" },
           }}
         >
           <Stack sx={{ flex: { md: 2 }, pb: { xs: 2 } }}>
@@ -30,7 +36,7 @@ export default function Footer() {
               community.
             </Typography>
           </Stack>
-          <Stack sx={{ flex: { md: 2 }, flexDirection: "row", height: "58px" }}>
+          <Stack sx={{ flex: { md: 2 }, flexDirection: "row", height: "55px", width: "100%"}}>
             <TextField
               type="email"
               className="form-control"
@@ -43,7 +49,7 @@ export default function Footer() {
               sx={{
                 bgcolor: "#2e7d32",
                 ml: 1,
-                padding: { xs: "0px 15px", md: "0px 25px" },
+                padding: { xs: "0px 0px", md: "0px 25px" },
               }}
             >
               Tilaa
@@ -53,8 +59,7 @@ export default function Footer() {
         <Stack
           sx={{
             flexDirection: { xs: "column", md: "row" },
-            padding: { xs: "0px 20px" },
-            gap: "10px",
+            padding: { xs: "10px 20px", md: "10px 0px 10px 0px" },
           }}
         >
           <Stack sx={{ flex: { md: 1 }, flexDirection: { xs: "column" } }}>
@@ -147,7 +152,12 @@ export default function Footer() {
           </Stack>
         </Stack>
         <Stack
-          sx={{ p: { xs: "25px 20px", md: "25px 48px" }, flexDirection: {xs: "column", md: "row"}, alignItems: {xs: "center"} }} gap={1}
+          sx={{
+            p: { xs: "25px 20px", md: "25px 48px" },
+            flexDirection: { xs: "column", md: "row" },
+            alignItems: { xs: "center" },
+          }}
+          gap={1}
         >
           <Stack sx={{ flex: 1, flexWrap: "flex-start" }}>
             <p>© 2024 EcoHub.</p>

@@ -3,17 +3,24 @@ import { ENV_ISSUES_CARD_DATA } from "./data";
 
 export default function ENVIssuesCards() {
   return (
-    <Box>
+    <Box sx={{ mt: 2 }}>
       {ENV_ISSUES_CARD_DATA.map((item) => (
-        <Box>
-          <Stack direction="row" pb="40px">
+        <Box key={`${item.id}`}>
+          <Stack
+            sx={{
+              flexDirection: { xs: "column", md: "row" },
+              pb: { xs: "0px", mb: "40px" },
+            }}
+          >
             <Stack flex="1">
-              <img
+              <Box
+                component="img"
                 key={`${item.id}`}
                 src={`${item.path}`}
                 loading="lazy"
-                style={{
-                  width: "400px",
+                alt="Start Your Journey Today"
+                sx={{
+                  width: "100%",
                 }}
               />
             </Stack>
@@ -22,7 +29,7 @@ export default function ENVIssuesCards() {
               <Typography variant="body1">{item.text}</Typography>
             </Stack>
           </Stack>
-          <Divider sx={{marginBottom: "40px"}}/>
+          <Divider sx={{ marginBottom: { xs: "0px", md: "40px" } }} />
         </Box>
       ))}
     </Box>

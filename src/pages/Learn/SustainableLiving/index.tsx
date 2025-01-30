@@ -29,12 +29,14 @@ export default function sustainableLivingPage() {
           <Stack
             sx={{
               backgroundColor: "#384C54A1",
-              padding: 5,
+              padding: { xs: 2.5, md: 5 },
               borderRadius: "25px",
               textAlign: "center",
             }}
           >
-            <Typography variant="h3" color="white">Sustainable living</Typography>
+            <Typography variant="h3" color="white">
+              Sustainable living
+            </Typography>
           </Stack>
         </Stack>
       </Stack>
@@ -45,9 +47,15 @@ export default function sustainableLivingPage() {
           margin: "auto",
         }}
       >
-        <Stack sx={{ justifyContent: "center", alignItems: "center", mb: 20 }}>
+        <Stack sx={{ justifyContent: "center", alignItems: "center", mb: {xs: 2.5, md: 20} }}>
           <Stack
-            sx={{ textAlign: "center", padding: "80px 64.5px 80px 64.5px" }}
+            sx={{
+              textAlign: "center",
+              padding: {
+                xs: "40px 20px",
+                md: "80px 64.5px 80px 64.5px",
+              },
+            }}
           >
             <Typography variant="h2">
               Living sustainably: greener living: tips for a greener lifestyle

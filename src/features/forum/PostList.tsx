@@ -72,6 +72,7 @@ export default function PostList() {
         display: "flex",
         margin: "auto",
         maxWidth: "1366px",
+        p: {xs: "10px 20px"}
       }}
     >
       <NewPost/>

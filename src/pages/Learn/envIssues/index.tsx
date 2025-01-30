@@ -30,7 +30,7 @@ export default function EnvIssuesPage() {
           <Stack
             sx={{
               backgroundColor: "#384C54A1",
-              padding: 5,
+              padding: { xs: 2.5, md: 5 },
               borderRadius: "25px",
               textAlign: "center",
             }}
@@ -55,7 +55,13 @@ export default function EnvIssuesPage() {
       >
         <Stack sx={{ justifyContent: "center", alignItems: "center" }}>
           <Stack
-            sx={{ textAlign: "center", padding: "80px 64.5px 80px 64.5px" }}
+            sx={{
+              textAlign: "center",
+              padding: {
+                xs: "25px 20px",
+                md: "80px 64.5px 80px 64.5px",
+              },
+            }}
           >
             <Typography variant="h2">
               Understanding Environmental Issues and Taking Action
