@@ -82,7 +82,7 @@ Maybe you can mention me or this repo in the acknowledgements too
     <img src="https://github.com/SebuBergman/EcoHub/blob/main/public/EcoHub_screenshot.png" alt="Logo" width="1200">
   </a>
   <br>
-  <img src="https://github.com/SebuBergman/EcoHub/blob/main/src/assets/EcoHub_FrontPage.png" alt="FrontPage" />
+  <img src="https://github.com/SebuBergman/EcoHub/blob/main/public/EcoHub.gif" alt="FrontPage" />
 </div>
 
 
