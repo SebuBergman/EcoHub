@@ -77,11 +77,12 @@ Maybe you can mention me or this repo in the acknowledgements too
 ### :camera: Screenshots/Video
 
 <div align="center"> 
-  <p>A screenshot of the front page</p>
+  <p>Small glimpse of my progress video (Youtube link)</p>
   <a href="https://youtu.be/PpG7rtFujiAt">
     <img src="https://github.com/SebuBergman/EcoHub/blob/main/public/EcoHub_screenshot.png" alt="Logo" width="1200">
   </a>
   <br>
+  <p>Gif of the Landing Page</p>
   <img src="https://github.com/SebuBergman/EcoHub/blob/main/public/EcoHub.gif" alt="FrontPage" />
 </div>
 
