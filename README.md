@@ -81,6 +81,7 @@ Maybe you can mention me or this repo in the acknowledgements too
   <a href="https://youtu.be/PpG7rtFujiAt">
     <img src="https://github.com/SebuBergman/EcoHub/blob/main/public/EcoHub_screenshot.png" alt="Logo" width="80" height="80">
   </a>
+  <br>
   <img src="https://github.com/SebuBergman/EcoHub/blob/main/src/assets/EcoHub_FrontPage.png" alt="FrontPage" />
 </div>
 
