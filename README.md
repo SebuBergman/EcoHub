@@ -78,7 +78,7 @@ Maybe you can mention me or this repo in the acknowledgements too
 
 <div align="center"> 
   <p>Small glimpse of my progress video (Youtube link)</p>
-  <a href="https://youtu.be/PpG7rtFujiAt">
+  <a href="https://youtu.be/PpG7rtFujiAt" target="_blank">
     <img src="https://github.com/SebuBergman/EcoHub/blob/main/public/EcoHub_screenshot.png" alt="Logo" width="1200">
   </a>
   <br>
