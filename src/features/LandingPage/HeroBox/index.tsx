@@ -15,19 +15,19 @@ function HeroBox() {
           flexDirection: "row",
           bgcolor: "white",
           position: { md: "absolute" },
-          bottom: -59,
+          bottom: -60,
           right: 0,
           top: "auto",
           left: "auto",
           width: { xs: "100%", md: "520px" },
-          height: { xs: 380, md: 520 },
+          height: { xs: 380, md: 450 },
           borderRadius: 8,
         }}
       >
         <Stack sx={{ flexWrap: "wrap" }}>
           <Stack
             sx={{
-              padding: { xs: "40px 40px 0px 40px", md: "110px 40px 0px 40px" },
+              padding: { xs: "40px 40px 0px 40px", md: "80px 40px 0px 40px" },
             }}
           >
             <Typography variant="h1" pb={2}>
