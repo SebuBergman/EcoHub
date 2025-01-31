@@ -272,7 +272,7 @@ export default function Header() {
                   key="user_stories"
                   description="Explore stories shared by users about their journey toward sustainability."
                   startContent={<PersonSearchOutlinedIcon />}
-                  href={AppRoutes.notImplemented}
+                  href={AppRoutes.userStories}
                 >
                   User Stories
                 </DropdownItem>
@@ -280,7 +280,7 @@ export default function Header() {
                   key="submit_your_story"
                   description="Share your own sustainability journey and inspire others."
                   startContent={<HistoryEduOutlinedIcon />}
-                  href={AppRoutes.notImplemented}
+                  href={AppRoutes.submitUserStory}
                 >
                   Submit Your Story
                 </DropdownItem>
