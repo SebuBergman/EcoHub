@@ -12,7 +12,7 @@ import {
 
 import authReducer from "@features/auth/store/authSlice";
 import userDataReducer from "@/features/userData/store/userDataSlice";
-import ecoStoryReducer from "@/features/userData/store/ecoStorySlice";
+import ecoStoryReducer from "@/features/userStories/store/ecoStorySlice";
 
 import { rtkQueryErrorLogger } from "./middleware/errorMiddleware";
 import storage from "redux-persist/lib/storage";
