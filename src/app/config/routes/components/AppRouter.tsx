@@ -14,10 +14,11 @@ import NotYetFinished from "@/pages/not-implemented";
 import { AppRoutes } from "../AppRoutes";
 import ProtectedRoute from "./ProtectedRoute";
 import SettingsPage from "@/pages/user/settings";
-import UserEcoStory from "@/features/userData/components/ecoStory";
 import PressAndMedia from "@/pages/about/pressAndMedia";
 import MissionAndTeam from "@/pages/about/missionAndteam";
 import DiscussionForum from "@/pages/interact/discussionForum";
+import UserStories from "@/pages/engage/userStories";
+import SubmitUserStories from "@/pages/engage/userStorySubmission";
 
 export default function AppRouter() {
   return (
@@ -32,6 +33,9 @@ export default function AppRouter() {
       />
       {/* Interact Pages */}
       <Route path={AppRoutes.discussionForum} element={<DiscussionForum />} />
+      {/* Engage Pages */}
+      <Route path={AppRoutes.userStories} element={<UserStories />} />
+      <Route path={AppRoutes.submitUserStory} element={<SubmitUserStories />} />
       {/* About Pages */}
       <Route path={AppRoutes.missionTeam} element={<MissionAndTeam />} />
       <Route path={AppRoutes.pressAndMedia} element={<PressAndMedia />} />
@@ -49,7 +53,6 @@ export default function AppRouter() {
         }
       >
         <Route path={AppRoutes.dashboard} element={<UserDashboardPage />} />
-        <Route path={AppRoutes.ecoStory} element={<UserEcoStory />} />
         <Route path={AppRoutes.settings} element={<SettingsPage />} />
       </Route>
       {/* Not Found Page */}
