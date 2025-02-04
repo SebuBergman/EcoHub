@@ -1,4 +1,4 @@
-import { useAppDispatch, useAppSelector } from "@/app/store";
+import { useAppSelector } from "@/app/store";
 import {
   Box,
   Typography,
@@ -7,19 +7,9 @@ import {
   CardActions,
   Button,
 } from "@mui/material";
-import { updateStoryInFirestore } from "../userData/store/ecoStorySlice";
 
 export default function AdminPage() {
-  const dispatch = useAppDispatch();
   const stories = useAppSelector((state) => state.ecoStory.stories);
-
-  const handleApprove = (id: string) => {
-    dispatch(updateStoryInFirestore({ id, accepted: true }));
-  };
-
-  const handleReject = (id: string) => {
-    dispatch(updateStoryInFirestore({ id, accepted: false }));
-  };
 
   return (
     <Box sx={{ maxWidth: "800px", mx: "auto", mt: 4 }}>
@@ -27,7 +17,7 @@ export default function AdminPage() {
         Admin Story Approval
       </Typography>
       {stories.map((story) => (
-        <Card key={story.id} sx={{ mb: 2 }}>
+        <Card sx={{ mb: 2 }}>
           <CardContent>
             <Typography variant="h6">{story.title}</Typography>
             <Typography variant="body2" sx={{ mb: 2 }}>
@@ -44,7 +34,6 @@ export default function AdminPage() {
             <Button
               size="small"
               color="success"
-              onClick={() => handleApprove(story.id)}
               disabled={story.accepted}
             >
               Approve
@@ -52,7 +41,6 @@ export default function AdminPage() {
             <Button
               size="small"
               color="error"
-              onClick={() => handleReject(story.id)}
             >
               Reject
             </Button>
