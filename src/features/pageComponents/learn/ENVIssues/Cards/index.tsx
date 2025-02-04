@@ -29,7 +29,7 @@ export default function ENVIssuesCards() {
               <Typography variant="body1">{item.text}</Typography>
             </Stack>
           </Stack>
-          <Divider sx={{ marginBottom: { xs: "0px", md: "40px" } }} />
+          <Divider sx={{ marginBottom: { xs: "0px", md: "40px" }, paddingBottom: "40px" }} />
         </Box>
       ))}
     </Box>
