@@ -13,12 +13,12 @@ import NotYetFinished from "@/pages/not-implemented";
 
 import { AppRoutes } from "../AppRoutes";
 import ProtectedRoute from "./ProtectedRoute";
-import SettingsPage from "@/pages/user/settings";
-import PressAndMedia from "@/pages/about/pressAndMedia";
-import MissionAndTeam from "@/pages/about/missionAndteam";
-import DiscussionForum from "@/pages/interact/discussionForum";
-import UserStories from "@/pages/engage/userStories";
-import SubmitUserStories from "@/pages/engage/userStorySubmission";
+import SettingsPage from "@pages/user/settings";
+import PressAndMedia from "@pages/about/pressAndMedia";
+import MissionAndTeam from "@pages/about/missionAndteam";
+import DiscussionForum from "@pages/interact/discussionForum";
+import UserStories from "@pages/engage/userStories";
+import SubmitUserStories from "@pages/engage/userStorySubmission";
 
 export default function AppRouter() {
   return (
