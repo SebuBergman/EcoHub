@@ -14,17 +14,17 @@ import MissionAndTeam from "@pages/about/missionAndteam";
 import DiscussionForum from "@pages/interact/discussionForum";
 import UserStories from "@pages/engage/userStories";
 import SubmitUserStories from "@pages/engage/userStorySubmission";
-import HomePage from "@pages/home";
 import UserDashboardPage from "@pages/user/userDashboard";
 import SustainableLiving from "@/pages/learn/sustainableLiving";
 import SettingsPage from "@/pages/user/settings";
 import EnvIssuesPage from "@/pages/learn/envIssues";
+import LandingPage from "@/pages/home";
 
 export default function AppRouter() {
   return (
     <Routes>
       {/* Public Pages */}
-      <Route path={AppRoutes.home} element={<HomePage />} />
+      <Route path={AppRoutes.home} element={<LandingPage />} />
       {/* Learn Pages */}
       <Route path={AppRoutes.envIssues} element={<EnvIssuesPage />} />
       <Route

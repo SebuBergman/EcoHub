@@ -12,7 +12,7 @@ import "./styles.scss";
 import { Typography, TextField, Box, Stack } from "@mui/material";
 import AppButton from "@/features/ui/AppButton";
 
-export default function HomePage() {
+export default function LandingPage() {
   return (
     <Box className="pageContainer">
       <Header />
