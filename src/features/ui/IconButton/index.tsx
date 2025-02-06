@@ -14,7 +14,7 @@ interface Props {
   isLoading?: boolean;
 }
 
-export default function AppIconButton(props: Props) {
+export default function IconButton(props: Props) {
   return (
     <LoadingButton
       loading={props.isLoading}

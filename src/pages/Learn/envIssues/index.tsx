@@ -3,7 +3,7 @@ import Footer from "@features/footer";
 import ENVPageHeroImage from "@app/assets/images/envIssImage.webp";
 
 import { Box, Stack, Typography } from "@mui/material";
-import ENVIssuesCards from "@/features/pageComponents/learn/ENVIssues/Cards";
+import ENVIssuesCards from "@features/pageComponents/learn/ENVIssues/Cards";
 
 export default function EnvIssuesPage() {
   return (

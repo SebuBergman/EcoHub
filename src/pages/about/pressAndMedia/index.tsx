@@ -1,5 +1,5 @@
-import Footer from "@/features/footer";
-import Header from "@/features/header";
+import Footer from "@features/footer";
+import Header from "@features/header";
 import { Box, Typography, Button, Stack } from "@mui/material";
 
 export default function PressAndMedia() {

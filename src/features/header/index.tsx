@@ -13,9 +13,9 @@ import {
   Avatar,
 } from "@nextui-org/react";
 
-import { useBreakpoints } from "@/app/hooks/useBreakpoints";
+import { useBreakpoints } from "@app/hooks/useBreakpoints";
 import { IconButton, Stack } from "@mui/material";
-import { AppRoutes } from "@/app/config/routes/AppRoutes.js";
+import { AppRoutes } from "@app/config/routes/AppRoutes.js";
 import { logout } from "@services/api";
 
 import AppLogo from "../ui/Icons/Logo";
@@ -38,7 +38,7 @@ import FeedOutlinedIcon from "@mui/icons-material/FeedOutlined";
 import ContactMailOutlinedIcon from "@mui/icons-material/ContactMailOutlined";
 
 import "./style.scss";
-import { useAppSelector } from "@/app/store";
+import { useAppSelector } from "@app/store";
 import { selectAuth, selectUser } from "../auth/store/authSlice";
 
 export default function Header() {
@@ -272,7 +272,7 @@ export default function Header() {
                   key="user_stories"
                   description="Explore stories shared by users about their journey toward sustainability."
                   startContent={<PersonSearchOutlinedIcon />}
-                  href={AppRoutes.notImplemented}
+                  href={AppRoutes.userStories}
                 >
                   User Stories
                 </DropdownItem>
@@ -280,7 +280,7 @@ export default function Header() {
                   key="submit_your_story"
                   description="Share your own sustainability journey and inspire others."
                   startContent={<HistoryEduOutlinedIcon />}
-                  href={AppRoutes.notImplemented}
+                  href={AppRoutes.submitUserStory}
                 >
                   Submit Your Story
                 </DropdownItem>

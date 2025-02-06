@@ -9,7 +9,7 @@ import {
 
 import "./styles.scss";
 import { Box, Button, Stack, TextField, Typography } from "@mui/material";
-import { AppRoutes } from "@/app/config/routes";
+import { AppRoutes } from "@app/config/routes";
 
 export default function Footer() {
   return (

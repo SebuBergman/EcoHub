@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Box, Button, Modal, TextField, Typography } from "@mui/material";
 import { v4 as uuidv4 } from "uuid";
 import { addPost } from "./store/forumSlice";
-import { useAppDispatch, useAppSelector } from "@/app/store";
+import { useAppDispatch, useAppSelector } from "@app/store";
 import dayjs from "dayjs";
 
 export default function NewPost() {

@@ -11,4 +11,6 @@ export const AppRoutes = {
   pressAndMedia: "/press_and_media",
   discussionForum: "/discussion_forum",
   notImplemented: "/not_implemented",
+  submitUserStory: "/submit_user_story",
+  userStories: "/user_stories",
 };

@@ -23,7 +23,6 @@
     /* Import Aliases */
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
       "@app/*": ["src/app/*"],
       "@pages/*": ["src/pages/*"],
       "@features/*": ["src/features/*"],

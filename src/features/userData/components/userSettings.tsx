@@ -7,7 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 import { getAuth, updateProfile } from "firebase/auth";
-import ReusableModal from "@/features/ui/reusableModal";
+import ReusableModal from "@features/ui/reusableModal";
 
 export default function UserSettings() {
   const auth = getAuth();

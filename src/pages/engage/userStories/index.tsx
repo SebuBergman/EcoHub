@@ -1,13 +1,13 @@
 import Footer from "@features/footer";
-import PostList from "@features/forum/PostList";
 import Header from "@features/header";
+import EcoStoryList from "@features/userStories/components/EcoStoryList";
 import { Box } from "@mui/material";
 
-export default function DiscussionForum() {
+export default function UserStories() {
   return (
     <Box>
       <Header />
-      <PostList />
+      <EcoStoryList />
       <Footer />
     </Box>
   );

@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 
 import { APP_NAME } from "@config/constants";
-import { Colors } from "@/app/config/styles";
+import { Colors } from "@app/config/styles";
 import Logo from "../Logo.png";
 
 interface Props {
