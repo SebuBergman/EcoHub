@@ -2,8 +2,6 @@ import { Route, Routes } from "react-router-dom";
 
 import AccountLayout from "@features/ui/layout/accountLayout/AccountLayout";
 import NotFoundPage from "@pages/not-found";
-import EnvIssuesPage from "@pages/learn/envIssues";
-import SustainableLiving from "@pages/learn/sustainableLiving";
 import AuthLayout from "@features/ui/layout/AuthLayout";
 import SignUpPage from "@pages/register";
 import LoginPage from "@pages/login";
@@ -11,7 +9,6 @@ import NotYetFinished from "@pages/not-implemented";
 
 import { AppRoutes } from "../AppRoutes";
 import ProtectedRoute from "./ProtectedRoute";
-import SettingsPage from "@pages/user/settings";
 import PressAndMedia from "@pages/about/pressAndMedia";
 import MissionAndTeam from "@pages/about/missionAndteam";
 import DiscussionForum from "@pages/interact/discussionForum";
@@ -19,6 +16,9 @@ import UserStories from "@pages/engage/userStories";
 import SubmitUserStories from "@pages/engage/userStorySubmission";
 import HomePage from "@pages/home";
 import UserDashboardPage from "@pages/user/userDashboard";
+import SustainableLiving from "@/pages/learn/sustainableLiving";
+import SettingsPage from "@/pages/user/settings";
+import EnvIssuesPage from "@/pages/learn/envIssues";
 
 export default function AppRouter() {
   return (
