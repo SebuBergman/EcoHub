@@ -14,7 +14,6 @@ import authReducer from "@features/auth/store/authSlice";
 import userDataReducer from "@/features/userData/store/userDataSlice";
 import ecoStoryReducer from "@/features/userStories/store/ecoStorySlice";
 
-import { rtkQueryErrorLogger } from "./middleware/errorMiddleware";
 import storage from "redux-persist/lib/storage";
 import forumReducer from "@/features/forum/store/forumSlice";
 
@@ -40,7 +39,7 @@ export const store = configureStore({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }).concat(rtkQueryErrorLogger),
+    }).concat(),
 });
 
 export const persistor = persistStore(store);

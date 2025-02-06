@@ -1,3 +1,5 @@
+import React from "react";
+
 import { LoadingButton } from "@mui/lab";
 import { type SxProps, type Theme } from "@mui/material";
 
@@ -5,7 +7,7 @@ interface Props {
   isSmall?: boolean;
   onClick: (event?: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   "aria-label": string;
-  children: JSX.Element;
+  children: React.JSX.Element;
   sx?: SxProps<Theme>;
   variant?: "outlined" | "contained";
   disabled?: boolean;
