@@ -1,6 +1,6 @@
-import { AppRoutes } from "@/app/config/routes";
-import Footer from "@/features/footer";
-import Header from "@/features/header";
+import { AppRoutes } from "@app/config/routes";
+import Footer from "@features/footer";
+import Header from "@features/header";
 import { Stack, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 

@@ -3,7 +3,7 @@ import { collection, addDoc, getDocs } from "firebase/firestore";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { EcoStory } from "../types";
 import { ECO_STORY_COLLECTION } from "../constant";
-import { firestore } from "@/app/services/firebase";
+import { firestore } from "@app/services/firebase";
 
 // Initial state
 interface EcoStoryState {

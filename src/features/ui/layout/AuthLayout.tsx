@@ -6,7 +6,7 @@ import LoginBackground from "@features/auth/assets/login-background.webp";
 import SignUpBackground from "@features/auth/assets/sign-up-background.webp";
 
 import Logo from "../Logo.png";
-import { APP_NAME } from "@/app/config/constants";
+import { APP_NAME } from "@app/config/constants";
 
 export default function AuthLayout() {
   const location = useLocation();

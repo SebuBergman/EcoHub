@@ -6,7 +6,7 @@ import { Stack } from "@mui/material";
 import NewPost from "./NewPost";
 import { Comment as CommentTypes, Post as PostTypes } from "./types";
 import { collection, onSnapshot, query } from "firebase/firestore";
-import { firestore } from "@/app/services/firebase";
+import { firestore } from "@app/services/firebase";
 
 export default function PostList() {
   const dispatch = useAppDispatch();

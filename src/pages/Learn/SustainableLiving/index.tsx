@@ -1,8 +1,8 @@
-import Header from "@/features/header";
+import Header from "@features/header";
 import { Box, Stack, Typography } from "@mui/material";
 import SustainablePageHeroImage from "@app/assets/images/SustainableHeroImage.jpg";
-import Footer from "@/features/footer";
-import SustainabilityCards from "@/features/pageComponents/learn/SustainableLiving/Cards";
+import Footer from "@features/footer";
+import SustainabilityCards from "@features/pageComponents/learn/SustainableLiving/Cards";
 
 export default function sustainableLivingPage() {
   return (

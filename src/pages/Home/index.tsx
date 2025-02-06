@@ -10,7 +10,7 @@ import ImageBox2 from "./assets/homeImage3.webp";
 // import styles
 import "./styles.scss";
 import { Typography, TextField, Box, Stack } from "@mui/material";
-import AppButton from "@/features/ui/AppButton";
+import AppButton from "@features/ui/AppButton";
 
 export default function LandingPage() {
   return (

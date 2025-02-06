@@ -21,7 +21,7 @@ import { logout } from "@services/api";
 import { useAppSelector } from "@store/index";
 
 import { ACCOUNT_LINKS } from "./data";
-import { AppRoutes } from "@/app/config/routes";
+import { AppRoutes } from "@app/config/routes";
 
 interface Props {
   onClose: () => void;

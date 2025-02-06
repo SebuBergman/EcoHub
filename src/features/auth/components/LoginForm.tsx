@@ -9,7 +9,7 @@ import { useAppDispatch, useAppSelector } from "@store/index";
 
 import { loginUser } from "../store/authActions";
 import { selectAuth } from "../store/authSlice";
-import { Colors } from "@/app/config/styles";
+import { Colors } from "@app/config/styles";
 
 interface FormInput {
   email: string;

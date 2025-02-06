@@ -13,9 +13,9 @@ import {
   Avatar,
 } from "@nextui-org/react";
 
-import { useBreakpoints } from "@/app/hooks/useBreakpoints";
+import { useBreakpoints } from "@app/hooks/useBreakpoints";
 import { IconButton, Stack } from "@mui/material";
-import { AppRoutes } from "@/app/config/routes/AppRoutes.js";
+import { AppRoutes } from "@app/config/routes/AppRoutes.js";
 import { logout } from "@services/api";
 
 import AppLogo from "../ui/Icons/Logo";
@@ -38,7 +38,7 @@ import FeedOutlinedIcon from "@mui/icons-material/FeedOutlined";
 import ContactMailOutlinedIcon from "@mui/icons-material/ContactMailOutlined";
 
 import "./style.scss";
-import { useAppSelector } from "@/app/store";
+import { useAppSelector } from "@app/store";
 import { selectAuth, selectUser } from "../auth/store/authSlice";
 
 export default function Header() {

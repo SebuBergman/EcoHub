@@ -1,6 +1,6 @@
 import { Box, Stack, Typography } from "@mui/material";
 import { SUSTAINABLE_CARD_DATA } from "./data";
-import { Colors } from "@/app/config/styles";
+import { Colors } from "@app/config/styles";
 
 export default function SustainabilityCards() {
   return (

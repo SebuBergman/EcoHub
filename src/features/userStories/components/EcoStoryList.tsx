@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelector } from "@app/store";
 import { EcoStory as EcoStoryTypes } from "../types";
 import { useEffect } from "react";
 import { collection, onSnapshot, query } from "firebase/firestore";
-import { firestore } from "@/app/services/firebase";
+import { firestore } from "@app/services/firebase";
 import { ECO_STORY_COLLECTION } from "../constant";
 import UserStory from "./Story";
 import { fetchUserStories, updateStoriesLocally } from "../store/ecoStorySlice";

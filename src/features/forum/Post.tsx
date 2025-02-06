@@ -1,15 +1,15 @@
 import { useState } from "react";
 import { Avatar, Box, Button, Stack, TextField, Typography } from "@mui/material";
 import { Post as PostTypes } from "./types";
-import { Colors } from "@/app/config/styles";
-import { useAppSelector } from "@/app/store";
+import { Colors } from "@app/config/styles";
+import { useAppSelector } from "@app/store";
 import { selectUser } from "../auth/store/authSlice";
 import LikesComponent from "./Likes";
 import { Comment as CommentTypes } from "./types";
 import { v4 as uuidv4 } from "uuid";
 import CommentIconComponent from "../ui/CommentIcon";
 import dayjs from "dayjs";
-import { timeAgo } from "@/app/services/date/formatDate";
+import { timeAgo } from "@app/services/date/formatDate";
 
 interface Props {
   post: PostTypes;

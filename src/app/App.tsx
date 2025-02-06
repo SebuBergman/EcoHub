@@ -12,7 +12,7 @@ import "./app.scss";
 import { PersistGate } from "redux-persist/integration/react";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import Loader from "@/features/ui/Loader";
+import Loader from "@features/ui/Loader";
 import { persistor } from "./store/index";
 
 function App() {

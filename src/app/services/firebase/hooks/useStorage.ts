@@ -1,4 +1,4 @@
-import { UserData } from "@/features/userData/types";
+import { UserData } from "@features/userData/types";
 import { getFirestore, doc, setDoc } from "firebase/firestore";
 import {
   getStorage,

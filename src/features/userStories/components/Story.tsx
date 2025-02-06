@@ -5,8 +5,8 @@ import {
   Typography,
 } from "@mui/material";
 import { EcoStory as EcoStoryTypes } from "../types";
-import { Colors } from "@/app/config/styles";
-import { timeAgo } from "@/app/services/date/formatDate";
+import { Colors } from "@app/config/styles";
+import { timeAgo } from "@app/services/date/formatDate";
 
 interface Props {
   story: EcoStoryTypes;

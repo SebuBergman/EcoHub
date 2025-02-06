@@ -11,11 +11,11 @@ import {
 } from "redux-persist";
 
 import authReducer from "@features/auth/store/authSlice";
-import userDataReducer from "@/features/userData/store/userDataSlice";
-import ecoStoryReducer from "@/features/userStories/store/ecoStorySlice";
+import userDataReducer from "@features/userData/store/userDataSlice";
+import ecoStoryReducer from "@features/userStories/store/ecoStorySlice";
 
 import storage from "redux-persist/lib/storage";
-import forumReducer from "@/features/forum/store/forumSlice";
+import forumReducer from "@features/forum/store/forumSlice";
 
 const rootReducer = combineReducers({
   auth: authReducer,

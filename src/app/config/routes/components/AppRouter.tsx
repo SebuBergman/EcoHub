@@ -15,10 +15,10 @@ import DiscussionForum from "@pages/interact/discussionForum";
 import UserStories from "@pages/engage/userStories";
 import SubmitUserStories from "@pages/engage/userStorySubmission";
 import UserDashboardPage from "@pages/user/userDashboard";
-import SustainableLiving from "@/pages/learn/sustainableLiving";
-import SettingsPage from "@/pages/user/settings";
-import EnvIssuesPage from "@/pages/learn/envIssues";
-import LandingPage from "@/pages/home";
+import LandingPage from "@pages/home";
+import EnvIssuesPage from "@pages/learn/envIssues";
+import SustainableLiving from "@pages/learn/sustainableLiving";
+import SettingsPage from "@pages/user/settings";
 
 export default function AppRouter() {
   return (

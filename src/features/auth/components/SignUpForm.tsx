@@ -10,7 +10,7 @@ import { useAppDispatch, useAppSelector } from "@store/index";
 
 import { registerUser } from "../store/authActions";
 import { selectAuth, setUserName } from "../store/authSlice";
-import { Colors } from "@/app/config/styles";
+import { Colors } from "@app/config/styles";
 
 interface FormInput {
   name: string;
