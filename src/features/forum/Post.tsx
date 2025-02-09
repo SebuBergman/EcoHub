@@ -82,9 +82,9 @@ export default function Post({
   };
 
   return (
-    <Box sx={{ mb: 4 }} className="postContainer">
+    <Box sx={{ mb: 2 }} className="postContainer">
       <Stack flexDirection={"row"} alignItems={"center"} gap={1}>
-        <Avatar sx={{ height: 48, width: 48, background: Colors.disabled }}>
+        <Avatar sx={{ height: 40, width: 40, background: Colors.disabled }}>
           {userInitial}
         </Avatar>
         <Typography

@@ -1,9 +1,9 @@
-import HeroBox from "@features/LandingPage/HeroBox";
+import HeroBox from "@features/landingPage/HeroBox";
 import Header from "@features/header";
 import Footer from "@features/footer";
 import HomePageHeroImage from "./assets/homePage1.webp";
 import HomeImage1 from "./assets/homeImage1.webp";
-import Carousel from "@features/LandingPage/Carousel";
+import Carousel from "@features/landingPage/Carousel";
 import ImageBox1 from "./assets/homeImage2.webp";
 import ImageBox2 from "./assets/homeImage3.webp";
 

@@ -39,7 +39,7 @@ export default function AddEcoStory() {
   };
 
   return (
-    <Box sx={{ maxWidth: "800px", mx: "auto", mt: 4, py: 4 }}>
+    <Box sx={{ maxWidth: "800px", mx: "auto", mt: 4, py: 4, px: {xs: 2} }}>
       <Typography variant="h4" sx={{ mb: 4, textAlign: "center" }}>
         Share Your Eco Story
       </Typography>

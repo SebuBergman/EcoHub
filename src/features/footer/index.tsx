@@ -17,7 +17,7 @@ export default function Footer() {
       sx={{
         bgcolor: "#f9fafb",
         marginTop: { xs: "0px", md: "32px" },
-        pb: 2
+        pb: 2,
       }}
     >
       <Stack sx={{ maxWidth: "1280px", width: "100%", margin: "auto" }}>
@@ -36,7 +36,14 @@ export default function Footer() {
               community.
             </Typography>
           </Stack>
-          <Stack sx={{ flex: { md: 2 }, flexDirection: "row", height: "55px", width: "100%"}}>
+          <Stack
+            sx={{
+              flex: { md: 2 },
+              flexDirection: "row",
+              height: "55px",
+              width: "100%",
+            }}
+          >
             <TextField
               type="email"
               className="form-control"
@@ -129,9 +136,13 @@ export default function Footer() {
                   Engage
                 </Typography>
                 <ul className="footer_ul">
-                  <li>User Profiles</li>
+                  <li>
+                    <a href={AppRoutes.userStories}>User Stories</a>
+                  </li>
                   <li>Signs & Achievements</li>
-                  <li>Submit Your Story</li>
+                  <li>
+                    <a href={AppRoutes.submitUserStory}>Submit Your Story</a>
+                  </li>
                 </ul>
               </Stack>
             </Stack>
