@@ -12,7 +12,7 @@ export default function MissionAndTeamPage() {
         sx={{
           maxWidth: "1000px",
           mx: "auto",
-          mt: 10,
+          mt: {xs: 4, md: 10},
           pb: { xs: 4, md: 2 },
         }}
       >

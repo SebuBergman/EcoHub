@@ -44,9 +44,9 @@ export default function EcoStoryList() {
   };*/
 
   return (
-    <Box sx={{ maxWidth: "800px", mx: "auto", mt: 4 }}>
-      <Typography variant="h5" sx={{ mt: 6, mb: 2 }}>
-        User Stories
+    <Box sx={{ maxWidth: "800px", mx: "auto", mt: {xs: 1, md: 4}, px: {xs: 1} }}>
+      <Typography variant="h1" sx={{ mt: {xs: 2, md: 6}, mb: 2, textAlign: "center" }}>
+        User Stories:
       </Typography>
       {stories.map((story) => (
         <UserStory key={story?.storyId} story={story} />

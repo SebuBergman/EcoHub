@@ -1,9 +1,4 @@
-import {
-  Avatar,
-  Box,
-  Stack,
-  Typography,
-} from "@mui/material";
+import { Avatar, Box, Stack, Typography } from "@mui/material";
 import { EcoStory as EcoStoryTypes } from "../types";
 import { Colors } from "@app/config/styles";
 import { timeAgo } from "@app/services/date/formatDate";
@@ -16,7 +11,17 @@ export default function UserStory({ story }: Props) {
   const userInitial = story.username?.split(" ")[0][0];
 
   return (
-    <Box sx={{ mb: 4 }}>
+    <Box
+      sx={{
+        mb: 3,
+        padding: { xs: "25px 20px 25px 20px", md: "25px 25px 25px 25px" },
+        borderRadius: "30px",
+        background: "#FFFFFF",
+        "&:hover": {
+          background: "#F3F3F3",
+        },
+      }}
+    >
       <Stack flexDirection={"row"} alignItems={"center"} gap={1}>
         <Avatar sx={{ height: 48, width: 48, background: Colors.disabled }}>
           {userInitial}

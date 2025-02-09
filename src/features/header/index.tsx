@@ -438,32 +438,23 @@ export default function Header() {
                   key="environmental_issues"
                   description="Explore key environmental challenges like climate change, pollution, and deforestation."
                   startContent={<ForestOutlinedIcon />}
+                  href={AppRoutes.envIssues}
                 >
-                  <Link
-                    href={AppRoutes.envIssues}
-                    aria-current="page"
-                    color="foreground"
-                  >
-                    Environmental Issues
-                  </Link>
+                  Environmental Issues
                 </DropdownItem>
                 <DropdownItem
                   key="sustainable_living_tips"
                   description="Discover practical tips to adopt a more eco-friendly and sustainable lifestyle."
                   startContent={<RecyclingOutlinedIcon />}
+                  href={AppRoutes.sustainableLiving}
                 >
-                  <Link
-                    href={AppRoutes.sustainableLiving}
-                    aria-current="page"
-                    color="foreground"
-                  >
-                    Sustainable Living Tips
-                  </Link>
+                  Sustainable Living Tips
                 </DropdownItem>
                 <DropdownItem
                   key="green_innovations"
                   description="Learn about innovative technologies and solutions driving sustainability forward."
                   startContent={<VolunteerActivismOutlinedIcon />}
+                  href={AppRoutes.notImplemented}
                 >
                   Green Innovations
                 </DropdownItem>
@@ -493,6 +484,7 @@ export default function Header() {
                   key="videos"
                   description="Watch engaging videos on environmental topics and success stories."
                   startContent={<VideocamOutlinedIcon />}
+                  href={AppRoutes.notImplemented}
                 >
                   Videos
                 </DropdownItem>
@@ -500,6 +492,7 @@ export default function Header() {
                   key="success_stories"
                   description="Get inspired by real-life stories of individuals and organizations making a difference."
                   startContent={<AutoStoriesOutlinedIcon />}
+                  href={AppRoutes.notImplemented}
                 >
                   Success Stories
                 </DropdownItem>
@@ -529,6 +522,7 @@ export default function Header() {
                   key="quizzes_and_challenges"
                   description="Test your knowledge with quizzes and take on exciting sustainability challenges."
                   startContent={<QuizOutlinedIcon />}
+                  href={AppRoutes.notImplemented}
                 >
                   Quizzes & Challenges
                 </DropdownItem>
@@ -536,14 +530,9 @@ export default function Header() {
                   key="discussion_forum"
                   description="Join discussions and connect with like-minded individuals in our forum."
                   startContent={<ForumOutlinedIcon />}
+                  href={AppRoutes.discussionForum}
                 >
-                  <Link
-                    href={AppRoutes.discussionForum}
-                    aria-current="page"
-                    color="foreground"
-                  >
-                    Discussion Forum
-                  </Link>
+                  Discussion Forum
                 </DropdownItem>
               </DropdownMenu>
             </Dropdown>
@@ -571,6 +560,7 @@ export default function Header() {
                   key="downloads_and_library"
                   description="Access a library of eco-friendly guides, research, and tools."
                   startContent={<FileDownloadOutlinedIcon />}
+                  href={AppRoutes.notImplemented}
                 >
                   Downloads & Library
                 </DropdownItem>
@@ -578,6 +568,7 @@ export default function Header() {
                   key="environmental_impact_assessment"
                   description="Calculate and assess your environmental impact with our tools."
                   startContent={<Co2OutlinedIcon />}
+                  href={AppRoutes.notImplemented}
                 >
                   Environmental Impact Assessment
                 </DropdownItem>
@@ -607,6 +598,7 @@ export default function Header() {
                   key="user_stories"
                   description="Explore stories shared by users about their journey toward sustainability."
                   startContent={<PersonSearchOutlinedIcon />}
+                  href={AppRoutes.userStories}
                 >
                   User Stories
                 </DropdownItem>
@@ -614,6 +606,7 @@ export default function Header() {
                   key="submit_your_story"
                   description="Share your own sustainability journey and inspire others."
                   startContent={<HistoryEduOutlinedIcon />}
+                  href={AppRoutes.submitUserStory}
                 >
                   Submit Your Story
                 </DropdownItem>
@@ -643,14 +636,9 @@ export default function Header() {
                   key="mission_and_team"
                   description="Learn about our mission, vision, and the team behind EcoHub."
                   startContent={<GroupsOutlinedIcon />}
+                  href={AppRoutes.missionTeam}
                 >
-                  <Link
-                    href={AppRoutes.missionTeam}
-                    aria-current="page"
-                    color="foreground"
-                  >
-                    Mission & Team
-                  </Link>
+                  Mission & Team
                 </DropdownItem>
                 <DropdownItem
                   key="news_and_updates"
@@ -663,14 +651,9 @@ export default function Header() {
                   key="press_and_media"
                   description="Contact us for media inquiries or explore our press materials."
                   startContent={<ContactMailOutlinedIcon />}
+                  href={AppRoutes.pressAndMedia}
                 >
-                  <Link
-                    href={AppRoutes.pressAndMedia}
-                    aria-current="page"
-                    color="foreground"
-                  >
-                    Press & Media
-                  </Link>
+                  Press & Media
                 </DropdownItem>
               </DropdownMenu>
             </Dropdown>
