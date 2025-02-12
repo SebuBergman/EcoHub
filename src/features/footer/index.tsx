@@ -115,7 +115,7 @@ export default function Footer() {
                 <ul className="footer_ul">
                   <li>Quizzes & Challenges</li>
                   <li>
-                    <a href={AppRoutes.discussionForum}>Discussion Forum</a>
+                    <a href={AppRoutes.forum}>Discussion Forum</a>
                   </li>
                 </ul>
               </Stack>
