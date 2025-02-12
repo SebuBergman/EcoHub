@@ -16,8 +16,9 @@ interface Props {
   onLike: (postId: string, userId: string) => void;
   onDislike: (postId: string, userId: string) => void;
   onAddComment: (postId: string, comment: CommentTypes) => void;
-  onLikeComment: (postId: string, commentId: number, userId: string) => void;
-  onDislikeComment: (postId: string, commentId: number, userId: string) => void;
+  onLikeComment: (postId: string, commentId: string, userId: string) => void;
+  onDislikeComment: (postId: string, commentId: string, userId: string) => void;
+  onClick: () => void;
 }
 
 export default function Post({
@@ -27,13 +28,13 @@ export default function Post({
   onAddComment,
   onLikeComment,
   onDislikeComment,
+  onClick,
 }: Props) {
   const date = dayjs(new Date()).toISOString();
   const user = useAppSelector(selectUser);
   const userInitial = post.username?.split(" ")[0][0];
   const userName = user?.displayName;
   const userId = user?.uid;
-  
 
   const [commentContent, setCommentContent] = useState("");
   const [commentsVisible, setCommentsVisible] = useState(false);
@@ -65,13 +66,13 @@ export default function Post({
     }
   };
 
-  const handleLikeComment = (commentId: number) => {
+  const handleLikeComment = (commentId: string) => {
     if (userId) {
       onLikeComment(post.postId, commentId, userId);
     }
   };
 
-  const handleDislikeComment = (commentId: number) => {
+  const handleDislikeComment = (commentId: string) => {
     if (userId) {
       onDislikeComment(post.postId, commentId, userId);
     }
@@ -82,7 +83,7 @@ export default function Post({
   };
 
   return (
-    <Box sx={{ mb: 2 }} className="postContainer">
+    <Box sx={{ mb: 2 }} className="postContainer" onClick={onClick}>
       <Stack flexDirection={"row"} alignItems={"center"} gap={1}>
         <Avatar sx={{ height: 40, width: 40, background: Colors.disabled }}>
           {userInitial}
@@ -125,8 +126,8 @@ export default function Post({
       </Stack>
       {commentsVisible && ( // Conditional rendering of comments
         <Stack spacing={2} sx={{ pt: 2 }} className="commentsContainer">
-          {post.comments?.map((comment, idx) => (
-            <Box key={idx}>
+          {post.comments?.map((comment) => (
+            <Box key={comment.commentId}>
               <Stack direction="row" gap={1}>
                 <Typography variant="body2" sx={{ fontWeight: "bold" }}>
                   {comment.username}
@@ -144,8 +145,8 @@ export default function Post({
                 initialUserVote={
                   userId && comment.likes?.includes(userId) ? 1 : 0
                 }
-                onUpvote={() => handleLikeComment(idx)}
-                onDownvote={() => handleDislikeComment(idx)}
+                onUpvote={() => handleLikeComment(comment.commentId)}
+                onDownvote={() => handleDislikeComment(comment.commentId)}
               />
             </Box>
           ))}

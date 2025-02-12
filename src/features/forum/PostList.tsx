@@ -7,10 +7,12 @@ import NewPost from "./NewPost";
 import { Comment as CommentTypes, Post as PostTypes } from "./types";
 import { collection, onSnapshot, query } from "firebase/firestore";
 import { firestore } from "@app/services/firebase";
+import { useNavigate } from "react-router-dom";
 
 export default function PostList() {
   const dispatch = useAppDispatch();
   const posts = useAppSelector((state: RootState) => state.forum.posts);
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Fetch posts initially
@@ -21,7 +23,6 @@ export default function PostList() {
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       const updatedPosts: PostTypes[] = querySnapshot.docs.map((doc) => ({
         ...doc.data(),
-        postId: doc.id,
       })) as PostTypes[];
 
       // Sort posts by timestamp in descending order
@@ -52,7 +53,7 @@ export default function PostList() {
 
   const handleLikeComment = (
     postId: string,
-    commentId: number,
+    commentId: string,
     userId: string
   ) => {
     dispatch(toggleCommentLike({ postId, commentId, userId }));
@@ -60,10 +61,14 @@ export default function PostList() {
 
   const handleDislikeComment = (
     postId: string,
-    commentId: number,
+    commentId: string,
     userId: string
   ) => {
     dispatch(toggleCommentLike({ postId, commentId, userId }));
+  };
+
+  const handlePostClick = (postId: string) => {
+    navigate(`/post/${postId}`);
   };
 
   return (
@@ -72,10 +77,10 @@ export default function PostList() {
         display: "flex",
         margin: "auto",
         maxWidth: "1366px",
-        p: {xs: "10px 20px"}
+        p: { xs: "10px 20px" },
       }}
     >
-      <NewPost/>
+      <NewPost />
       {posts.map((post) => (
         <Post
           key={post?.postId}
@@ -85,6 +90,7 @@ export default function PostList() {
           onAddComment={handleAddComment}
           onLikeComment={handleLikeComment}
           onDislikeComment={handleDislikeComment}
+          onClick={() => handlePostClick(post.postId)}
         />
       ))}
     </Stack>
