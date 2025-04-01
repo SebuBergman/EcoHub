@@ -34,14 +34,15 @@ export default function NotYetFinished() {
           }}
         >
           <li>
-            <a href={AppRoutes.discussionForum}>Environmental Issues</a>
+            <a href={AppRoutes.envIssues}>Environmental Issues</a>
           </li>
           <li>
-            <a href={AppRoutes.discussionForum}>Sustainable Living Tips</a>
+            <a href={AppRoutes.sustainableLiving}>Sustainable Living Tips</a>
           </li>
           <li>
-            <a href={AppRoutes.discussionForum}>Discussion Forum</a>
+            <a href={AppRoutes.forumPost}>Discussion Forum</a>
           </li>
+          forumPost
           <li>
             <a href={AppRoutes.missionTeam}>Mission & Team</a>
           </li>
