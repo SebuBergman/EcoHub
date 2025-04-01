@@ -10,7 +10,6 @@ import {
 import { Comment as CommentTypes } from "./types";
 import { Box, Stack, Typography, TextField, Button } from "@mui/material";
 import LikesComponent from "./Likes";
-import CommentIconComponent from "../ui/CommentIcon";
 import dayjs from "dayjs";
 import { timeAgo } from "@app/services/date/formatDate";
 import { v4 as uuidv4 } from "uuid";
@@ -28,7 +27,6 @@ export default function PostDetail() {
   const date = dayjs(new Date()).toISOString();
 
   const [commentContent, setCommentContent] = useState("");
-  const [commentsVisible, setCommentsVisible] = useState(false);
 
   useEffect(() => {
     if (!post) {
@@ -127,12 +125,7 @@ export default function PostDetail() {
             onUpvote={handleUpvote}
             onDownvote={handleDownvote}
           />
-          <CommentIconComponent
-            commentCount={post.comments?.length || 0}
-            onClick={() => setCommentsVisible(!commentsVisible)}
-          />
         </Stack>
-        {commentsVisible && (
           <Stack spacing={2} sx={{ pt: 2 }}>
             {post.comments?.map((comment, idx) => (
               <Box key={idx}>
@@ -170,7 +163,6 @@ export default function PostDetail() {
               Post Comment
             </Button>
           </Stack>
-        )}
       </Box>
       <Footer />
     </Box>
