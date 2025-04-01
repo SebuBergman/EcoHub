@@ -198,10 +198,10 @@ export default function Header() {
                   key="discussion_forum"
                   description="Join discussions and connect with like-minded individuals in our forum."
                   startContent={<ForumOutlinedIcon />}
-                  href={AppRoutes.discussionForum}
+                  href={AppRoutes.forum}
                 >
                   <Link
-                    href={AppRoutes.discussionForum}
+                    href={AppRoutes.forum}
                     aria-current="page"
                     color="foreground"
                   >
@@ -530,7 +530,7 @@ export default function Header() {
                   key="discussion_forum"
                   description="Join discussions and connect with like-minded individuals in our forum."
                   startContent={<ForumOutlinedIcon />}
-                  href={AppRoutes.discussionForum}
+                  href={AppRoutes.forum}
                 >
                   Discussion Forum
                 </DropdownItem>

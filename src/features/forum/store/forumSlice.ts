@@ -107,7 +107,7 @@ export const toggleCommentLike = createAsyncThunk(
       postId,
       commentId,
       userId,
-    }: { postId: string; commentId: number; userId: string },
+    }: { postId: string; commentId: string; userId: string },
     { rejectWithValue }
   ) => {
     try {
@@ -117,18 +117,21 @@ export const toggleCommentLike = createAsyncThunk(
       if (!postData) return rejectWithValue("Post not found");
 
       const comments = postData.comments as CommentTypes[];
-      const comment = comments[commentId];
+      const comment = comments.find((comment) => comment.commentId === commentId);
       if (!comment) return rejectWithValue("Comment not found");
 
       let newLikes: string[];
 
       if (comment.likes.includes(userId)) {
-        newLikes = comment.likes.filter((id) => id !== userId);
+        newLikes = comment.likes.filter((id: string) => id !== userId);
       } else {
         newLikes = [...comment.likes, userId];
       }
 
-      comments[commentId] = { ...comment, likes: newLikes };
+      const commentIndex = comments.findIndex((comment) => comment.commentId === commentId);
+      if (commentIndex !== -1) {
+        comments[commentIndex] = { ...comment, likes: newLikes };
+      }
 
       await updateDoc(postRef, { comments });
       return { postId, comments };

@@ -19,6 +19,7 @@ import LandingPage from "@pages/home";
 import EnvIssuesPage from "@pages/learn/envIssues";
 import SustainableLiving from "@pages/learn/sustainableLiving";
 import SettingsPage from "@pages/user/settings";
+import PostDetail from "@features/forum/PostDetail";
 
 export default function AppRouter() {
   return (
@@ -32,7 +33,8 @@ export default function AppRouter() {
         element={<SustainableLiving />}
       />
       {/* Interact Pages */}
-      <Route path={AppRoutes.discussionForum} element={<DiscussionForum />} />
+      <Route path={AppRoutes.forum} element={<DiscussionForum />} />
+      <Route path={AppRoutes.forumPost} element={<PostDetail />} />
       {/* Engage Pages */}
       <Route path={AppRoutes.userStories} element={<UserStories />} />
       <Route path={AppRoutes.submitUserStory} element={<SubmitUserStories />} />
